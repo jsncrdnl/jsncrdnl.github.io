@@ -1,10 +1,3 @@
-<?php
-	session_start();	
-	if( isset($_POST, $_POST["uName"], $_POST["uPass"]) && $_POST["uName"]=="jsn" && $_POST["uPass"]=="jsn" )
-		$_SESSION['administrator'] = "Active";		
-	else if( isset($_POST, $_POST["admin_log_out"], $_SESSION, $_SESSION['administrator']) && $_POST["admin_log_out"]=="true" )
-		unset($_SESSION['administrator']);
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,56 +20,19 @@
     <body>
 			
 		<div id="container">
-		
-				<?php if( isset($_SESSION, $_SESSION['administrator']) && $_SESSION['administrator']=="Active" ) { ?>
-					<div id="adminBlock" class="loggedIn">
-						<p>Mode administrateur</p>
-						<form method="post" action="?">
-							<input type="hidden" value="true" name="admin_log_out" id="admin_log_out" />
-							<input type="submit" value="Déconnexion" name="uDeconn" id="uDeconn" />
-						</form>		
-					</div>
-					
-					<div id="mainAdminPanel" style="z-index: 100;position: fixed;top: -2px;left: -2px;padding: 10px;background: #f1f1f1;border-radius: 0 0 5px 0;border: 2px solid black;">
-						<p>
-							<span style="width: 285px;display: inline-block;">Couleur conteneur principal : </span>
-							<a href="#" class="colorSwitch" rel="html" style="background: #f1f1f1; display: inline-block;width: 20px;height: 20px;margin-left: 5px;border: 1px solid black;"></a>
-							<a href="#" class="colorSwitch" rel="html" style="background: rgb(193, 193, 252); display: inline-block;width: 20px;height: 20px;margin-left: 5px;border: 1px solid black;"></a>
-							<a href="#" class="colorSwitch" rel="html" style="background: rgb(200, 240, 202); display: inline-block; width: 20px; height: 20px; border: 1px solid black; margin-left: 5px;"></a>
-							<a href="#" class="colorSwitch" rel="html" style="background: rgb(240, 200, 226); display: inline-block; width: 20px; height: 20px; border: 1px solid black; margin-left: 5px;"></a>
-						</p>
-						<p>
-							<span style="width: 285px;display: inline-block;">Couleur secondaire : </span>
-							<a href="#" class="colorSwitch" rel=".movieBlock" style="background: rgb(31, 31, 31); display: inline-block;width: 20px;height: 20px;margin-left: 5px;border: 1px solid black;"></a>
-							<a href="#" class="colorSwitch" rel=".movieBlock" style="background: rgb(47, 87, 47); display: inline-block;width: 20px;height: 20px;margin-left: 5px;border: 1px solid black;"></a>
-							<a href="#" class="colorSwitch" rel=".movieBlock" style="background: rgb(87, 47, 53); display: inline-block; width: 20px; height: 20px; border: 1px solid black; margin-left: 5px;"></a>
-							<a href="#" class="colorSwitch" rel=".movieBlock" style="background: rgb(37, 94, 133); display: inline-block; width: 20px; height: 20px; border: 1px solid black; margin-left: 5px;"></a>
-						</p>
-					</div>
-					
-				<?php } else { ?>	
-					<div id="adminBlock" class="loggedOut">
-						<p>Mode administrateur</p>
-						<form method="post" action="?">
-							<label for="uName">Login :</label><input type="text" value="" name="uName" id="uName" /><br/>
-							<label for="uPass">Mot de passe :</label><input type="password" value="" name="uPass" id="uPass" /><br/>
-							<input type="submit" value="Connexion" name="uConn" id="uConn" />
-						</form>		
-					</div>
-				<?php } ?>
-		
+	
+			<div id="adminBlock" class="loggedOut">
+				<p>Mode administrateur</p>
+				<form method="post" action="?">
+					<label for="uName">Login :</label><input type="text" value="" name="uName" id="uName" /><br/>
+					<label for="uPass">Mot de passe :</label><input type="password" value="" name="uPass" id="uPass" /><br/>
+					<input type="submit" value="Connexion" name="uConn" id="uConn" />
+				</form>		
+			</div>
+
 			<div id="signature"> 
 				jsn.crdnl
 			</div> 
-			
-			<!--nav id="navigationMap">
-				<ul>
-					<li><a class="ascensorLink ascensorLink0"></a></li>
-					<li><a class="ascensorLink ascensorLink1"></a></li>
-					<li><a class="ascensorLink ascensorLink2"></a></li>
-					<li><a class="ascensorLink ascensorLink3"></a></li>
-				</ul>
-			</nav-->
 			
 			<div id="menu">			
 				<a href="#" rel="qualif"><h2>Qualification</h2></a>
@@ -87,14 +43,7 @@
 			
 			<div id='ascensor'>
 				 <div id="qualif">
-					<?php if( isset($_SESSION, $_SESSION['administrator']) && $_SESSION['administrator']=="Active" ) { ?>
-						<div contenteditable="true">
-					<?php } else { ?>
-						<div>
-					<?php } ?>
-						<?php include("content1.htm"); ?>
-					</div>
-						<!--p>Qualification................................... Développeur</p>
+						<p>Qualification................................... Développeur</p>
 						<p>Domaines d'action.......................... Sites web, lociciels, applications Android, etc.</p>
 						<p>Connaissances web........................ HTML, CSS, PHP, JS, jQ, AJAX, CMS, etc.</p>
 						<p>Connaissances logiciel................... C, C++, C#, Java, etc.</p>
@@ -108,7 +57,7 @@
 						<p>&nbsp;&gt;&nbsp;création de logiciels Windows (également Linux et Mac -en Java-),</p>
 						<p>&nbsp;&gt;&nbsp;création d'applications pour smartphone (Android),</p>
 						<p>&nbsp;&gt;&nbsp;administration de systèmes Linux,</p>
-						<p>&nbsp;&gt;&nbsp;etc.</p-->
+						<p>&nbsp;&gt;&nbsp;etc.</p>
 				</div>
 				<div id="mobile">
 					<div>
@@ -217,7 +166,6 @@
 		<!--script src="assets/js/mousewheel.js"></script-->
         <!--script src="assets/js/jquery.ascensor.min.js"></script-->
         <script src="assets/js/script.js"></script>
-		<?php if( isset($_SESSION, $_SESSION['administrator']) && $_SESSION['administrator']=="Active" ) { ?>
 			<script src="ckeditor/ckeditor.js"></script>
 			<script>
 
@@ -269,7 +217,6 @@
 				});
 
 			</script>
-	   <?php } ?>
     </body>
 </html>
 
