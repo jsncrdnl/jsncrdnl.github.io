@@ -56,9 +56,7 @@
 		    				crossDomain: true,
 						method : "GET"
 					}).done(function(responseData, textStatus, jqXHR){
-						console.log( "this rel is " + $(this).attr("rel") );
-						console.log( "responseData " + responseData );
-						$("#"+$(this).attr("rel")).html(responseData);
+						setTimeout(function(){window.location="?";}, 1000);
 					}).fail(function(jqXHR, textStatus){
 		  				alert( "Request failed: " + textStatus );
 					}).complete(function(){});
