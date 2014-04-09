@@ -1,6 +1,12 @@
 <html>
 	<head>
-		<style>.loadContent{ border:1px solid gray; background:lightgray; }</style>
+		<style>
+			.loadContent{ border:1px solid gray; background:lightgray;padding:5px;}
+			.loadContent{ 	border:1px solid gray; border-radius:10px; 
+					background:lightblue; padding:5px; display:inline-block;
+					width:200px;height:40px; }
+			.loadContent:hover{ 	border:2px solid darkgray; background:blue; padding:5px; }
+		</style>
 	</head>
 	<body>
 		<h1>My first personnal page on github</h1>
@@ -15,11 +21,13 @@
 		<div class="loadContent" rel="test.html">
 			
 		</div>
-		<div class="loadContent" rel="test2.html">
-			
-		</div>
+		<div class="button" onclick="updatePage();"></div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
+		var updatePage = function()
+		{
+			alert("clicked !");
+		};
 		$(document).ready(function()
 		{
 			$(".loadContent").each(function(index, value)
