@@ -1,9 +1,33 @@
-<h1>My first personnal page on github</h1>
-<h2>Helloworld</h2>
-<p>This is a test</p>
-<ul>
-	<li>aaa</li>
-	<li>bbb</li>
-	<li>ccc</li>
-</ul>
-<h3>My 3rd title !</h3>
+<html>
+	<head></head>
+	<body>
+		<h1>My first personnal page on github</h1>
+		<h2>Helloworld</h2>
+		<p>This is a test</p>
+		<ul>
+			<li>aaa</li>
+			<li>bbb</li>
+			<li>ccc</li>
+		</ul>
+		<h3>Other webpage content :</h3>
+		<div class="loadContent" rel="test.html">
+			
+		</div>
+		<div class="loadContent" rel="test2.html">
+			
+		</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function()
+		{
+			$(".loadContent").each(function(index, value)
+			{
+				$(html).apppend(
+					"index = " + index + " ; "+
+					"value = " + value + " ; "+
+					"rel   = " + $(this).attr("rel") );
+			});
+		});
+	</script>
+	</body>
+</html>
