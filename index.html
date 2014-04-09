@@ -22,10 +22,7 @@
 		{
 			$(".loadContent").each(function(index, value)
 			{
-				$("body").append(
-					"index = " + index + " ; "+
-					"value = " + value + " ; "+
-					"rel   = " + $(this).attr("rel") );
+				$(this).load( $(this).attr("rel") );
 			});
 		});
 	</script>
