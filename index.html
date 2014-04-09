@@ -30,10 +30,10 @@
 			{
 				url : "http://cherrypy-jsncrdnl.rhcloud.com",
 				method : "GET"
-			}).success(function(){
+			}).done(function(){
 				alert("success");
-			}).fail(function(e){
-				alert("fail :: " + e);
+			}).fail(function(jqXHR, textStatus){
+  				alert( "Request failed: " + textStatus );
 			}).complete(function(){});
 		};
 		$(document).ready(function()
