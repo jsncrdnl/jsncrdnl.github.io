@@ -18,10 +18,10 @@
 			<li>ccc</li>
 		</ul>
 		<h3>Other webpage content :</h3>
-		<div class="loadContent" rel="test.html">
+		<div class="loadContent" id="test_html">
 			<img src="ajax-loader.gif" alt="Chargement en cours... " />	
 		</div>
-		<p><span class="button" onclick="updatePage();">Update Test.html page !</span></p>
+		<p><span class="button" rel="test_html">Update Test.html page !</span></p>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
 		$.support.cors = true;
@@ -30,7 +30,6 @@
 			$.ajax(
 			{
 				url : "http://cherrypy-jsncrdnl.rhcloud.com",
-    				//dataType: "jsonp",
     				crossDomain: true,
 				method : "GET"
 			}).done(function(responseData, textStatus, jqXHR){
@@ -43,9 +42,25 @@
 		};
 		$(document).ready(function()
 		{
-			$(".loadContent").each(function(index, value)
+			$(".loadContent").each(function()
 			{
-				$(this).load( $(this).attr("rel") );
+				$(this).load( $(this).attr("id").replace(/\_/g,'.'); );
+			});
+			$(".button").each(function()
+			{
+				$(this).click(function()
+				{
+					$.ajax(
+					{
+						url : "http://cherrypy-jsncrdnl.rhcloud.com",
+		    				crossDomain: true,
+						method : "GET"
+					}).done(function(responseData, textStatus, jqXHR){
+						$("#"+$(this).attr("rel")).html(responseData);
+					}).fail(function(jqXHR, textStatus){
+		  				alert( "Request failed: " + textStatus );
+					}).complete(function(){});
+				});
 			});
 		});
 	</script>
