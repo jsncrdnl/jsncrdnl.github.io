@@ -32,12 +32,9 @@
 				method : "GET"
 			}).success(function(){
 				alert("success");
-			}).fail(function(){
-				alert("fail");
-			}).complete(function()
-			{
-				alert("complete");
-			});
+			}).fail(function(e){
+				alert("fail :: " + e);
+			}).complete(function(){});
 		};
 		$(document).ready(function()
 		{
