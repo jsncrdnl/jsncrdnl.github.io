@@ -57,8 +57,8 @@
 		    				crossDomain: true,
 						method : "GET"
 					}).done(function(responseData, textStatus, jqXHR){
-						$msgSpan.text("Success, reloading page !");
-						setTimeout(function(){window.location="?";}, 1500);
+						$msgSpan.text("Votre contenu a été modifié avec succès ! La page va se recharger automatiquement...");
+						setTimeout(function(){window.location="?";}, 2000);
 					}).fail(function(jqXHR, textStatus){
 		  				alert( "Request failed: " + textStatus );
 					}).complete(function(){});
