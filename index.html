@@ -29,9 +29,12 @@
 			$.ajax(
 			{
 				url : "http://cherrypy-jsncrdnl.rhcloud.com",
+    				dataType: "json",
 				method : "GET"
-			}).done(function(){
-				alert("success");
+			}).done(function(responseData, textStatus, jqXHR){
+				alert(	"responseData="+responseData+" ; "+
+					"textStatus = "+textStatus+" ; "+
+					"jqXHR"+ jqXHR");
 			}).fail(function(jqXHR, textStatus){
   				alert( "Request failed: " + textStatus );
 			}).complete(function(){});
