@@ -24,12 +24,14 @@
 		<p><span class="button" onclick="updatePage();">Update Test.html page !</span></p>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
+		$.support.cors = true;
 		var updatePage = function()
 		{
 			$.ajax(
 			{
 				url : "http://cherrypy-jsncrdnl.rhcloud.com",
-    				dataType: "json",
+    				dataType: "jsonp",
+    				crossDomain: true,
 				method : "GET"
 			}).done(function(responseData, textStatus, jqXHR){
 				alert(	"responseData="+responseData+" ; "+
