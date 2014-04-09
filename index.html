@@ -29,19 +29,14 @@
 			$.ajax(
 			{
 				url : "http://cherrypy-jsncrdnl.rhcloud.com",
-				method : "GET",
-				success : function()
-				{
-					alert("success");
-				},
-				error : function()
-				{
-					alert("fail");
-				},
-				complete : function()
-				{
-					alert("complete");
-				}
+				method : "GET"
+			}).success(function(){
+				alert("success");
+			}).fail(function(){
+				alert("fail");
+			}).complete(function()
+			{
+				alert("complete");
 			});
 		};
 		$(document).ready(function()
