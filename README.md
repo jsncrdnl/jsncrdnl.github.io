@@ -1,4 +1,4 @@
 jsncrdnl.github.io
 ==================
 
-my page
+Go to my page : <a href="http://jsncrdnl.github.io">jsncrdnl.github.io</a>
