@@ -6,6 +6,10 @@
 					background:lightblue; padding:5px; display:inline-block;
 					width:200px;height:40px; }
 			.button span:first-of-type:hover{ 	border:2px solid darkgray; background:blue; padding:5px; cursor:pointer; }
+			.button2 span:first-of-type{ 	border:1px solid gray; border-radius:10px; 
+					background:lightblue; padding:5px; display:inline-block;
+					width:200px;height:40px; }
+			.button2 span:first-of-type:hover{ 	border:2px solid darkgray; background:blue; padding:5px; cursor:pointer; }
 		</style>
 	</head>
 	<body>
@@ -17,33 +21,23 @@
 			<li>bbb</li>
 			<li>ccc</li>
 		</ul>
-		<h3>Other webpage content :</h3>
+		<h3>Other webpage content 'test':</h3>
 		<div class="loadContent" id="test_html">
 			<img src="ajax-loader.gif" alt="Chargement en cours... " />	
 		</div>
 		<p class="button"><span rel="test_html">Update Test.html page !</span><span></span></p>
 		
 	<div>
+		<h3>Other webpage content 'test2':</h3>
+		<div class="loadContent" id="test2_html">
+			<img src="ajax-loader.gif" alt="Chargement en cours... " />	
+		</div>
 		<textarea id="textToCommit" placeholder="Type your text here" cols="100" rows="10"></textarea>
+		<p class="button2"><span rel="test2_html">Send text</span><span></span></p>
 	</div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
 		$.support.cors = true;
-		var updatePage = function()
-		{
-			$.ajax(
-			{
-				url : "https://cherrypy-jsncrdnl.rhcloud.com",
-    				crossDomain: true,
-				method : "GET"
-			}).done(function(responseData, textStatus, jqXHR){
-				alert(	"responseData="+responseData+" ; "+
-					"textStatus = "+textStatus+" ; "+
-					"jqXHR"+ jqXHR);
-			}).fail(function(jqXHR, textStatus){
-  				alert( "Request failed: " + textStatus );
-			}).complete(function(){});
-		};
 		$(document).ready(function()
 		{
 			$(".loadContent").each(function()
@@ -57,7 +51,27 @@
 				{
 					$.ajax(
 					{
-						url : "http://cherrypy-jsncrdnl.rhcloud.com",
+						url : "https://cherrypy-jsncrdnl.rhcloud.com",
+		    				crossDomain: true,
+						method : "GET"
+					}).done(function(responseData, textStatus, jqXHR){
+						$msgSpan.text("Votre contenu a été modifié avec succès ! La page va se recharger automatiquement...");
+						setTimeout(function(){window.location="?";}, 1000);
+					}).fail(function(jqXHR, textStatus){
+		  				alert( "Request failed: " + textStatus );
+					}).complete(function(){});
+				});
+			});
+			$(".button2").each(function()
+			{
+				$msgSpan = $(this).find("span:eq(1)");
+				$(this).find("span:eq(0)").click(function()
+				{
+					var textToCommit = $("#textToCommit").val();
+					$.ajax(
+					{
+						url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
+						data : { value : textToCommit },
 		    				crossDomain: true,
 						method : "GET"
 					}).done(function(responseData, textStatus, jqXHR){
