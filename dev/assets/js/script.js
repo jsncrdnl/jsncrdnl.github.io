@@ -3,9 +3,18 @@
 $(function(){
 
 	$("#mySpecs h2:eq(0)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
-	$("#mySpecs h2:eq(1)").animate({ 'margin-top':0, 'opacity':1.0}, 2500);
-	$("#mySpecs h2:eq(2)").animate({ 'margin-top':0, 'opacity':1.0}, 3500);
-	$("#mySpecs h2:eq(3)").animate({ 'margin-top':0, 'opacity':1.0}, 4500);
+	setTimeout(function(){
+		$("#mySpecs h2:eq(1)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
+	}, 1000);
+	setTimeout(function(){
+		$("#mySpecs h2:eq(2)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
+	}, 2000);
+	setTimeout(function(){
+		$("#mySpecs h2:eq(3)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
+	}, 3000);
+	setTimeout(function(){
+		$("#mySpecs h2:eq(3)").animate({ 'opacity':1.0}, 1500);
+	}, 4000);
 
 	var availableHeight = $(window).height() - 600;	
 	$("#container").css("margin-top", (availableHeight/2)+"px");
