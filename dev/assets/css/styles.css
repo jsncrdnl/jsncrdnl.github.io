@@ -17,21 +17,12 @@ General Styles
 
 
 html{
-background-color:#f1f1f1;
-/*background-color: #1F1F1F;*/
-/*background:none;*/
-/*min-height:100%;*/
-/*height:100%;*/
-/*padding-top:100px;*/
+	background-color:#f1f1f1;
 }
 
 body{ 
-/*min-width:1000px;*/
-height: 100%;
-/*
-min-height:100%;*/
-background:none;
-/*background-color: #1F1F1F;*/
+	height: 100%;
+	background:none;
 } 
 
 a, a:visited {
@@ -44,26 +35,15 @@ a:hover{
 	text-decoration:underline;
 }
 
-p{
-font-family: 'Iceland', cursive;
-font-size:25px;
-text-shadow:1px 1px 1px #ffffff;
+p {
+	font-family: 'Iceland', cursive;
+	font-size:25px;
+	text-shadow:1px 1px 1px #ffffff;
 }
 /***********************************************************************
 * SIGNATURE
 ************************************************************************/
 #signature{ 
-	/*top:50px;*/
-	/*z-index : 10;
-	position:fixed;	
-	width:100%;
-	margin:0;
-	padding:0;
-	color:black;
-	font-size:120px;
-	font-family: 'Trade Winds', cursive;
-	text-shadow: 0px 0px 60px #D90000;
-	text-align:center;*/
 	font-size: 120px;
 	font-family: 'Trade Winds', cursive;
 	text-shadow: 0px 0px 60px #99FFE5;
@@ -74,18 +54,8 @@ text-shadow:1px 1px 1px #ffffff;
 
 }
 #container{
-	/*margin-top: 100px;
-	margin-bottom: 100px;
-	height: 80%; 
-	height: 800px;*/
-	/*overflow-y: scroll;*/
-	/*background: #f1f1f1;
-	width: 100%;*/
-	/*background: #f1f1f1;*/
 	width: 100%;
-	height: 600px;/*
-	margin-bottom:90px;
-	margin-top:90px;*/
+	height: 600px;
 }
  
 #ascensor{
@@ -95,40 +65,24 @@ text-shadow:1px 1px 1px #ffffff;
 #ascensor div div{
 	display:block;
 	width:960px;
-	height:370px;
+	height:165px;
 	margin-top:20px;
 	margin-left:auto;
 	margin-right:auto;
 	box-shadow: 30px 30px 136px -45px black;
 	padding:10px;
-	overflow-y:scroll;
 }
-#ascensor div {
-	display:none;
-}
-#ascensor div:nth-of-type(1) {
-	display:block;
-}
-
-#menu{
-	text-align:center;
-	/*padding-top:180px;*/
-}
-#menu h2{
+#mySpecs h2{
 	font-family: 'Orbitron', sans-serif;
 	font-weight: 900;
 	color: #B3ACAC;
 	text-shadow: 0px 0px 24px #ffffff;
 	font-size: 28px;
 }
-#menu a{
+#mySpecs a{
 	display : inline-block;
 	margin-right:10px; 
-}
-.glow {
-	text-shadow: 0px 0px 2px #0000D9;
-	color: transparent;
-	font-size: 28px;
+	text-align:center;
 }
 
 #adminBlock {
@@ -152,39 +106,4 @@ text-shadow:1px 1px 1px #ffffff;
 }
 #adminBlock input[type=submit]{
 	margin-top:5px;
-	/*margin-left:100px;*/
-}
-
-/***********************************************************************
-* NAVIGATION
-************************************************************************/
-#ascensor>div:nth-of-type(1){
-   /*background:lightgreen;
-/*background: url(http://fc08.deviantart.net/fs71/f/2013/147/7/a/road_9_by_ashishdhawan-d66re0p.jpg) 0 0 no-repeat;*/
-   background-size: cover;
-} 
-#ascensor>div:nth-of-type(2){
-   /*background:lightblue;
-   /*background: url(http://fc08.deviantart.net/fs71/f/2013/147/f/8/road_11_by_ashishdhawan-d66refy.jpg) 0 0 no-repeat;*/
-   background-size: cover;
-} 
-#ascensor>div:nth-of-type(3){
-   /*background:lightgray;
-   /*background: url(http://fc06.deviantart.net/fs71/f/2013/146/7/7/railroad_tracks_by_owenb23-d66nz1i.jpg) 0 0 no-repeat;*/
-   background-size: cover;
-}
-#ascensor>div:nth-of-type(4){
-   /*background:#FFCC99;
-   /*background: url(http://fc06.deviantart.net/fs70/f/2010/334/7/0/the_road_by_sultan_alghamdi-d33x6b3.jpg) 0 0 no-repeat;*/
-   background-size: cover;
-} 
-#ascensor>div:nth-of-type(5){
-   /*background:#FFFFBF;
-   /*background: url(http://fc08.deviantart.net/fs21/i/2010/110/f/f/on_the_road_by_rainyface.jpg) 0 0 no-repeat;*/
-   background-size: cover;
-} 
-#ascensor>div:nth-of-type(6){
-   /*background:#FFDFF7;
-   /*background: url(http://fc07.deviantart.net/fs71/i/2011/268/f/6/road_to_eternity_by_chupadnb-d2eya3m.jpg) 0 0 no-repeat;*/
-   background-size: cover;
 }
