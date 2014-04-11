@@ -13,7 +13,7 @@ $(function(){
 		$("#mySpecs h2:eq(3)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
 	}, 3000);
 	setTimeout(function(){
-		$("#mySpecs h2:eq(3)").animate({ 'opacity':1.0}, 1500);
+		$("#ascensor div div").animate({ 'opacity':1.0}, 1500);
 	}, 4000);
 
 	var availableHeight = $(window).height() - 600;	
