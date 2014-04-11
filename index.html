@@ -32,6 +32,8 @@
 		<div class="loadContent" id="test2_html">
 			<img src="ajax-loader.gif" alt="Chargement en cours... " />	
 		</div>
+		<input type="text" name="username" id="usernameInput" placeholder="Your username" />
+		<input type="password" name="password" id="passwordInput" placeholder="Your password" />
 		<textarea id="textToCommit" placeholder="Type your text here" cols="100" rows="10"></textarea>
 		<p class="button2"><span rel="test2_html">Send text</span><span></span></p>
 	</div>
@@ -68,11 +70,16 @@
 				$(this).find("span:eq(0)").click(function()
 				{
 					var textToCommit = $("#textToCommit").val();
+					var usernameInput = $("#usernameInput").val();
+					var passwordInput = $("#passwordInput").val();
 					$.ajax(
 					{
 						url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
-						data : { value : textToCommit },
-		    				crossDomain: true,
+						data : 	{ 	value : 	textToCommit,
+									username:	usernameInput,
+									password:	passwordInput
+								},
+						crossDomain: true,
 						method : "GET"
 					}).done(function(responseData, textStatus, jqXHR){
 						$msgSpan.text("Votre contenu a été modifié avec succès ! La page va se recharger automatiquement...");
