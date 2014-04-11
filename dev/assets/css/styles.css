@@ -78,9 +78,9 @@ p {
 	color: #B3ACAC;
 	text-shadow: 0px 0px 24px #ffffff;
 	font-size: 28px;
+	display : block;
 }
 #mySpecs a{
-	display : inline-block;
 	margin-right:10px; 
 	text-align:center;
 }
