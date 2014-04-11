@@ -79,6 +79,11 @@ p {
 	text-shadow: 0px 0px 24px #ffffff;
 	font-size: 28px;
 	display : block;
+	opacity:0.0;
+	margin-top:-50px;
+}
+#mySpecs h2:nth-of-type(0){
+	background:red;
 }
 #mySpecs a{
 	margin-right:10px; 
