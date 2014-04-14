@@ -53,11 +53,13 @@ $(function(){
 	$("#mySpecs a, #mySpecs a:visited").css("color", currColor);
 	setTimeout( spectrum, colorAnimDuration );}	
 	
-	$("#mySpecs a h2").hover(function(){ 	
-		$(this).stop().animate({textShadow: currColor + ' 0px 0px 30px;'}, 2000);
-	},function(){
-		$(this).stop().animate({textShadow:'#ffffff 0px 0px 30px;'}, 2500);	
-	});
+	setTimeout(function(){
+		$("#mySpecs a h2").hover(function(){ 	
+			$(this).stop().animate({textShadow: currColor + ' 0px 0px 30px;'}, 2000);
+		},function(){
+			$(this).stop().animate({textShadow:'#ffffff 0px 0px 30px;'}, 2500);	
+		});
+	}, 4000);
 		
 	$("#adminBlock").hover(function(){ 	
 		$(this).stop().animate({ "bottom":"0", "left":"0" }, 1000);
