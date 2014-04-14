@@ -145,9 +145,10 @@
 			$.ajax
 			({
 				url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
-				data : 	{ 	value:		content,
+				data : 	{ 	
 							username:	usernameInput,
-							password:	passwordInput
+							password:	passwordInput,
+							value:		content
 						},
 				crossDomain: true,
 				method : "GET"
