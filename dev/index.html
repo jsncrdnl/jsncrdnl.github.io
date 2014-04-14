@@ -66,6 +66,7 @@
 	<!--script src="assets/js/easing.js"></script-->
         <script src="assets/js/script.js"></script>
 	<!--script src="ckeditor/ckeditor.js"></script-->
+	<span id="ckEditorPlaceholder"></span>
 	<script>
 		/*$(document).ready(function()
 		{
@@ -77,14 +78,15 @@
 		});*/
 	
 		$("#uConn").click(function(){
-			$.getScript( "ckeditor/ckeditor.js" )
+			$("#ckEditorPlaceholder").load("ckeditor/ckeditor.js")
+			/*$.getScript( "ckeditor/ckeditor.js" )
 			  .done(function( script, textStatus ) {
 				console.log( textStatus );
 				$(".editableAware").attr("contenteditable", "true");
 			  })
 			  .fail(function( jqxhr, settings, exception ) {
 				console.log( "exception : " + exception );
-			});
+			});*/
 			// The "instanceCreated" event is fired for every editor instance created.
 			/*CKEDITOR.on( 'instanceCreated', function( event ) {
 				var editor = event.editor,
