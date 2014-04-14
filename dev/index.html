@@ -63,7 +63,7 @@
         <script src="assets/js/jquery.color-2.1.2.min.js"></script>
         <script src="assets/js/jquery.animate-textshadow.min.js"></script>
 	<script src="assets/js/jquery.shuffleLetters.js"></script>
-	<!--script src="assets/js/jquery.animate-shadow.min.js"></script-->
+	<script src="assets/js/realshadow-min.js"></script>
 	<!--script src="assets/js/easing.js"></script-->
         <script src="assets/js/script.js"></script>
 	<!--script src="ckeditor/ckeditor.js"></script-->
@@ -77,7 +77,7 @@
 				$( $(this).attr("rel") ).css("background-color", $(this).css("background-color") );
 			});
 		});*/
-		//$('.editableAware').animate({boxShadow: '0 0 30px #44f'});
+		$('.editableAware').realshadow();
 		$("#uConn").click(function(){
 			//$("#ckEditorPlaceholder").html("<script src='ckeditor/ckeditor.js' />");
 			//$(".editableAware").attr("contenteditable", "true");
