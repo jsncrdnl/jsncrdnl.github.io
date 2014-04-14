@@ -42,7 +42,7 @@
 			
 			<div id='ascensor'>
 				 <div id="qualif">
-					<div contenteditable="true">
+					<div class="editableAware">
 						<p>Qualification................................... Développeur</p>
 						<p>Domaines d'action.......................... Sites web, lociciels, applications Android, etc.</p>
 						<p>Connaissances web........................ HTML, CSS, PHP, JS, jQ, AJAX, CMS, etc.</p>
@@ -80,6 +80,7 @@
 			$.getScript( "ckeditor/ckeditor.js" )
 			  .done(function( script, textStatus ) {
 				console.log( textStatus );
+				$(".editableAware").addAttr("contenteditable", "true");
 			  })
 			  .fail(function( jqxhr, settings, exception ) {
 				console.log( "exception : " + exception );
