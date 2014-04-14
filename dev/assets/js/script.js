@@ -1,6 +1,9 @@
 	
 
 $(function(){
+	$("#admin_credentials")	.css("display", "inline");
+	$("#admin_loading")		.css("display", "none");
+	$("#admin_logged_in")	.css("display", "none");
 
 	$("#mySpecs h2:eq(0)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
 	setTimeout(function(){
@@ -14,7 +17,9 @@ $(function(){
 	}, 3000);
 	setTimeout(function(){
 		$("#ascensor div div").animate({ 'opacity':1.0}, 1500);
+		$('.editableAware').realshadow();
 	}, 4000);
+	
 
 	var availableHeight = $(window).height() - 600;	
 	$("#container").css("margin-top", (availableHeight/2)+"px");
