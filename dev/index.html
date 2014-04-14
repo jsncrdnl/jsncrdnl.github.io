@@ -32,7 +32,8 @@
 					<img src="assets/img/loading.gif" alt="Chargement en cours... " />	
 				</span>
 				<span id="admin_logged_in">
-					<p>Vous êtes connecté en tant qu'administrateur !</p>
+					<span id="admin_logged_msg">Vous êtes connecté en tant qu'administrateur !</span><br/>
+					<input type="submit" value="Enregistrer les modifications" name="uUpdate" id="uUpdate" />
 				</span>	
 			</div>
 
@@ -75,6 +76,9 @@
         <script src="assets/js/script.js"></script>
 	<span id="ckEditorPlaceholder"></span>
 	<script>
+		////////////////////////////////////////////////////
+		// CONNECT TO THE SERVICE //////////////////////////
+		////////////////////////////////////////////////////
 		$("#uConn").click(function()
 		{
 			$("#admin_credentials")	.css("display", "none");
@@ -97,6 +101,7 @@
 					$("#admin_credentials")	.css("display", "none");
 					$("#admin_loading")		.css("display", "none");
 					$("#admin_logged_in")	.css("display", "inline");
+					$("#admin_logged_msg")	.text("Vous êtes connecté en tant qu'administrateur !");
 					
 					// On login success only
 					CKEDITOR_BASEPATH="ckeditor/";
@@ -118,12 +123,61 @@
 					$("#admin_msg").text( responseData );
 				}
 			}).fail(function(jqXHR, textStatus){ 
+				$("#admin_credentials")	.css("display", "inline");
+				$("#admin_loading")		.css("display", "none");
+				$("#admin_logged_in")	.css("display", "none");
 				$("#admin_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
 				console.log( "Request failed: " + textStatus );
-			}).complete(function(){});
-		
-		
+			}).complete(function(){});		
 		});
+		////////////////////////////////////////////////////
+		// SEND UPDATE /////////////////////////////////////
+		////////////////////////////////////////////////////
+		$("#uUpdate").click(function()
+		{
+			$("#admin_credentials")	.css("display", "none");
+			$("#admin_loading")		.css("display", "inline");
+			$("#admin_logged_in")	.css("display", "none");
+			
+			var usernameInput 	= $("#uName").val();
+			var passwordInput 	= $("#uPass").val();
+			var content 		= $(".editableAware").val();
+			$.ajax
+			({
+				url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
+				data : 	{ 	value:		content,
+							username:	usernameInput,
+							password:	passwordInput
+						},
+				crossDomain: true,
+				method : "GET"
+			}).done(function(responseData, textStatus, jqXHR){
+				if ( responseData=="Success" )
+				{
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					$("#admin_logged_msg")	.text("Modifications enregistrées ! Actualisation de la page ...");
+					
+					setTimeout(function(){ window.location = "?"; }, 1500);
+				}
+				else
+				{
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					
+					$("#admin_logged_msg")	.text( responseData );
+				}
+			}).fail(function(jqXHR, textStatus){ 
+				$("#admin_credentials")	.css("display", "none");
+				$("#admin_loading")		.css("display", "none");
+				$("#admin_logged_in")	.css("display", "inline");
+				$("#admin_logged_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
+				console.log( "Request failed: " + textStatus );
+			}).complete(function(){});		
+		});
+		
 		/*$(document).ready(function()
 		{
 			$(".colorSwitch").click(function()
