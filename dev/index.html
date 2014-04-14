@@ -80,7 +80,7 @@
 			$.getScript( "ckeditor/ckeditor.js" )
 			  .done(function( script, textStatus ) {
 				console.log( textStatus );
-				$(".editableAware").addAttr("contenteditable", "true");
+				$(".editableAware").attr("contenteditable", "true");
 			  })
 			  .fail(function( jqxhr, settings, exception ) {
 				console.log( "exception : " + exception );
