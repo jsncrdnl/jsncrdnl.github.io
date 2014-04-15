@@ -88,7 +88,7 @@
 		{
 			$(".editableAware").each(function()
 			{
-				var constructedTargetPageContent = "content/"+window.location+"/"+$(this).attr("rel")+".html";
+				var constructedTargetPageContent = "content/"+window.location.pathname+"/"+$(this).attr("rel")+".html";
 				console.log("constructedTargetPageContent = " + constructedTargetPageContent);
 				/*$targetPageContent = $(this);
 				$targetPageContent.html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />	");
