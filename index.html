@@ -82,6 +82,32 @@
 	<span id="ckEditorPlaceholder"></span>
 	<script>
 		////////////////////////////////////////////////////
+		// LOAD PAGE CONTENT ///////////////////////////////
+		////////////////////////////////////////////////////		
+		$(document).ready(function()
+		{
+			$(".editableAware").each(function()
+			{
+				var constructedTargetPageContent = "content/"+window.location+"/"$(this).attr("rel")+.".html";
+				$targetPageContent = $(this);
+				$targetPageContent.html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />	");
+				
+				$.ajax({
+					url : constructedTargetPageContent					
+				}).done(function(data){
+					$targetPageContent.html(data);					
+				}).fail(function(jqXHR, textStatus){ 
+					$targetPageContent.html("Impossible de charger le contenu de cette page.");
+					console.log( "Request failed: " + textStatus );
+				}).complete(function(){});	
+			});
+			/*$(".colorSwitch").click(function()
+			{
+				console.log("colorSwitch clicked with rel = " + $(this).attr("rel") + " and color = " + $(this).css("background") );
+				$( $(this).attr("rel") ).css("background-color", $(this).css("background-color") );
+			});*/
+		});
+		////////////////////////////////////////////////////
 		// CONNECT TO THE SERVICE //////////////////////////
 		////////////////////////////////////////////////////
 		$("#uConn").click(function()
@@ -186,15 +212,6 @@
 				console.log( "Request failed: " + textStatus );
 			}).complete(function(){});		
 		});
-		
-		/*$(document).ready(function()
-		{
-			$(".colorSwitch").click(function()
-			{
-				console.log("colorSwitch clicked with rel = " + $(this).attr("rel") + " and color = " + $(this).css("background") );
-				$( $(this).attr("rel") ).css("background-color", $(this).css("background-color") );
-			});
-		});*/
 	</script>
     </body>
 </html>
