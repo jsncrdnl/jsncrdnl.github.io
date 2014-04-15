@@ -98,6 +98,9 @@ p {
 	display:inline-block;
 	text-decoration: none;
 }
+.movieBlocks{
+	background:#1F1F1F;
+}
 
 #adminBlock {
 	position:fixed; z-index:10;
