@@ -1,122 +1,193 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<style>
-			.loadContent{ border:1px solid gray; background:lightgray;padding:5px;}
-			.button span:first-of-type{ 	border:1px solid gray; border-radius:10px; 
-					background:lightblue; padding:5px; display:inline-block;
-					width:200px;height:40px; }
-			.button span:first-of-type:hover{ 	border:2px solid darkgray; background:blue; padding:5px; cursor:pointer; }
-			.button2 span:first-of-type{ 	border:1px solid gray; border-radius:10px; 
-					background:lightblue; padding:5px; display:inline-block;
-					width:200px;height:40px; }
-			.button2 span:first-of-type:hover{ 	border:2px solid darkgray; background:blue; padding:5px; cursor:pointer; }
-		</style>
-	</head>
-	<body>
-		<h1>My first personnal page on github</h1>
-		<h2>Helloworld</h2>
-		<p>This is a test</p>
-		<ul>
-			<li>aaa</li>
-			<li>bbb</li>
-			<li>ccc</li>
-		</ul>
-		<h3>Other webpage content 'test':</h3>
-		<div class="loadContent" id="test_html">
-			<img src="ajax-loader.gif" alt="Chargement en cours... " />	
-		</div>
-		<p class="button"><span rel="test_html">Update Test.html page !</span><span></span></p>
+    <head>
+        <meta charset="utf-8" />
+        <title>Jsn.crdnl</title>
+        
+        <!-- Our CSS stylesheet file -->
+		<!--link type="text/css" rel="stylesheet" href="assets/css/navigation.css"-->
+        <link rel="stylesheet" href="assets/css/styles.css" />
+	<link href='http://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
+        
+        <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 		
-	<div>
-		<h3>Other webpage content 'test2':</h3>
-		<div class="loadContent" id="test2_html">
-			<img src="ajax-loader.gif" alt="Chargement en cours... " />	
+    </head>
+     
+    <body>
+			
+		<div id="container">
+	
+			<div id="adminBlock" class="loggedOut">
+				<p>Mode administrateur</p>
+				<span id="admin_credentials">
+					<label for="uName">Login :</label><input type="text" value="" name="uName" id="uName" /><br/>
+					<label for="uPass">Mot de passe :</label><input type="password" value="" name="uPass" id="uPass" /><br/>
+					<input type="submit" value="Connexion" name="uConn" id="uConn" />
+					<span id="admin_msg"></span>
+				</span>
+				<span id="admin_loading">
+					<img src="assets/img/loading.gif" alt="Chargement en cours... " />	
+				</span>
+				<span id="admin_logged_in">
+					<span id="admin_logged_msg">Vous êtes connecté en tant qu'administrateur !</span><br/>
+					<input type="submit" value="Enregistrer les modifications" name="uUpdate" id="uUpdate" />
+				</span>	
+			</div>
+
+			<div id="signature"> 
+				jsn.crdnl
+			</div> 
+			
+			<div id="mySpecs">			
+				<h2><a href="#">Création de sites</a></h2>
+				<h2><a href="#">Développement mobile</a></h2>
+				<h2><a href="#">Conception de logiciels</a></h2>
+				<h2><a href="#">Ingénierie en Cloud Computing</a></h2>
+			</div>
+			
+			<div id='ascensor'>
+				 <div id="qualif">
+					<div class="editableAware" rel="content1.html">
+						<p>Qualification................................... Développeur</p>
+						<p>Domaines d'action.......................... Sites web, lociciels, applications Android, etc.</p>
+						<p>Connaissances web........................ HTML, CSS, PHP, JS, jQ, AJAX, CMS, etc.</p>
+						<p>Connaissances logiciel................... C, C++, C#, Java, etc.</p>
+						<p>Connaissances système................. Linux (Apache, Tomcat, Scripts, etc.)</p>
+						<p>En attendant, voici mon adresse mail : 
+						<a href="mailto:jsn.crdnl@gmail.com" title="jsn.crdnl@gmail.com">
+							jsn.crdnl@gmail.com
+						</a></p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<input type="text" name="username" id="usernameInput" placeholder="Your username" />
-		<input type="password" name="password" id="passwordInput" placeholder="Your password" />
-		<textarea id="textToCommit" placeholder="Type your text here" cols="100" rows="10"></textarea>
-		<p class="button2"><span rel="test2_html">Send text</span><span></span></p>
-	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		
+        <!-- JavaScript includes -->
+	<script src="assets/js/jquery_1-7-2.min.js"></script>
+	<!--script src="assets/js/jquery-1.8.3.min.js"></script-->
+        <script src="assets/js/jquery.color-2.1.2.min.js"></script>
+        <script src="assets/js/jquery.animate-textshadow.min.js"></script>
+	<script src="assets/js/jquery.shuffleLetters.js"></script>
+	<script src="assets/js/realshadow-min.js"></script>
+	<!--script src="assets/js/easing.js"></script-->
+        <script src="assets/js/script.js"></script>
+	<span id="ckEditorPlaceholder"></span>
 	<script>
-		$.support.cors = true;
-		$(document).ready(function()
+		////////////////////////////////////////////////////
+		// CONNECT TO THE SERVICE //////////////////////////
+		////////////////////////////////////////////////////
+		$("#uConn").click(function()
 		{
-			$(".loadContent").each(function()
-			{
-				$(this).load( $(this).attr("id").replace(/\_/g,'.') );
-			});
-			$(".button").each(function()
-			{
-				$msgSpan = $(this).find("span:eq(1)");
-				$(this).find("span:eq(0)").click(function()
+			$("#admin_credentials")	.css("display", "none");
+			$("#admin_loading")		.css("display", "inline");
+			$("#admin_logged_in")	.css("display", "none");
+			
+			var usernameInput = $("#uName").val();
+			var passwordInput = $("#uPass").val();
+			$.ajax
+			({
+				url : "https://cherrypy-jsncrdnl.rhcloud.com/login",
+				data : 	{ 	username:	usernameInput,
+							password:	passwordInput
+						},
+				crossDomain: true,
+				method : "GET"
+			}).done(function(responseData, textStatus, jqXHR){
+				if ( responseData=="Success" )
 				{
-					$.ajax(
-					{
-						url : "https://cherrypy-jsncrdnl.rhcloud.com",
-		    				crossDomain: true,
-						method : "GET"
-					}).done(function(responseData, textStatus, jqXHR){
-						$msgSpan.text("Votre contenu a été modifié avec succès ! La page va se recharger automatiquement...");
-						setTimeout(function(){window.location="?";}, 1000);
-					}).fail(function(jqXHR, textStatus){
-		  				alert( "Request failed: " + textStatus );
-					}).complete(function(){});
-				});
-			});
-			$(".button2").each(function()
-			{
-				$msgSpan = $(this).find("span:eq(1)");
-				$(this).find("span:eq(0)").click(function()
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					$("#admin_logged_msg")	.text("Vous êtes connecté en tant qu'administrateur !");
+					
+					// On login success only
+					CKEDITOR_BASEPATH="ckeditor/";
+					$.getScript( "ckeditor/ckeditor.js" )
+					  .done(function( script, textStatus ) {
+						console.log( textStatus );
+						$(".editableAware").attr("contenteditable", "true");
+					  })
+					  .fail(function( jqxhr, settings, exception ) {
+						console.log( "exception : " + exception );
+					});
+				}
+				else
 				{
-					var textToCommit = $("#textToCommit").val();
-					var usernameInput = $("#usernameInput").val();
-					var passwordInput = $("#passwordInput").val();
-					$.ajax(
-					{
-						url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
-						data : 	{ 	value : 	textToCommit,
-									username:	usernameInput,
-									password:	passwordInput
-								},
-						crossDomain: true,
-						method : "GET"
-					}).done(function(responseData, textStatus, jqXHR){
-						$msgSpan.text("Votre contenu a été modifié avec succès ! La page va se recharger automatiquement...");
-						setTimeout(function(){window.location="?";}, 1000);
-					}).fail(function(jqXHR, textStatus){
-		  				alert( "Request failed: " + textStatus );
-					}).complete(function(){});
-				});
-			});
+					$("#admin_credentials")	.css("display", "inline");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "none");
+					
+					$("#admin_msg").text( responseData );
+				}
+			}).fail(function(jqXHR, textStatus){ 
+				$("#admin_credentials")	.css("display", "inline");
+				$("#admin_loading")		.css("display", "none");
+				$("#admin_logged_in")	.css("display", "none");
+				$("#admin_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
+				console.log( "Request failed: " + textStatus );
+			}).complete(function(){});		
 		});
+		////////////////////////////////////////////////////
+		// SEND UPDATE /////////////////////////////////////
+		////////////////////////////////////////////////////
+		$("#uUpdate").click(function()
+		{
+			$("#admin_credentials")	.css("display", "none");
+			$("#admin_loading")		.css("display", "inline");
+			$("#admin_logged_in")	.css("display", "none");
+			
+			var usernameInput 	= $("#uName").val();
+			var passwordInput 	= $("#uPass").val();
+			var content 		= $(".editableAware").html();
+			$.ajax
+			({
+				url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
+				data : 	{ 	
+							username:	usernameInput,
+							password:	passwordInput,
+							value:		content
+						},
+				crossDomain: true,
+				method : "GET"
+			}).done(function(responseData, textStatus, jqXHR){
+				if ( responseData=="Success" )
+				{
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					$("#admin_logged_msg")	.text("Modifications enregistrées ! Actualisation de la page ...");
+					
+					setTimeout(function(){ window.location = "?"; }, 1500);
+				}
+				else
+				{
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					
+					$("#admin_logged_msg")	.text( responseData );
+				}
+			}).fail(function(jqXHR, textStatus){ 
+				$("#admin_credentials")	.css("display", "none");
+				$("#admin_loading")		.css("display", "none");
+				$("#admin_logged_in")	.css("display", "inline");
+				$("#admin_logged_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
+				console.log( "Request failed: " + textStatus );
+			}).complete(function(){});		
+		});
+		
+		/*$(document).ready(function()
+		{
+			$(".colorSwitch").click(function()
+			{
+				console.log("colorSwitch clicked with rel = " + $(this).attr("rel") + " and color = " + $(this).css("background") );
+				$( $(this).attr("rel") ).css("background-color", $(this).css("background-color") );
+			});
+		});*/
 	</script>
-	    <div id="disqus_thread"></div>
-	    <script type="text/javascript">
-	        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	        var disqus_shortname = 'jsncrdnlgithubio'; // required: replace example with your forum shortname
-	
-	        /* * * DON'T EDIT BELOW THIS LINE * * */
-	        (function() {
-	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	        })();
-	    </script>
-	    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-	     <script type="text/javascript">
-	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	    var disqus_shortname = 'jsncrdnlgithubio'; // required: replace example with your forum shortname
-	
-	    /* * * DON'T EDIT BELOW THIS LINE * * */
-	    (function () {
-	        var s = document.createElement('script'); s.async = true;
-	        s.type = 'text/javascript';
-	        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-	    }());
-	    </script>
-	    
-	</body>
+    </body>
 </html>
+

@@ -5,15 +5,15 @@ $(function(){
 	$("#admin_loading")		.css("display", "none");
 	$("#admin_logged_in")	.css("display", "none");
 
-	$("#mySpecs h2:eq(0)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
+	$("#mySpecs h2:eq(0)").animate({ 'margin-top': '10px', 'opacity':1.0}, 1500);
 	setTimeout(function(){
-		$("#mySpecs h2:eq(1)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
+		$("#mySpecs h2:eq(1)").animate({ 'margin-top': '10px', 'opacity':1.0}, 1500);
 	}, 1000);
 	setTimeout(function(){
-		$("#mySpecs h2:eq(2)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
+		$("#mySpecs h2:eq(2)").animate({ 'margin-top': '10px', 'opacity':1.0}, 1500);
 	}, 2000);
 	setTimeout(function(){
-		$("#mySpecs h2:eq(3)").animate({ 'margin-top':0, 'opacity':1.0}, 1500);
+		$("#mySpecs h2:eq(3)").animate({ 'margin-top': '10px', 'opacity':1.0}, 1500);
 	}, 3000);
 	setTimeout(function(){
 		$("#ascensor div div").animate({ 'opacity':1.0}, 1500);
@@ -55,16 +55,40 @@ $(function(){
 	if(currShadow=="80px") currShadow = "40px";
 	if(currShadow=="40px") currShadow = "80px";
 	$('#signature').animate( { color : currColor, textShadow : currColor+' 0px 0px '+currShadow }, colorAnimDuration);
-	$("#mySpecs a, #mySpecs a:visited").css("color", currColor);
+	/*$("#mySpecs a, #mySpecs a:visited").css("color", currColor);*/
+	$("#mySpecs h2 span").animate( { color : currColor }, colorAnimDuration);
 	setTimeout( spectrum, colorAnimDuration );}	
 	
-	setTimeout(function(){
-		$("#mySpecs a h2").hover(function(){ 	
+	/*setTimeout(function(){
+		$("#mySpecs h2 a").hover(function(){ 	
 			$(this).stop().animate({textShadow: currColor + ' 0px 0px 30px;'}, 2000);
 		},function(){
 			$(this).stop().animate({textShadow:'#ffffff 0px 0px 30px;'}, 2500);	
 		});
-	}, 4000);
+	}, 4000);*/
+	
+	setTimeout(function(){
+		$('#mySpecs h2 a').css("position", "relative");
+		$('#mySpecs h2').each(function(){
+			$(this).find("a").html( "<span>" + $(this).find("a").text() + "</span>" + $(this).find("a").html() );
+			$(this).find('span').css("display", "none");
+			$(this).find('span').css("position", "absolute");
+			$(this).find('span').css("z-index", "10");
+			$(this).find('span').css("top", "0");
+			$(this).find('span').css("left", "0");
+			$(this).find('span').css("overflow", "hidden");
+			$(this).find('span').css("white-space", "nowrap");
+			$(this).find('span').css("width", "0");
+			$(this).find('span').css("display", "block");
+			$(this).find('span').css("text-decoration", "underline");
+		
+			$(this).hover(function(){
+				$(this).find('span').stop().animate( { width: $(this).find("a").width(), color : currColor }, 1000 );
+			},function(){        
+				$(this).find('span').stop().animate( { width: 0, color : currColor }, 1000);			
+			});
+		});
+	}, 4000  );
 		
 	$("#adminBlock").hover(function(){ 	
 		$(this).stop().animate({ "bottom":"0", "left":"0" }, 1000);
