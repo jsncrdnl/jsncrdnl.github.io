@@ -6,9 +6,14 @@
         
         <!-- Our CSS stylesheet file -->
 		<!--link type="text/css" rel="stylesheet" href="assets/css/navigation.css"-->
-        <link rel="stylesheet" href="assets/css/styles.css" />
 	<link href='http://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
+	
+    <link rel="stylesheet" type='text/css' href="assets/css/styles.css" />
+	
+	<!-- USER DEFINED STYLES -->
+	<link rel="stylesheet" type='text/css' href='content/style_user_custom_props.css' />
+	<!-- ------------------- -->
         
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -50,7 +55,7 @@
 			
 			<div id='ascensor'>
 				 <div id="qualif">
-					<div class="editableAware" rel="content1.html">
+					<div class="editableAware" rel="content_01">
 						<p>Qualification................................... Développeur</p>
 						<p>Domaines d'action.......................... Sites web, lociciels, applications Android, etc.</p>
 						<p>Connaissances web........................ HTML, CSS, PHP, JS, jQ, AJAX, CMS, etc.</p>
@@ -142,6 +147,9 @@
 			var usernameInput 	= $("#uName").val();
 			var passwordInput 	= $("#uPass").val();
 			var content 		= $(".editableAware").html();
+			var destinationFile	= $(".editableAware").attr("rel");
+			console.log("destinationFile = " + destinationFile);
+			
 			$.ajax
 			({
 				url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
