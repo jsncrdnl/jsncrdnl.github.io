@@ -88,8 +88,9 @@
 		{
 			$(".editableAware").each(function()
 			{
-				var constructedTargetPageContent = "content/"+window.location+"/"$(this).attr("rel")+.".html";
-				$targetPageContent = $(this);
+				var constructedTargetPageContent = "content/"+window.location+"/"+$(this).attr("rel")+".html";
+				console.log("constructedTargetPageContent = " + constructedTargetPageContent);
+				/*$targetPageContent = $(this);
 				$targetPageContent.html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />	");
 				
 				$.ajax({
@@ -99,7 +100,7 @@
 				}).fail(function(jqXHR, textStatus){ 
 					$targetPageContent.html("Impossible de charger le contenu de cette page.");
 					console.log( "Request failed: " + textStatus );
-				}).complete(function(){});	
+				}).complete(function(){});*/
 			});
 			/*$(".colorSwitch").click(function()
 			{
