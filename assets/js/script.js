@@ -25,10 +25,10 @@ $(function(){
 	$("#container").css("margin-top", (availableHeight/2)+"px");
 	
 	var movieBlockHeight = (availableHeight / 3);
-	$("#container").append(
-		"<div class='movieBlock' style='position:fixed;top:0;left:0;width:100%;height:0;background:#1F1F1F;'></div>" + 
-		"<div class='movieBlock' style='position:fixed;bottom:0;left:0;width:100%;height:0;background:#1F1F1F;'></div>"
-	);
+	//$("#container").append(
+	//	"<div class='movieBlock' style='position:fixed;top:0;left:0;width:100%;height:0;background:#1F1F1F;'></div>" + 
+	//	"<div class='movieBlock' style='position:fixed;bottom:0;left:0;width:100%;height:0;background:#1F1F1F;'></div>"
+	//);
 	$(".movieBlock").animate({
 		"height" : movieBlockHeight+"px"
 	}, 1500);
