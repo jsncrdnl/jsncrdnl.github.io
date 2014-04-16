@@ -94,11 +94,31 @@ $(function(){
 		
 		$("#container").stop().animate({  borderSpacing: -90 }, {
 			step: function(now,fx) {
-			      $(this).css('-webkit-transform','rotateY('+25+'deg)');
-			      $(this).css('-moz-transform','rotateY('+25+'deg)'); 
-			      $(this).css('-ms-transform','rotateY('+25+'deg)');
-			      $(this).css('-o-transform','rotateY('+25+'deg)');
-			      $(this).css('transform','rotateY('+25+'deg)');  
+			      $(this).css('-webkit-transform','rotateY(-'+25+'deg)');
+			      $(this).css('-moz-transform','rotateY(-'+25+'deg)'); 
+			      $(this).css('-ms-transform','rotateY(-'+25+'deg)');
+			      $(this).css('-o-transform','rotateY(-'+25+'deg)');
+			      $(this).css('transform','rotateY(-'+25+'deg)');  
+			      $(this).css('-webkit-transform','rotateX('+13+'deg)');
+			      $(this).css('-moz-transform','rotateX('+13'deg)'); 
+			      $(this).css('-ms-transform','rotateX('+13+'deg)');
+			      $(this).css('-o-transform','rotateX('+13+'deg)');
+			      $(this).css('transform','rotateX('+13+'deg)'); 
+			      $(this).css('-webkit-transform','translateZ(43px)');
+			      $(this).css('-moz-transform','translateZ(43px)'); 
+			      $(this).css('-ms-transform','translateZ(43px)');
+			      $(this).css('-o-transform','translateZ(43px)');
+			      $(this).css('transform','translateZ(43px)'); 
+			      $(this).css('-webkit-transform','translateX(107px)');
+			      $(this).css('-moz-transform','translateX(107px)'); 
+			      $(this).css('-ms-transform','translateX(107px)');
+			      $(this).css('-o-transform','translateX(107px)');
+			      $(this).css('transform','translateX(107px)'); 
+			      $(this).css('-webkit-transform','scale(0.75)');
+			      $(this).css('-moz-transform','scale(0.75)'); 
+			      $(this).css('-ms-transform','scale(0.75)');
+			      $(this).css('-o-transform','scale(0.75)');
+			      $(this).css('transform','scale(0.75)'); 
 			    },
 			/*"-webkit-transform":	"rotateY(-25deg), "+
 						"translateZ(43px), "+
