@@ -94,11 +94,11 @@ $(function(){
 		
 		$("#container").stop().animate({  borderSpacing: -90 }, {
 			step: function(now,fx) {
-			      $(this).css('-webkit-transform','rotate('+now+'deg)');
-			      $(this).css('-moz-transform','rotate('+now+'deg)'); 
-			      $(this).css('-ms-transform','rotate('+now+'deg)');
-			      $(this).css('-o-transform','rotate('+now+'deg)');
-			      $(this).css('transform','rotate('+now+'deg)');  
+			      $(this).css('-webkit-transform','rotateY('+25+'deg)');
+			      $(this).css('-moz-transform','rotateY('+25+'deg)'); 
+			      $(this).css('-ms-transform','rotateY('+25+'deg)');
+			      $(this).css('-o-transform','rotateY('+25+'deg)');
+			      $(this).css('transform','rotateY('+25+'deg)');  
 			    },
 			/*"-webkit-transform":	"rotateY(-25deg), "+
 						"translateZ(43px), "+
