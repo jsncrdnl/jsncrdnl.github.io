@@ -170,8 +170,8 @@
 				
 				var colorScheme = "";
 				$(this).find("span").each(function(){
-					colorScheme += $(this).css("background-color") + "{" + 
-						"background:" + $(this).attr("rel") + "}\n";
+					colorScheme += $(this).attr("rel") + "{" + 
+						"background:" + $(this).css("background-color") + "}";
 				});
 				$("#uColorScheme").val(colorScheme);
 				
