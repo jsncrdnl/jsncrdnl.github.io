@@ -91,12 +91,6 @@ $(function(){
 	}, 4000  );
 		
 	$("#adminBlock").hover(function(){ 
-		$("#container").animate({transform : 'rotate(-25deg), translateX(107px), scale(0.75)'});
-			/*"-webkit-transform":	"rotateY(-25deg), "+
-						"translateZ(43px), "+
-						"rotateX(13deg), "+
-						"translateX(107px), "+
-						"scale(0.75)"*/
 		$(this).stop().animate({ "bottom":"0", "left":"0" }, 1000);
 	},function(){
 		$(this).stop().animate({ "bottom":"-123px", "left":"-335px" }, 1000);	
