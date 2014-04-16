@@ -94,16 +94,16 @@ $(function(){
 		
 		$("#container").stop().animate({  borderSpacing: -90 }, {
 			step: function(now,fx) {
-			      $(this).css('-webkit-transform','rotateY(-'+25+'deg)');
-			      $(this).css('-moz-transform','rotateY(-'+25+'deg)'); 
-			      $(this).css('-ms-transform','rotateY(-'+25+'deg)');
-			      $(this).css('-o-transform','rotateY(-'+25+'deg)');
-			      $(this).css('transform','rotateY(-'+25+'deg)');  
-			      $(this).css('-webkit-transform','rotateX('+13+'deg)');
-			      $(this).css('-moz-transform','rotateX('+13'deg)'); 
-			      $(this).css('-ms-transform','rotateX('+13+'deg)');
-			      $(this).css('-o-transform','rotateX('+13+'deg)');
-			      $(this).css('transform','rotateX('+13+'deg)'); 
+			      $(this).css('-webkit-transform','rotateY(-25deg)');
+			      $(this).css('-moz-transform','rotateY(-25deg)'); 
+			      $(this).css('-ms-transform','rotateY(-25deg)');
+			      $(this).css('-o-transform','rotateY(-25deg)');
+			      $(this).css('transform','rotateY(-25deg)');  
+			      $(this).css('-webkit-transform','rotateX(13deg)');
+			      $(this).css('-moz-transform','rotateX(13deg)'); 
+			      $(this).css('-ms-transform','rotateX(13deg)');
+			      $(this).css('-o-transform','rotateX(13deg)');
+			      $(this).css('transform','rotateX(13deg)'); 
 			      $(this).css('-webkit-transform','translateZ(43px)');
 			      $(this).css('-moz-transform','translateZ(43px)'); 
 			      $(this).css('-ms-transform','translateZ(43px)');
