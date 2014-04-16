@@ -35,6 +35,9 @@
 			height:10px;
 			display:inline-block;
 		}
+		.colorSchemePicker span:hover{
+			cursor:pointer;
+		}
         </style>
 		
     </head>
@@ -159,11 +162,12 @@
 					console.log( "Request failed: " + textStatus );
 				}).complete(function(){});
 			});
-			/*$(".colorSwitch").click(function()
+			$(".colorSchemePicker").click(function()
 			{
-				console.log("colorSwitch clicked with rel = " + $(this).attr("rel") + " and color = " + $(this).css("background") );
-				$( $(this).attr("rel") ).css("background-color", $(this).css("background-color") );
-			});*/
+				var background_1 = $(this).find("span:eq(0)").css("background-color");
+				var background_2 = $(this).find("span:eq(0)").css("background-color");
+				console.log("color scheme is " + background_1 + " ; " + background_2 );
+			});
 		});
 		////////////////////////////////////////////////////
 		// CONNECT TO THE SERVICE //////////////////////////
