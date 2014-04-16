@@ -19,6 +19,23 @@
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+        
+        <style>
+        	.colorSchemePicker{
+        		display:block; 
+        		background:#F0F0F0;
+        		border:1px solid black;
+        		border-radius:10px;
+        		width:35px;
+        		height:20px;
+        		padding-left:5px;	
+		}
+		.colorSchemePicker span{
+			width:10px;
+			height:10px;
+			display:inline-block;
+		}
+        </style>
 		
     </head>
      
@@ -41,20 +58,20 @@
 					<img src="assets/img/loading.gif" alt="Chargement en cours... " />	
 				</span>
 				<span id="admin_logged_in">
-					<span id="admin_logged_msg">Vous êtes connecté en tant qu'administrateur !</span><br/>
+					<span id="admin_logged_msg"></span><br/>
 							
 					  <h3>Modifiez votre thème</h3>
-					  <span class="colorSchemePicker" style="display:block; background:#F0F0F0;border:1px solid black; border-radius:10px;width:35px; height:20px; padding-left:5px;">
-					    	<span style="width:10px;height:10px;display:inline-block;background:red;"></span>
-					    	<span style="width:10px;height:10px;display:inline-block;background:blue;"></span>
+					  <span class="colorSchemePicker">
+					    	<span style="background:red;"></span>
+					    	<span style="background:blue;"></span>
 					  </span>
-					  <span class="colorSchemePicker" style="display:block; background:#F0F0F0;border:1px solid black; border-radius:10px;width:35px; height:20px; padding-left:5px;">
-					    	<span style="width:10px;height:10px;display:inline-block;background:yellow;"></span>
-					    	<span style="width:10px;height:10px;display:inline-block;background:green;"></span>
+					  <span class="colorSchemePicker">
+					    	<span style="background:yellow;"></span>
+					    	<span style="background:green;"></span>
 					  </span>
-					  <span class="colorSchemePicker" style="display:block; background:#F0F0F0;border:1px solid black; border-radius:10px;width:35px; height:20px; padding-left:5px;">
-					    	<span style="width:10px;height:10px;display:inline-block;background:gray;"></span>
-					    	<span style="width:10px;height:10px;display:inline-block;background:orange;"></span>
+					  <span class="colorSchemePicker">
+					    	<span style="background:gray;"></span>
+					    	<span style="background:orange;"></span>
 					  </span>
 					  <input type="hidden" value="" name="colorScheme" id="colorScheme">
 					  
