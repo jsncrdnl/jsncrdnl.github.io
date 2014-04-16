@@ -90,10 +90,11 @@ $(function(){
 		});
 	}, 4000  );
 		
-	$("#adminBlock").hover(function(){ 
+	$('.box-lid-menu').boxLid();
+	/*$("#adminBlock").hover(function(){ 
 		$(this).stop().animate({ "bottom":"0", "left":"0" }, 1000);
 	},function(){
 		$(this).stop().animate({ "bottom":"-123px", "left":"-335px" }, 1000);	
-	});
+	});*/
 	
 });
