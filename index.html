@@ -156,8 +156,8 @@
 			$("#admin_credentials")	.css("display", "none");
 			$("#admin_loading")	.css("display", "inline");
 			$("#admin_logged_in")	.css("display", "none");
-			$("#admin_on")		.vss("display", "none");
-			$("#admin_off")		.vss("display", "inline");
+			$("#admin_on")		.css("display", "none");
+			$("#admin_off")		.css("display", "inline");
 			
 			var usernameInput = $("#uName").val();
 			var passwordInput = $("#uPass").val();
@@ -176,8 +176,8 @@
 					$("#admin_loading")		.css("display", "none");
 					$("#admin_logged_in")	.css("display", "inline");
 					$("#admin_logged_msg")	.text("Vous êtes connecté en tant qu'administrateur !");
-					$("#admin_on")		.vss("display", "inline");
-					$("#admin_off")		.vss("display", "none");
+					$("#admin_on")		.css("display", "inline");
+					$("#admin_off")		.css("display", "none");
 					
 					// On login success only
 					CKEDITOR_BASEPATH="ckeditor/";
@@ -195,8 +195,8 @@
 					$("#admin_credentials")	.css("display", "inline");
 					$("#admin_loading")		.css("display", "none");
 					$("#admin_logged_in")	.css("display", "none");
-					$("#admin_on")		.vss("display", "none");
-					$("#admin_off")		.vss("display", "inline");
+					$("#admin_on")		.css("display", "none");
+					$("#admin_off")		.css("display", "inline");
 					
 					$("#admin_msg").text( responseData );
 				}
@@ -205,8 +205,8 @@
 				$("#admin_loading")		.css("display", "none");
 				$("#admin_logged_in")	.css("display", "none");
 				$("#admin_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
-				$("#admin_on")		.vss("display", "none");
-				$("#admin_off")		.vss("display", "inline");
+				$("#admin_on")		.css("display", "none");
+				$("#admin_off")		.css("display", "inline");
 				console.log( "Request failed: " + textStatus );
 			}).complete(function(){});		
 		});
