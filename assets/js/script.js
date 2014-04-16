@@ -93,7 +93,7 @@ $(function(){
 	$("#adminBlock").hover(function(){ 
 		$("#container").stop().animate({
 			"-webkit-transform":	"rotateY(-25deg)",
-			"translateZ",		"43px", 
+			"translateZ":		"43px", 
 			"rotateX":		"13deg", 
 			"translateX":		"107px", 
 			"scale":		"0.75"},
