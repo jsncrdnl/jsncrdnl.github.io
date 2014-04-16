@@ -91,7 +91,7 @@ $(function(){
 	}, 4000  );
 		
 	$("#adminBlock").hover(function(){ 
-		$("#container").animate({'transform', 'rotateY(-25deg), translateZ(43px), rotateX(13deg), translateX(107px), scale(0.75)'});
+		$("#container").animate({'transform' : 'rotateY(-25deg), translateZ(43px), rotateX(13deg), translateX(107px), scale(0.75)'});
 			/*"-webkit-transform":	"rotateY(-25deg), "+
 						"translateZ(43px), "+
 						"rotateX(13deg), "+
