@@ -66,16 +66,16 @@
 							
 					  <h3>Modifiez votre thème</h3>
 					  <span class="colorSchemePicker">
-					    	<span style="background:red;"></span>
-					    	<span style="background:blue;"></span>
+					    	<span style="background:rgb(233, 233, 233);" rel="#container"></span>
+					    	<span style="background:rgb(31, 31, 31);" rel=".movieBlock"></span>
 					  </span>
 					  <span class="colorSchemePicker">
-					    	<span style="background:yellow;"></span>
-					    	<span style="background:green;"></span>
+					    	<span style="background:rgb(255, 194, 147);" rel="#container"></span>
+					    	<span style="background:rgb(240, 177, 177);" rel=".movieBlock"></span>
 					  </span>
 					  <span class="colorSchemePicker">
-					    	<span style="background:gray;"></span>
-					    	<span style="background:orange;"></span>
+					    	<span style="background:rgb(0, 0, 0);" rel="#container"></span>
+					    	<span style="background:rgb(124, 0, 0);" rel=".movieBlock"></span>
 					  </span>
 					  <input type="hidden" value="" name="colorScheme" id="colorScheme">
 					  
@@ -166,8 +166,11 @@
 			$(".colorSchemePicker").click(function()
 			{
 				var background_1 = $(this).find("span:eq(0)").css("background-color");
-				var background_2 = $(this).find("span:eq(0)").css("background-color");
+				var back_target_1 = $(this).find("span:eq(0)").css("background-color");
+				var background_2 = $(this).find("span:eq(1)").attr("rel");
+				var back_target_2 = $(this).find("span:eq(1)").attr("rel");
 				console.log("color scheme is " + background_1 + " ; " + background_2 );
+				console.log("color target is " + back_target_1 + " ; " + back_target_2 );
 			});
 		});
 		////////////////////////////////////////////////////
