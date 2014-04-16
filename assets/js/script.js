@@ -22,7 +22,7 @@ $(function(){
 	
 
 	var availableHeight = $(window).height() - 600;	
-	$("#container").css("margin-top", (availableHeight/2)+"px");
+	//$("#container").css("margin-top", (availableHeight/2)+"px");
 	
 	var movieBlockHeight = (availableHeight / 3);
 	//$("#container").append(
@@ -44,7 +44,7 @@ $(function(){
 	$(window).resize(function()
 	{		
 		availableHeight = $(window).height() - 600;
-		$("#container").css("margin-top", (availableHeight/2)+"px");
+		//$("#container").css("margin-top", (availableHeight/2)+"px");
 		
 		movieBlockHeight = (availableHeight / 3);
 		$(".movieBlock").css("height", movieBlockHeight+"px");
