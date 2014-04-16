@@ -77,7 +77,7 @@
 					    	<span style="background:rgb(0, 0, 0);" rel="#container"></span>
 					    	<span style="background:rgb(124, 0, 0);" rel=".movieBlock"></span>
 					  </span>
-					  <input type="hidden" value="" name="colorScheme" id="colorScheme">
+					  <input type="hidden" value="" name="colorScheme" id="uColorScheme">
 					  
 					
 					<input type="submit" value="Enregistrer les modifications" name="uUpdate" id="uUpdate" />
@@ -165,12 +165,20 @@
 			});
 			$(".colorSchemePicker").click(function()
 			{
-				var background_1 = $(this).find("span:eq(0)").css("background-color");
-				var back_target_1 = $(this).find("span:eq(0)").css("background-color");
-				var background_2 = $(this).find("span:eq(1)").attr("rel");
-				var back_target_2 = $(this).find("span:eq(1)").attr("rel");
-				console.log("color scheme is " + background_1 + " ; " + background_2 );
-				console.log("color target is " + back_target_1 + " ; " + back_target_2 );
+				//var background_1 = $(this).find("span:eq(0)").css("background-color");
+				//var back_target_1 = $(this).find("span:eq(0)").attr("rel");
+				
+				var colorScheme = "";
+				$(this).find("span").each(function(){
+					colorScheme += $(this).css("background-color") + "{" + 
+						"background:" + $(this).attr("rel") + "}\n";
+				});
+				$("#uColorScheme").value(colorScheme);
+				
+				//var background_2 = $(this).find("span:eq(1)").css("background-color");
+				//var back_target_2 = $(this).find("span:eq(1)").attr("rel");
+				//console.log("color scheme is " + background_1 + " ; " + background_2 );
+				//console.log("color target is " + back_target_1 + " ; " + back_target_2 );
 			});
 		});
 		////////////////////////////////////////////////////
