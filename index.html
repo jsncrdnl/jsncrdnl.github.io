@@ -22,25 +22,24 @@
     </head>
      
     <body>
+		<div id="adminBlock" class="loggedOut">
+			<p>Mode administrateur</p>
+			<span id="admin_credentials">
+				<label for="uName">Login :</label><input type="text" value="" name="uName" id="uName" /><br/>
+				<label for="uPass">Mot de passe :</label><input type="password" value="" name="uPass" id="uPass" /><br/>
+				<input type="submit" value="Connexion" name="uConn" id="uConn" />
+				<span id="admin_msg"></span>
+			</span>
+			<span id="admin_loading">
+				<img src="assets/img/loading.gif" alt="Chargement en cours... " />	
+			</span>
+			<span id="admin_logged_in">
+				<span id="admin_logged_msg">Vous êtes connecté en tant qu'administrateur !</span><br/>
+				<input type="submit" value="Enregistrer les modifications" name="uUpdate" id="uUpdate" />
+			</span>	
+		</div>
 			
 		<div id="container">
-	
-			<div id="adminBlock" class="loggedOut">
-				<p>Mode administrateur</p>
-				<span id="admin_credentials">
-					<label for="uName">Login :</label><input type="text" value="" name="uName" id="uName" /><br/>
-					<label for="uPass">Mot de passe :</label><input type="password" value="" name="uPass" id="uPass" /><br/>
-					<input type="submit" value="Connexion" name="uConn" id="uConn" />
-					<span id="admin_msg"></span>
-				</span>
-				<span id="admin_loading">
-					<img src="assets/img/loading.gif" alt="Chargement en cours... " />	
-				</span>
-				<span id="admin_logged_in">
-					<span id="admin_logged_msg">Vous êtes connecté en tant qu'administrateur !</span><br/>
-					<input type="submit" value="Enregistrer les modifications" name="uUpdate" id="uUpdate" />
-				</span>	
-			</div>
 
 			<div id="signature"> 
 				jsn.crdnl
