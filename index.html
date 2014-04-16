@@ -26,7 +26,11 @@
 		<div class='box-lid-menu'>
 			<div class='box-lid-icon'></div>
 			<nav>
-				<p>Mode administrateur</p>
+				<p>
+					Mode administrateur
+					<span id="admin_on" style="float:right; font-size:bold; color:green; display:none;">ON</span>
+					<span id="admin_off" style="float:right; font-size:bold; color:red;">OFF</span>
+				</p>
 				<span id="admin_credentials">
 					<label for="uName" style="width:95px;display: inline-block;">Login :</label><input type="text" value="" name="uName" id="uName" /><br/>
 					<label for="uPass" style="width:95px;display: inline-block;">Mot de passe :</label><input type="password" value="" name="uPass" id="uPass" /><br/>
@@ -150,8 +154,10 @@
 		$("#uConn").click(function()
 		{
 			$("#admin_credentials")	.css("display", "none");
-			$("#admin_loading")		.css("display", "inline");
+			$("#admin_loading")	.css("display", "inline");
 			$("#admin_logged_in")	.css("display", "none");
+			$("#admin_on")		.vss("display", "none");
+			$("#admin_off")		.vss("display", "inline");
 			
 			var usernameInput = $("#uName").val();
 			var passwordInput = $("#uPass").val();
@@ -170,6 +176,8 @@
 					$("#admin_loading")		.css("display", "none");
 					$("#admin_logged_in")	.css("display", "inline");
 					$("#admin_logged_msg")	.text("Vous êtes connecté en tant qu'administrateur !");
+					$("#admin_on")		.vss("display", "inline");
+					$("#admin_off")		.vss("display", "none");
 					
 					// On login success only
 					CKEDITOR_BASEPATH="ckeditor/";
@@ -187,6 +195,8 @@
 					$("#admin_credentials")	.css("display", "inline");
 					$("#admin_loading")		.css("display", "none");
 					$("#admin_logged_in")	.css("display", "none");
+					$("#admin_on")		.vss("display", "none");
+					$("#admin_off")		.vss("display", "inline");
 					
 					$("#admin_msg").text( responseData );
 				}
@@ -195,6 +205,8 @@
 				$("#admin_loading")		.css("display", "none");
 				$("#admin_logged_in")	.css("display", "none");
 				$("#admin_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
+				$("#admin_on")		.vss("display", "none");
+				$("#admin_off")		.vss("display", "inline");
 				console.log( "Request failed: " + textStatus );
 			}).complete(function(){});		
 		});
