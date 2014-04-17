@@ -151,6 +151,7 @@
 			{
 				var pageName = window.location.pathname;
 				if(pageName=="/") pageName = "index";
+				else pageName.replace('.html', '').replace('/', '');
 				var constructedTargetPageContent = "content/"+pageName+"/"+$(this).attr("rel")+".html";
 				console.log("constructedTargetPageContent = " + constructedTargetPageContent);
 				
