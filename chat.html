@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Jsn.crdnl</title>
+        
+        <!-- Our CSS stylesheet file -->
+		<!--link type="text/css" rel="stylesheet" href="assets/css/navigation.css"-->
+	<link href='http://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' type='text/css' href='assets/css/box-lid.css'>
+	
+    <link rel="stylesheet" type='text/css' href="assets/css/styles.css" />
+	
+	<!-- USER DEFINED STYLES -->
+	<link rel="stylesheet" type='text/css' href='content/style_user_custom_props.css' />
+	<!-- ------------------- -->
+        
+        <!--[if lt IE 9]>
+          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <style>
+        	.colorSchemePicker{
+        		display:block; 
+        		background:white;
+        		border:1px solid black;
+        		border-radius:10px;
+        		width:35px;
+        		height:20px;
+        		padding-left:5px;	
+		}
+		.colorSchemePicker:hover{
+        	background: #D0D0D0;
+			cursor:pointer;
+		}
+		.colorSchemePicker span{
+			width:10px;
+			height:10px;
+			display:inline-block;
+		}
+        </style>
+		
+    </head>
+     
+    <body> 
+		<div class='box-lid-menu'>
+			<div class='box-lid-icon'></div>
+			<nav>
+				<p>
+					Mode administrateur
+					<span id="admin_on" style="float:right; font-size:bold; color:green; display:none;">ON</span>
+					<span id="admin_off" style="float:right; font-size:bold; color:red;">OFF</span>
+				</p>
+				<span id="admin_credentials">
+					<label for="uName" style="width:95px;display: inline-block;">Login :</label><input type="text" value="" name="uName" id="uName" /><br/>
+					<label for="uPass" style="width:95px;display: inline-block;">Mot de passe :</label><input type="password" value="" name="uPass" id="uPass" /><br/>
+					<input type="submit" value="Connexion" name="uConn" id="uConn" />
+					<span id="admin_msg"></span>
+				</span>
+				<span id="admin_loading">
+					<img src="assets/img/loading.gif" alt="Chargement en cours... " />	
+				</span>
+				<span id="admin_logged_in">
+					<span id="admin_logged_msg"></span><br/>
+							
+					  <h3>Modifiez votre thème</h3>
+					  <span class="colorSchemePicker">
+					    	<span style="background:rgb(233, 233, 233);" rel=".box-lid .box-lid-content"></span>
+					    	<span style="background:rgb(31, 31, 31);" rel=".movieBlock"></span>
+					  </span>
+					  <span class="colorSchemePicker">
+					    	<span style="background:rgb(255, 194, 147);" rel=".box-lid .box-lid-content"></span>
+					    	<span style="background:rgb(240, 177, 177);" rel=".movieBlock"></span>
+					  </span>
+					  <span class="colorSchemePicker">
+					    	<span style="background:rgb(0, 0, 0);" rel=".box-lid .box-lid-content"></span>
+					    	<span style="background:rgb(124, 0, 0);" rel=".movieBlock"></span>
+					  </span>
+					  <span id="colorSchemeMsg" style="display:inline-block">
+					  	
+					  </span>
+					  <input type="hidden" value="" name="colorScheme" id="uColorScheme">
+					  
+					
+					<input type="submit" value="Enregistrer les modifications" name="uUpdate" id="uUpdate" />
+				</span>	
+			</nav>
+		</div>
+		<div class='box-lid'>
+			<div class='box-lid-content'>
+			
+			
+				<div id="container">
+		
+					<div id="signature"> 
+						jsn.crdnl
+					</div> 
+					
+					<div id='ascensor'>
+						 <div id="qualif">
+							<div class="editableAware" rel="content_01">
+								<p>This is just somemore content...</p>
+							</div>
+						</div>
+						 <div>
+							<div>
+								<p>This one is not editable, to bad...</p>
+							</div>
+						</div>
+						 <div>
+							<div class="editableAware" rel="content_02">
+								<p>Another page, another words !</p>
+								<p>This one should be modified ...</p>
+							</div>
+						</div>
+						 <div>
+							<div>
+								<div id="disqus_thread"></div>
+								<script type="text/javascript">
+								/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+								var disqus_shortname = ''; // required: replace example with your forum shortname
+
+								/* * * DON'T EDIT BELOW THIS LINE * * */
+								(function() {
+								var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+								dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+								})();
+								</script>
+								<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+								<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>								
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class='movieBlock' style='position:fixed;top:0;left:0;width:100%;height:0;'></div>
+					<div class='movieBlock' style='position:fixed;bottom:0;left:0;width:100%;height:0;'></div>
+				</div>
+			
+			</div>
+		</div>
+		
+		<!--div id="adminBlock" class="loggedOut">
+			
+		</div-->
+		
+        <!-- JavaScript includes -->
+	<script src="assets/js/jquery_1-7-2.min.js"></script>
+	<!--script src="assets/js/jquery-1.8.3.min.js"></script-->
+        <script src="assets/js/jquery.color-2.1.2.min.js"></script>
+        <script src="assets/js/jquery.animate-textshadow.min.js"></script>
+	<script src="assets/js/jquery.shuffleLetters.js"></script>
+	<script src="assets/js/realshadow-min.js"></script>
+	<script src="assets/js/jquery.box-lid.min.js"></script>
+        <script src="assets/js/script.js"></script>
+	<span id="ckEditorPlaceholder"></span>
+	<script>
+		////////////////////////////////////////////////////
+		// LOAD PAGE CONTENT ///////////////////////////////
+		////////////////////////////////////////////////////		
+		$(document).ready(function()
+		{
+			$(".editableAware").each(function()
+			{
+				var pageName = window.location.pathname;
+				if(pageName=="/") pageName = "index";
+				var constructedTargetPageContent = "content/"+pageName+"/"+$(this).attr("rel")+".html";
+				console.log("constructedTargetPageContent = " + constructedTargetPageContent);
+				
+				$targetPageContent = $(this);
+				$targetPageContent.html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />	");
+				
+				$.ajax({
+					url : constructedTargetPageContent					
+				}).done(function(data){
+					$targetPageContent.html(data);					
+				}).fail(function(jqXHR, textStatus){ 
+					$targetPageContent.html("Impossible de charger le contenu de cette page.");
+					console.log( "Request failed: " + textStatus );
+				}).complete(function(){});
+			});
+			$(".colorSchemePicker").click(function()
+			{
+				var usernameInput 	= $("#uName").val();
+				var passwordInput 	= $("#uPass").val();
+				var colorScheme 	= "";
+				$(this).find("span").each(function(){
+					colorScheme += $(this).attr("rel") + "{" + 
+						"background:" + $(this).css("background-color") + ";}";
+				});
+				$("#uColorScheme").val(colorScheme);
+				
+				$.ajax
+				({
+					url : "https://cherrypy-jsncrdnl.rhcloud.com/update_theme",
+					data : 	{ 	
+								username:	usernameInput,
+								password:	passwordInput,
+								value:		colorScheme
+							},
+					crossDomain: true,
+					method : "GET"
+				}).done(function(responseData, textStatus, jqXHR){
+					if ( responseData=="Success" )
+					{
+						$("body").append("<style>"+colorScheme+"</style>");
+						$("#colorSchemeMsg").text("Modifications enregistrées !");
+						//setTimeout(function(){ window.location = "?"; }, 1500);
+					}
+					else
+					{
+						$("#colorSchemeMsg")	.text( responseData );
+					}
+				}).fail(function(jqXHR, textStatus){ 
+					$("#colorSchemeMsg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
+					console.log( "Request failed: " + textStatus );
+				}).complete(function(){});
+				
+				
+				//$("#colorSchemeMsg").text();
+				//var background_2 = $(this).find("span:eq(1)").css("background-color");
+				//var back_target_2 = $(this).find("span:eq(1)").attr("rel");
+				//console.log("color scheme is " + background_1 + " ; " + background_2 );
+				//console.log("color target is " + back_target_1 + " ; " + back_target_2 );
+			});
+		});
+		////////////////////////////////////////////////////
+		// CONNECT TO THE SERVICE //////////////////////////
+		////////////////////////////////////////////////////
+		$("#uConn").click(function()
+		{
+			$("#admin_credentials")	.css("display", "none");
+			$("#admin_loading")	.css("display", "inline");
+			$("#admin_logged_in")	.css("display", "none");
+			$("#admin_on")		.css("display", "none");
+			$("#admin_off")		.css("display", "inline");
+			
+			var usernameInput = $("#uName").val();
+			var passwordInput = $("#uPass").val();
+			$.ajax
+			({
+				url : "https://cherrypy-jsncrdnl.rhcloud.com/login",
+				data : 	{ 	username:	usernameInput,
+							password:	passwordInput
+						},
+				crossDomain: true,
+				method : "GET"
+			}).done(function(responseData, textStatus, jqXHR){
+				if ( responseData=="Success" )
+				{
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					$("#admin_logged_msg")	.text("Vous êtes connecté en tant qu'administrateur !");
+					$("#admin_on")		.css("display", "inline");
+					$("#admin_off")		.css("display", "none");
+					
+					// On login success only
+					CKEDITOR_BASEPATH="ckeditor/";
+					$.getScript( "ckeditor/ckeditor.js" )
+					  .done(function( script, textStatus ) {
+						console.log( textStatus );
+						$(".editableAware").attr("contenteditable", "true");
+					  })
+					  .fail(function( jqxhr, settings, exception ) {
+						console.log( "exception : " + exception );
+					});
+				}
+				else
+				{
+					$("#admin_credentials")	.css("display", "inline");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "none");
+					$("#admin_on")		.css("display", "none");
+					$("#admin_off")		.css("display", "inline");
+					
+					$("#admin_msg").text( responseData );
+				}
+			}).fail(function(jqXHR, textStatus){ 
+				$("#admin_credentials")	.css("display", "inline");
+				$("#admin_loading")		.css("display", "none");
+				$("#admin_logged_in")	.css("display", "none");
+				$("#admin_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
+				$("#admin_on")		.css("display", "none");
+				$("#admin_off")		.css("display", "inline");
+				console.log( "Request failed: " + textStatus );
+			}).complete(function(){});		
+		});
+		////////////////////////////////////////////////////
+		// SEND UPDATE /////////////////////////////////////
+		////////////////////////////////////////////////////
+		$("#uUpdate").click(function()
+		{
+			$("#admin_credentials")	.css("display", "none");
+			$("#admin_loading")		.css("display", "inline");
+			$("#admin_logged_in")	.css("display", "none");
+			
+			var usernameInput 	= $("#uName").val();
+			var passwordInput 	= $("#uPass").val();
+			var content 		= $(".editableAware").html();
+			var destinationFile	= $(".editableAware").attr("rel");
+			console.log("destinationFile = " + destinationFile);
+			
+			$.ajax
+			({
+				url : "https://cherrypy-jsncrdnl.rhcloud.com/update",
+				data : 	{ 	
+							username:	usernameInput,
+							password:	passwordInput,
+							value:		content
+						},
+				crossDomain: true,
+				method : "GET"
+			}).done(function(responseData, textStatus, jqXHR){
+				if ( responseData=="Success" )
+				{
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					$("#admin_logged_msg")	.text("Modifications enregistrées ! Actualisation de la page ...");
+					
+					setTimeout(function(){ window.location = "?"; }, 1500);
+				}
+				else
+				{
+					$("#admin_credentials")	.css("display", "none");
+					$("#admin_loading")		.css("display", "none");
+					$("#admin_logged_in")	.css("display", "inline");
+					
+					$("#admin_logged_msg")	.text( responseData );
+				}
+			}).fail(function(jqXHR, textStatus){ 
+				$("#admin_credentials")	.css("display", "none");
+				$("#admin_loading")		.css("display", "none");
+				$("#admin_logged_in")	.css("display", "inline");
+				$("#admin_logged_msg").text( "Une erreur inconnu est survenue lors de la tentative de connection." );
+				console.log( "Request failed: " + textStatus );
+			}).complete(function(){});		
+		});
+	</script>
+    </body>
+</html>
+
