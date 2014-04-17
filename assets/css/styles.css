@@ -69,7 +69,7 @@ p {
 #ascensor div div{
 	display:block;
 	width:960px;
-	height:165px;
+	height:auto;
 	margin-top:20px;
 	margin-left:auto;
 	margin-right:auto;
