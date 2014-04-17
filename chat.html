@@ -171,7 +171,8 @@
 				$.ajax({
 					url : constructedTargetPageContent					
 				}).done(function(data){
-					$targetPageContent.html(data);					
+					$targetPageContent.html(data);	
+					console.log( "setting targetPageContent: " + $targetPageContent.attr("rel") + " == "+ data );				
 				}).fail(function(jqXHR, textStatus){ 
 					$targetPageContent.html("Impossible de charger le contenu de cette page.");
 					console.log( "Request failed: " + textStatus );
