@@ -165,16 +165,16 @@
 				var constructedTargetPageContent = "content/"+pageName+"/"+$(this).attr("rel")+".html";
 				console.log("constructedTargetPageContent = " + constructedTargetPageContent);
 				
-				$targetPageContent = $(this);
-				$targetPageContent.html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />	");
+				//$targetPageContent = $(this);
+				$(this).html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />");
 				
 				$.ajax({
 					url : constructedTargetPageContent					
 				}).done(function(data){
-					$targetPageContent.html(data);	
-					console.log( "setting targetPageContent: " + $targetPageContent.attr("rel") + " == "+ data );				
+					$(this).html(data);	
+					console.log( "setting targetPageContent: " + $(this).attr("rel") + " == "+ data );				
 				}).fail(function(jqXHR, textStatus){ 
-					$targetPageContent.html("Impossible de charger le contenu de cette page.");
+					$(this).html("Impossible de charger le contenu de cette page.");
 					console.log( "Request failed: " + textStatus );
 				}).complete(function(){});
 			});
