@@ -1,13 +1,1 @@
-.movieBlock{
-  background : /*green; */ rgb(31, 31, 31); 
-}
-/*
-rgb(31, 31, 31)
-rgb(233, 233, 233);
-
-rgb(240, 177, 177)	movieb
-rgb(255, 194, 147)	container
-
-rgb(124, 0, 0)	movieb
-rgb(0, 0, 0)	container
-*/
+.box-lid .box-lid-content{background:rgb(255, 194, 147);}.movieBlock{background:rgb(240, 177, 177);}
