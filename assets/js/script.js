@@ -56,7 +56,9 @@ $(function(){
 	(Math.floor(Math.random()*256))+','+ (Math.floor(Math.random()*256))+')'; 
 	if(currShadow=="80px") currShadow = "40px";
 	if(currShadow=="40px") currShadow = "80px";
-	$('#signature').animate( { color : currColor, textShadow : currColor+' 0px 0px '+currShadow }, colorAnimDuration);
+	#f0f 10px 10px 10px;
+	$('#signature').animate( { color : currColor, textShadow : currColor+' 0px 0px 80px'/*+currShadow*/ }, colorAnimDuration);
+	/*$('#signature').animate( { color : currColor, textShadow : currColor+' 0px 0px '+currShadow }, colorAnimDuration);*/
 	/*$("#mySpecs a, #mySpecs a:visited").css("color", currColor);*/
 	$("#mySpecs h2 span").animate( { color : currColor }, colorAnimDuration);
 	setTimeout( spectrum, colorAnimDuration );}	
