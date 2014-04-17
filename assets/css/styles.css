@@ -58,7 +58,7 @@ p {
 }
 #container{
 	width: 100%;
-	height: 600px;
+	/*height: 600px;*/
 	background:none;
 }
  
@@ -69,7 +69,7 @@ p {
 #ascensor div div{
 	display:block;
 	width:960px;
-	height:165px;
+	height:auto;
 	margin-top:20px;
 	margin-left:auto;
 	margin-right:auto;

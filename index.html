@@ -152,18 +152,21 @@
 			{
 				var pageName = window.location.pathname;
 				if(pageName=="/") pageName = "index";
+				else pageName = pageName.replace('.html', '').replace('/', '');
 				var constructedTargetPageContent = "content/"+pageName+"/"+$(this).attr("rel")+".html";
 				console.log("constructedTargetPageContent = " + constructedTargetPageContent);
 				
-				$targetPageContent = $(this);
-				$targetPageContent.html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />	");
+				$(this).html("<img src='assets/img/loading.gif' alt='Chargement en cours... ' />	");
 				
 				$.ajax({
 					url : constructedTargetPageContent					
 				}).done(function(data){
-					$targetPageContent.html(data);					
+					var target = this.url.substring(this.url.lastIndexOf("/")+1,this.url.length-5);
+					$('div[rel="'+target+'"]').html(data);	
+					console.log( "url="+this.url+", target="+target+", rel=" + $('div[rel="'+target+'"]').attr("rel") + ", data="+ data );				
 				}).fail(function(jqXHR, textStatus){ 
-					$targetPageContent.html("Impossible de charger le contenu de cette page.");
+					var target = this.url.substring(this.url.lastIndexOf("/"),this.url.length-5);
+					$('div[rel="'+target+'"]').html("Impossible de charger le contenu de cette page.");
 					console.log( "Request failed: " + textStatus );
 				}).complete(function(){});
 			});

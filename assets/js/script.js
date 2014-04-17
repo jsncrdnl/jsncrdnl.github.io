@@ -23,6 +23,7 @@ $(function(){
 
 	var availableHeight = $(window).height() - 600;	
 	$("#container").css("padding-top", (availableHeight/2)+"px");
+	$("#container").css("padding-bottom", (availableHeight/2)+"px");
 	
 	var movieBlockHeight = (availableHeight / 3);
 	//$("#container").append(
@@ -44,6 +45,7 @@ $(function(){
 	$(window).resize(function()
 	{		
 		availableHeight = $(window).height() - 600;
+		$("#container").css("padding-top", (availableHeight/2)+"px");
 		$("#container").css("padding-top", (availableHeight/2)+"px");
 		
 		movieBlockHeight = (availableHeight / 3);
