@@ -171,9 +171,10 @@
 				var colorScheme = "";
 				$(this).find("span").each(function(){
 					colorScheme += $(this).attr("rel") + "{" + 
-						"background:" + $(this).css("background-color") + "}";
+						"background:" + $(this).css("background-color") + ";}";
 				});
 				$("#uColorScheme").val(colorScheme);
+				$("body").append("<style>"+colorScheme+"</style>");
 				
 				//var background_2 = $(this).find("span:eq(1)").css("background-color");
 				//var back_target_2 = $(this).find("span:eq(1)").attr("rel");
