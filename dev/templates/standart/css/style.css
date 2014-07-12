@@ -1,0 +1,109 @@
+@import url("reset.css"); 
+@import url("vanilla.custom.css"); 
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Trade+Winds);
+
+/***********************
+ * GENERAL
+ ************************/
+nav,header,footer{
+	text-align:center;
+}
+body {
+	background : url("../img/blue-tex.png") repeat;
+	width:100%;
+	height:100%;
+	min-width:100%;
+	min-height:100%;
+	color:lightgray;
+}
+
+/***********************
+ * HEAD
+ ************************/
+#header{
+	position:inline-block;
+	background : rgba(0,0,100,0.3);
+	/*background : url("../img/mooning.png") repeat;*/
+	display: inline-block;
+	width : 100%;
+	height:40px;
+}
+.ie7_body #header{background : #aaa;}
+#header h1{
+	float:left;
+	padding-top:10px;
+}
+#menu{
+	float:right;
+	list-style: none;
+	padding-top:5px;
+}
+#menu li{
+	display:inline-block;
+}
+#menu li a{
+	border-radius:5px;
+	padding-top:5px;
+	text-decoration:none;
+	color : white;
+	font-size:15px;
+	font-weight:bold;
+	background:darkblue;
+	display:block;
+	height:25px;
+	width:150px;
+	transition: background 0.5s linear;
+}
+
+#menu li a:hover{
+	background:darkgreen;
+}
+
+/***********************
+ * BODY
+ ************************/
+#body{
+	display: block;
+	position:absolute;
+	width : 100%;
+	height : 100%;
+	min-width:100%;
+	min-height:100%;
+}
+#centralPanel{
+	display: inline-block;
+	width : 100%;
+	height:70%;
+	margin-top:30px;
+	margin-bottom:60px;
+}
+#mainContent{
+	padding:10px;
+	margin-left:auto;
+	margin-right:auto;
+	width:800px;
+	background:rgba(255,255,255,0.7);
+	border:2px solid darkgray;
+	border-radius:5px;
+	color : black;
+}
+
+/***********************
+ * FOOT
+ ************************/
+#footer{
+	display: inline-block;
+	overflow:hidden;
+	background : rgba(0,0,100,0.3);
+	width : 100%;
+	height:60px;
+	margin-top:40px;
+}
+.ie7_body #footer{background : #aaa;}
+#footer #jsnCrdnlSignature{	position:absolute;left:5px;text-align: left;}
+#footer #preSignature{ font-family: 'Lobster', cursive;color:white; }
+#footer #signature{margin-left: -10px; margin-top:0px;height:30px;overflow:hidden; font-size:35px; font-family: 'Trade Winds', cursive;}
+#footer #signature a{text-decoration:none;}
+#footer #signature:hover{cursor:pointer;}
+#footer #copyright{position:absolute;right:5px;}

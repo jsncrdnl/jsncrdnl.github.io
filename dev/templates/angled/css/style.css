@@ -1,0 +1,136 @@
+@import url("reset.css");
+@import url("vanilla.custom.css");
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Trade+Winds);
+
+/***********************
+ * GENERAL
+ ************************/
+nav, header, footer {
+	text-align: center;
+}
+html,body {
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+}
+body {
+	background: url("../img/mooning.jpg") repeat;
+	color: black;
+}
+
+/***********************
+ * LEFT PANEL
+ ************************/
+#sidePanel {
+	display: block;
+	position: fixed;
+	top: -25%;
+	left: -17%;
+	height: 150%;
+	width: 30%;
+	border-right: 3px solid black;
+	background: url("http://subtlepatterns.com/patterns/grey.png");
+}
+nav {
+	padding-top: 33%;
+	padding-left:10px;
+	
+}
+nav a {
+	float:right;
+	border-radius: 0 0 0 30px;
+	padding-top: 5px;
+	margin-top:7%;
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	background: #18BDAC;
+	display: block;
+	height: 25px;
+	margin-left:40%;
+	width: 50%;
+	transition: background 0.5s linear;
+}
+nav a:hover {
+	background: #E22C5A;
+}
+#footer{
+	position:absolute;
+	bottom:3%;left:-15%;
+}
+#footDiagPan{
+	position: absolute;
+	bottom:-15%;left:-18%;
+	background: url("http://subtlepatterns.com/patterns/grey.png") transparent;
+	border-top: 3px solid black;
+	height: 20%;
+	width: 150%;
+	z-index: -10;
+}
+footer {
+}
+footer #jsnCrdnlSignature {
+	display: inline-block;
+	float: left;
+	margin-left: 10%;
+	overflow: hidden;
+}
+footer #preSignature {
+	font-family: 'Lobster', cursive;
+	color: black;
+	display:block;
+	width:100%;
+	margin-left:15px;
+	text-align:left;
+}
+footer #signature {
+	float: left;
+	font-family: "Trade Winds", cursive;
+	font-size: 35px;
+	height: 35px;
+	margin-left:-10px;
+	overflow: hidden;
+	width: 180px;
+}
+footer #signature a {
+	text-decoration: none;
+}
+footer #signature:hover {
+	cursor: pointer;
+}
+
+/***********************
+ * BODY
+ ************************/
+#body {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	
+	overflow:hidden;
+	position: relative;
+}
+header h1 {
+	margin-top: 20px;
+	height:50px;
+	text-align:right;
+	margin-right:20px;
+}
+#centralPanel {
+	display: inline-block;
+	width: 80%;
+	margin-left:20%;
+	min-height: 100%;
+	margin-top: 30px;
+	margin-bottom: 60px;
+	position:relative;
+}
+#mainContent {
+	padding: 10px;
+}
+

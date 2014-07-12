@@ -1,0 +1,214 @@
+@import url("reset.css");
+@import url("vanilla.custom.css");
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Trade+Winds);
+
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster', cursive;
+    text-align: right;
+    padding-right: 15px;
+	margin:15px;
+	line-height:1.0;
+}
+h2 {
+    background: white;
+    background-size: 50% 100%;
+    display: inline;
+}
+#sidePanel {
+    border-right: 3px solid black;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    overflow: hidden;
+    background: url("http://subtlepatterns.com/patterns/grey.png");
+}
+nav{  height:90%; position:relative; }
+nav ul{ list-style : none; height:100%; display:block; }
+nav ul li {
+    background: #000000;
+    width: 70%;
+    padding-left: 5%;
+    height: 6%;
+}
+nav ul li a {
+    display: block;
+    text-decoration : none;
+    font-size: 2em;
+    font-family: 'impact';
+    color: white;
+	padding-top:5%;
+}
+nav ul li:hover { cursor: pointer }
+#container {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    min-height: 100%;
+    width: 80%;
+    overflow: hidden;
+}
+#container section {
+    min-height: 1000px;
+    position: relative;
+    width: 100% !important;
+    min-width: 1000px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#container section:nth-of-type(1) {
+    background: #AEA99A;
+    height: 1200px;
+}
+#container section:nth-of-type(2) {
+    background: #B7A59B;
+    height: 1600px;
+}
+#container section:nth-of-type(3) {
+    background: #AEA99A;
+    height: 1200px;
+}
+#container section:nth-of-type(4) {
+    background: #B7A59B;
+    height: 1600px;
+}
+#bottle>div:nth-of-type(1) {
+    background: url(http://fc02.deviantart.net/fs71/f/2013/149/b/6/waterscape_5_by_ashishdhawan-d671065.jpg) 0 0 no-repeat fixed;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#bottle>div:nth-of-type(2) {
+    background: url(http://2.bp.blogspot.com/-d64mvcs78XI/UTy4jqhrOUI/AAAAAAAAAJU/eRDzEqDDdv4/s1600/rain.png) 0 10% repeat;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+}
+#story-freext>div:nth-of-type(1) {
+    background: url(http://fc04.deviantart.net/fs70/i/2013/149/e/f/landscape_11_by_ashishdhawan-d670ztr.jpg) 0 0 no-repeat fixed;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+#story-freext>div:nth-of-type(2) {
+    background: url(http://www.ambiance-live.com/images/imagecache/ros-snowboard2_1361733373_301x301.png) 0 10% no-repeat fixed;
+    background-size: 20%;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    width: 100%;
+}
+#bottle2>div:nth-of-type(1) {
+    background: url(http://fc01.deviantart.net/fs70/i/2011/200/3/d/airplanes_by_apofiss-d40u2t6.jpg) 0 0 no-repeat fixed;
+    background-size: 100% 150%;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#story-freext2>div:nth-of-type(1) {
+    background: url(http://fc00.deviantart.net/fs70/f/2012/116/0/1/undiscovered_by_blinck-d4xmsh6.jpg) 0 0 no-repeat fixed;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+#story-freext2>div:nth-of-type(2) {
+    background: url(http://www.juniorgeneral.org/donated/2008/nov21/rocks.png) 0 0 no-repeat fixed;
+    background-size: 20%;
+    margin: 0;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    width: 100%;
+}
+.parallax-item {
+    position: absolute;
+    z-index: 5;
+    top: 40px;
+    left: 400px;
+}
+section p {
+    color: black;
+    width: 300px;
+    background: white;
+	margin-top:20px;
+}
+section a {
+    color: black;
+    text-decoration: none;
+    width: 300px;
+    background: lightblue;
+}
+section a:hover {
+    cursor:pointer;
+}
+section article {
+    position: absolute;
+    top: 240px;
+    left: 40px;
+    z-index: 4;
+}
+
+footer {
+	bottom: 0px;
+	left: 0px;
+	position:absolute;
+}
+footer #jsnCrdnlSignature {
+	display: inline-block;
+	float: left;
+	margin-left: 7%;
+	margin-top: 7%;
+	overflow: hidden;
+}
+footer #preSignature {
+	font-family: 'Lobster', cursive;
+	color: black;
+	display:block;
+	width:100%;
+	margin-left:15px;
+	text-align:left;
+}
+footer #signature {
+	float: left;
+	font-family: "Trade Winds", cursive;
+	font-size: 35px;
+	height: 35px;
+	margin-left:-10px;
+	overflow: hidden;
+	width: 180px;
+}
+footer #signature a {
+	text-decoration: none;
+}
+footer #signature:hover {
+	cursor: pointer;
+}

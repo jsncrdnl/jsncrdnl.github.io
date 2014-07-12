@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>index</title>
+        <meta name="description" content="" />
+        <meta name="author" content="Kuroicloud" />
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.color-2.1.2.min.js"></script>
+		<script type="text/javascript" src="js/jQueryRotate.js"></script>
+		<script type="text/javascript" src="js/jquery.scrolly.js"></script>
+		<!--[if lt IE 9]><script src="js/IE9.js"></script><![endif]-->
+		
+        <script type="text/javascript">
+        	$(document).ready(function()
+    		{    			
+				spectrum();
+				function spectrum(){
+					var hue = 'rgb('+(Math.floor(Math.random()*256))+','+
+									 (Math.floor(Math.random()*256))+','+
+									 (Math.floor(Math.random()*256))+')';
+					$('#signature a').animate( { color : hue }, 2500);
+					setTimeout( spectrum, 2500 );
+				}	
+				
+				$('.parallax').scrolly({bgParallax: true});
+				$("nav ul li").css("margin-top", "-50px");
+				$("nav ul li").animate({"margin-top": "10px"}, 1500); 
+				$("nav ul li").click(function()
+				{
+					$("nav ul li").stop().animate({'width': '70%', 'margin-left': '0%', 'border-radius' : '0px', 'background-color':'#000000', 'padding-left' : '20px'}, 300); 
+					$(this).stop().animate({   'width': '90%', 'margin-left': '10%', 'border-radius' : '30px', 'background-color':'#454545', 'padding-left' : '35px' },750);
+					$('html, body').stop().animate({ scrollTop: $(''+$(this).find('a').attr("rel")).offset().top }, 1000);				
+				});
+				
+				setTimeout(function(){
+					$("section").hover(function()
+					{
+						$("nav ul li").stop().animate({'width': '70%', 'margin-left': '0%', 'border-radius' : '0px', 'background-color':'#000000', 'padding-left' : '20px'}, 300); 
+						$("#"+$(this).attr('id')+"-menu").stop().animate({   'width': '90%', 'margin-left': '10%', 'border-radius' : '30px', 'background-color':'#454545', 'padding-left' : '35px' },750);
+					 });
+				}, 1500);
+    		});
+        </script>
+    </head>
+	
+	
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			
+		});
+	</script>
+</head>
+<body>	
+	<div id="sidePanel">
+		<header>
+			<h1>Magazine-a-like</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li id="bottle-menu">
+					<a rel="#bottle">aaa</a>
+				</li>
+				<li id="story-freext-menu">
+					<a rel="#story-freext">bbb</a>
+				</li>
+				<li id="bottle2-menu">
+					<a rel="#bottle2">ccc</a>
+				</li>
+				<li id="story-freext2-menu">
+					<a rel="#story-freext2">ddd</a>
+				</li>
+				<br/>
+                <li>
+                    <a href="../standart/index.html">Standart</a>
+                </li>
+                <li>
+                    <a href="../angled/index.html">Angled</a>
+                </li>
+                <li>
+                    <a href="../vertPara/index.html">Vertical Paralax</a>
+                </li>
+                <li>
+                    <a href="../xyMove/index.html">XY Move v1</a>
+                </li>
+                <li>
+                    <a href="../xyMove/index2.html">XY Move v2</a>
+                </li>
+                <li>
+                    <a href="../MagicLine/index.html">Moving Line</a>
+                </li>
+			</ul>
+		</nav>        
+
+		<footer>
+			<div id='jsnCrdnlSignature'>	
+				<div id='preSignature'>Développé par </div>
+				<div id='signature'><a href='http://jsncrdnl.alwaysdata.net/' title='Vers le site web de jsn.crdnl'>. jsn.crdnl</a></div>
+			</div>
+		</footer> 
+	</div>
+
+	<div id="container">
+		<section id="bottle">
+        		<article>
+		        	<h2>Our products are a load of rubbish.</h2>   
+			        <p><strong>NIKE FREE TR FIT</strong>
+			        Each Nike 2010 World Championship Football jersey is made entirely from recycled polyester. 
+				That's up to eight recycled plastic bottles per jersey. 
+				In total, that diverted nearly 13 million plastic bottles from landfills. 
+				Yes, you read right. 13 million. Plastic. Bottles.</p>    
+				<a onclick="$('#bottle-menu').click();">Back to top</a>
+		        </article>
+		        <div class="parallax" data-velocity="-.3"></div>
+				<div class="parallax" data-velocity="-1.3"></div>
+		</section>
+		<section id="story-freext">
+		        <article>
+		       	 	<h2>One shoe does good, the other shoe kicks ass.</h2>   
+			        <p><strong>NIKE FREE TR FIT</strong>
+			        The Free TR Fit is designed with a lower environmental impact using
+			        environmentally preferred rubber, water-based cementing and recycled polyester.
+			        That means every step in the multi-directional flex groove outsole replicates
+			        the foot's natural movement and helps women get more out of their workout without
+			        leaving a huge environmental footprint. Everyone's a winner.</p>    
+				<a onclick="$('#bottle-menu').click();">Back to top</a>
+		        </article>
+		        <div class="parallax" data-velocity="-.1"></div>
+		        <div class="parallax" data-velocity="-.25" data-fit="525"></div>
+		</section>
+		<section id="bottle2">
+        		<article>
+		        	<h2>Our products are a load of rubbish.</h2>   
+			        <p><strong>NIKE FREE TR FIT</strong>
+			        Each Nike 2010 World Championship Football jersey is made entirely from recycled polyester. 
+				That's up to eight recycled plastic bottles per jersey. 
+				In total, that diverted nearly 13 million plastic bottles from landfills. 
+				Yes, you read right. 13 million. Plastic. Bottles.</p>       
+				<a onclick="$('#bottle-menu').click();">Back to top</a>
+		        </article>
+		        <div class="parallax" data-velocity="-.3"></div>
+		</section>
+		<section id="story-freext2">
+		        <article>
+		       	 	<h2>One shoe does good, the other shoe kicks ass.</h2>   
+			        <p><strong>NIKE FREE TR FIT</strong>
+			        The Free TR Fit is designed with a lower environmental impact using
+			        environmentally preferred rubber, water-based cementing and recycled polyester.
+			        That means every step in the multi-directional flex groove outsole replicates
+			        the foot's natural movement and helps women get more out of their workout without
+			        leaving a huge environmental footprint. Everyone's a winner.</p>    
+				<a onclick="$('#bottle-menu').click();">Back to top</a>
+		        </article>
+		        <div class="parallax" data-velocity="-.1"></div>
+		        <div class="parallax" data-velocity="-.5" data-fit="525"></div>
+		</section>
+	</div>
+	
+	<footer class="clearfix simple">
+	
+	</footer>	
+</body>
+</html>

@@ -1,0 +1,133 @@
+@import url("reset.css"); 
+@import url("vanilla.custom.css"); 
+@import url("magicLine.css"); 
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Trade+Winds);
+@import url(http://fonts.googleapis.com/css?family=Audiowide);
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+
+
+/* ****************** */
+body{
+	padding:0;margin:0;
+	min-width:900px;
+	/*background: url("http://subtlepatterns.com/patterns/dark_wall.png") transparent;*/
+	background: url(http://fc00.deviantart.net/fs70/f/2012/293/c/c/dead_space_by_peagabassi-d5ieh2c.jpg) 0 0 no-repeat fixed; 
+	background-size:cover;
+}
+header{
+	padding:0; margin:0;
+	width:100%;
+	height:80px;
+	display:block;
+}
+header h1{
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	/*font-family: Impact;*/
+	font-family: 'Audiowide', cursive;
+	font-size: 70px;
+	font-weight: 400;
+	color : #00AAA4;
+	text-shadow: 0.1em 0em 0.6em #00AAA4, -0.1em 0em 0.6em #00AAA4;
+}
+nav{
+	/*background: black;*/
+	border-bottom: 2px solid white;
+	/*border-top: 1px solid white;*/
+	font-family: 'Orbitron', sans-serif;
+	display: block;
+	height: 30px;
+	left: -25px;
+	position: absolute;
+	text-align: left;
+	width: 850px;
+	z-index: 10;
+	top:80px;
+}
+nav ul{
+	padding-left:40px;
+}
+#magic-line{
+	background:#00AAA4;
+}
+.menuDiag{
+	position: absolute;
+	display: inline-block;
+	font-weight: 700;
+	line-height: 56px;
+	padding: 10px;
+}
+#menuDiagL{
+	border-top: 15px solid transparent;
+	border-right: 5px solid white;
+	height: 77px;
+	top: 92px;
+	left: -45px;
+	top: 0px;
+}
+#menuDiagR{
+	height: 95%;
+	border-bottom: 15px solid transparent;
+	border-left: 5px solid white;
+	top: 0px;
+	right: -55px;
+}
+
+#body{
+	position:absolute;
+	top:0;bottom:0;
+	width:98%;
+	padding:10px;
+}
+#centralPanel{
+	/*background: url(../img/paperBack.jpg) 0 0 no-repeat;
+	background-size: cover;*/
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	width:800px;
+	height:100%;
+	min-height:100%;
+	/*border:3px solid white;
+	border-top:1px solid gray;
+	border-bottom:1px solid gray;
+	border-bottom:none;
+	margin-bottom:50px;
+	border-radius:10px;*/
+}
+#content{
+	position:relative;
+	margin-top:30px;
+	padding-top:20px;
+	width:780px;
+	margin-left:10px;
+	margin-right:10px;
+	/*overflow-y:scroll;*/
+	/*height:200px;*/
+}
+footer{
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	display: block;
+	height: 65px;
+	width: 300px;
+	overflow:hidden;
+}
+footer #footer{
+	display:block;
+	width:300px;
+	height:60px;
+	margin-left:auto;
+	margin-right:auto;
+	background:black;
+}
+#footer #jsnCrdnlSignature{	position:absolute;left:5px;text-align: left;}
+#footer #preSignature{ font-family: 'Lobster', cursive;color:white; }
+#footer #signature{margin-left: -10px; margin-top:-10px;height:50px;overflow:hidden; font-size:35px; font-family: 'Trade Winds', cursive;}
+#footer #signature a{text-decoration:none;}
+#footer #signature:hover{cursor:pointer;}
+#footer #copyright{position:absolute;right:5px;}
+
