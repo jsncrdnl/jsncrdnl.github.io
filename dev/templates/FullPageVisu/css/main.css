@@ -1,0 +1,280 @@
+@import url(http://fonts.googleapis.com/css?family=Meddon);
+*{
+	margin:0; padding:0;
+}
+html,
+button,
+input,
+select,
+textarea {
+    color: #FFFFFF;
+}
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+img {
+    vertical-align: middle;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ===== Initializr Styles ================================================== */
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+	background : black;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+h1,h2,h3{
+font-family: 'Meddon', cursive;
+}
+.title {
+    color: white;
+	display:block;
+	width:100%;
+	text-align:center;
+}
+.ie7 .title {
+    padding-top: 20px;
+}
+
+header h1.title img {
+	
+}
+.mobileView header h1.title img {
+	width:80%;
+	height:auto;
+}
+
+#contactBody.mobileView header h1.title img {
+	width:40%;
+	height:auto;
+	margin:0;
+}
+#mobileBack { 
+	position:fixed;top:0;left:0;width:100%;height:100%; z-index:-5;
+}
+#mobileBack div {
+	position:absolute;top:0;left:0; width : 100%; height : 100%;
+}
+.wrapper {
+	max-width: 1026px;
+	margin: 0 auto;
+}
+
+nav {
+	float: right;
+	width: 100%;
+	display:block;
+	position:relative;
+	background: rgba(0, 0, 0, 0.4);
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align:center;
+	max-width : 1026px;
+}
+nav ul li{
+	list-style-type: none;
+}
+nav a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;	
+	border: 3px solid #B40909;
+	border-top: 1px solid #B40909;	
+	border-left: 0;
+	border-radius: 50px;
+	float: left;
+	width: 190px;
+	margin-top :5px;
+	margin-bottom: 5px;
+	margin-right :10px;
+	padding: 10px;
+	font-size: 20px;
+	font-family: 'Meddon', cursive;	/*font-weight: 400;*/
+}
+nav a:hover,
+nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    background: rgba(187, 28, 28, 0.36);
+}
+.mobileView nav a {
+	width : 38%;
+	font-size: 17px;
+}
+
+.currentPageMenuItem {
+    background: rgba(187, 28, 28, 0.36);
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main article {
+	float: left;
+	width: 95%;
+	margin-bottom:100px;
+	position:relative;
+}
+/************************************ INDEX PAGE ***********************************************/
+#homeBody{ 
+	height:100%;overflow-y:hidden;
+}
+#homeBody .main-container {
+	height:100%;
+}
+.homeWave {
+	position:absolute; top:0; left:-30px; height:100%; z-index:50;
+}
+.backgroundHomeImg {
+	position:absolute; top:0; left:0; width:100%; height:100%; 
+}
+.backgroundHomeImgVert {
+	position:absolute; top:0; left:0; width:100%; height:100%;
+}
+.columnSides {
+	position:absolute;top:0;display:inline-block;width:50%;height:100%;margin:0;padding:0;
+}
+.columnSides div {
+	text-align: center; width:100%;height:100%;position:relative;
+}
+#factorySide {
+	/*background:url(../img/factory.jpg) no-repeat; background-size:cover;*/ left:0; text-align:left;
+}
+#spizzicoSide {
+	/*background:url(../img/spizzico.jpg) no-repeat;
+	background-size:cover;
+	background-position: 50%;*/
+	right:0;
+	text-align:right;
+}
+.blurImg {
+	position:absolute; width:100%;height:100%;top:0;margin:0;padding:0;
+}
+#factoryBlur {
+	/*background:url(../img/factory_blured.jpg) no-repeat; background-size:cover;*/ left:0;
+}
+#spizzicoBlur {
+	/*background:url(../img/spizzico_blured.jpg) no-repeat;
+	background-size:cover;
+	background-position: 50%;*/
+	left:0;
+}
+.logoShortcut {
+	position:relative; top:35%; display: inline-block; border-radius: 100%; padding: 5%; width: 40%;
+}
+.logoShortcut img {
+	width : 100%;
+} 
+#factoryShortcut {
+	/*left:20%; */
+	background : #000000; padding : 0.25%;
+}
+#spizzicoShortcut {
+	/*right:20%;*/
+	background : #231F20;
+}
+.verticalView .columnSides {
+	position:absolute;left:0;display:inline-block;width:100%;height:50%;
+}
+.verticalView #factorySide {
+	top:0;
+}
+.verticalView #spizzicoSide {
+	top:50%;
+}
+/************************************ FACTORY PAGE ***********************************************/
+.imagesGalleryContainer {
+	max-width:80%;
+	width: 350px;
+	height: 275px;
+	overflow: hidden;
+	display: inline-block;
+	float: left;
+	padding: 5px;
+	border-left: 0;
+	border-top: 2px solid #B40000;
+	border-radius: 185px;
+	text-align: center;
+	margin-left: 50px;
+}
+.mobileview.imagesGalleryContainer {
+	margin: 0;
+}
+.imagesGallery img {
+	max-width:80%;
+	width : 340px;
+	border-radius : 120px;
+}
+/*.mobileview.imagesGallery img {
+	width: 65%;
+	height: auto;
+}*/
+/************************************ CONTACT PAGE ***********************************************/
+.contactTable {
+	border:none; text-align:center; margin-left:auto; margin-right:auto; margin-top:40px;		
+}
+.contactTable tr td {
+	padding : 5px; 
+}
+.contactItemIcon {
+	width:40px; height:40px;
+}
+.column {
+	display:inline-block; width: 500px; float: left;
+}
+.columnRight {
+	text-align:right;
+}
+.columnRight .contactTable {
+	float:right;
+}
+.alignLeft { text-align : left; width:430px; }
+.alignCenter { text-align : center; width:60px; }
+.alignRight { text-align : right; width:430px; }
