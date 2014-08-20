@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Meddon);
+/*@import url(http://fonts.googleapis.com/css?family=Meddon);*/
 *{
 	margin:0; padding:0;
 }
@@ -8,10 +8,10 @@ button,
 input,
 select,
 textarea {
-    color: #FFFFFF;
+    color: #000000;
 }
 body {
-    font-size: 1em;
+    font-size: 6em;
     line-height: 1.4;
 }
 ::-moz-selection {

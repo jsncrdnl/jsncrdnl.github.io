@@ -58,6 +58,15 @@
                     </header>
                     <section>
                         <p>Blabla</p>
+						<h2>Controllez la page</h2>
+						<h3>Durée avant la transition</h3>
+						<p id="timeout_time_control">
+							<button id="timeout_time_min">-</button><span id="timeout_time_text"></span><button id="timeout_time_plus">+</button>
+						</p>
+						<h3>Durée de la transition</h3>
+						<p id="anim_time_control">
+							<button id="anim_time_min">-</button><span id="anim_time_text"></span><button id="anim_time_plus">+</button>
+						</p>
                     </section>
                 </article>
 
@@ -91,14 +100,15 @@
 				currentArrayIndex++;
 				if(currentArrayIndex>=imgList.length) currentArrayIndex = 0;
 				
-				$("#backgroundImage"+otherBackIndex).css("background", "url("+imgList[currentArrayIndex]+") no-repeat");
+				$("#backgroundImage"+otherBackIndex).css("background", "url("+imgList[currentArrayIndex]+") no-repeat")
+													.css("background-size", "cover");
 				$("#backgroundImage"+otherBackIndex)	.stop().velocity({ opacity : '1.0' }, 	animSpeed);
 				
 				currentBackIndex = Math.abs(currentBackIndex-1);
 				currentArrayIndex++;
 				if(currentArrayIndex>=imgList.length) currentArrayIndex = 0;
 				
-				setTimeout(nextBackground, timeout);
+				if(timeout>0 && animSpeed>0) setTimeout(nextBackground, timeout);
 			}
 			$(document).ready(function()
 			{
@@ -107,9 +117,71 @@
 					"<div id='backgroundImage1'  class='backgroundDiapo'></div>"+
 					"<div id='backgroundOverlay' class='backgroundDiapo'></div>"
 				);
-				$("#backgroundImage0").css("background", "url("+imgList[currentArrayIndex]+") no-repeat"); currentArrayIndex++;
-				$("#backgroundImage1").css("background", "url("+imgList[currentArrayIndex]+") no-repeat"); currentArrayIndex++;
-				nextBackground();
+				
+				if 		(imgList=="undefined" || imgList.length==0)
+				{
+					$("#backgroundImage0").css("background", "white");					
+				}
+				else if	(imgList.length==1)
+				{
+					$("#backgroundImage0")	.css("background", 		"url("+imgList[currentArrayIndex]+") no-repeat")
+											.css("background-size", "cover");
+				}
+				else if	(imgList.length>1)
+				{
+					$("#backgroundImage0")	.css("background", "url("+imgList[currentArrayIndex]+") no-repeat")
+											.css("background-size", "cover"); 
+					currentArrayIndex++;
+					$("#backgroundImage1")	.css("background", "url("+imgList[currentArrayIndex]+") no-repeat")
+											.css("background-size", "cover");
+					currentArrayIndex++;
+					nextBackground();
+				}
+				
+				/* ***************
+				 *	CONTROL
+				 ************** */
+				$("#timeout_time_control #timeout_time_text").text( (timeout/1000) + " secondes" );
+				$("#anim_time_control #anim_time_text").text( (animSpeed/1000) + " secondes" );
+					
+				$("#timeout_time_control #timeout_time_min").click(function(){
+					if(timeout>0)	timeout -= 1000;
+					
+					if(timeout<=0)
+					{
+						timeout = -1;
+						$("#timeout_time_control #timeout_time_text").text( "Désactivé" );
+					}
+					else
+						$("#timeout_time_control #timeout_time_text").text( (timeout/1000) + " secondes" );
+					
+				});
+				$("#timeout_time_control #timeout_time_plus").click(function(){
+					if(timeout!=-1)	timeout += 1000;
+					else {			timeout = 1000; nextBackground();	}
+					$("#timeout_time_control #timeout_time_text").text( (timeout/1000) + " secondes" );
+				});
+				
+				
+				$("#anim_time_control #anim_time_min").click(function(){
+					if(animSpeed>0)	animSpeed -= 1000;
+					
+					if(animSpeed<=0)
+					{
+						animSpeed = -1;
+						$("#anim_time_control #anim_time_text").text( "Désactivé" );
+					}
+					else
+						$("#anim_time_control #anim_time_text").text( (animSpeed/1000) + " secondes" );
+					
+				});
+				$("#anim_time_control #anim_time_plus").click(function(){
+					if(animSpeed!=-1)	animSpeed += 1000;
+					else {				animSpeed = 1000; nextBackground();	}
+					$("#anim_time_control #anim_time_text").text( (animSpeed/1000) + " secondes" );
+				});
+				
+				
 			});
 		</script>
         <!--script src="js/main.js"></script-->
