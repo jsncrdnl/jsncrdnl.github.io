@@ -67,6 +67,9 @@
 						<p id="anim_time_control">
 							<button id="anim_time_min">-</button><span id="anim_time_text"></span><button id="anim_time_plus">+</button>
 						</p>
+						<h3>Type de transition</h3>
+						<select id="anim_trans_types"></select>
+						<a href="http://tympanus.net/Development/PageTransitions/" target="_blank">Voir ce lien pour inspiration</a>
                     </section>
                 </article>
 
@@ -77,7 +80,12 @@
         <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/jquery.js"></script>
         <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/velocity.js"></script>	
         <script type="text/javascript">	
-			var timeout = 5000, animSpeed = 2000, currentBackIndex = 0, currentArrayIndex = 0;
+			var timeout = 3000, animSpeed = 1000, currentBackIndex = 0, currentArrayIndex = 0, animIndex = 0;
+			
+			var animations = new Array();
+			animations[0] = "Disparait";
+			animations[1] = "Par dessous";
+			animations[2] = "Par dessus";
 			
 			var imgList =  new Array();
 			imgList[0] = 'img/01.JPG';
@@ -95,14 +103,30 @@
 			function nextBackground (){
 				var otherBackIndex = Math.abs(currentBackIndex-1);
 				
-				$("#backgroundImage"+currentBackIndex)	.stop().velocity({ opacity : '0.0' }, 	animSpeed);			
+				if(animIndex==0)
+				{
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({ opacity : '0.0' }, 	animSpeed);			
+					
+					currentArrayIndex++;
+					if(currentArrayIndex>=imgList.length) currentArrayIndex = 0;
+					
+					$("#backgroundImage"+otherBackIndex).css("background", "url("+imgList[currentArrayIndex]+") no-repeat")
+														.css("background-size", "cover");
+					$("#backgroundImage"+otherBackIndex)	.stop().velocity({ opacity : '1.0' }, 	animSpeed);
+				}
+				else if(animIndex==1)
+				{				
+					$("#backgroundImage"+otherBackIndex).css("top", "100%");
+					$("#backgroundImage"+otherBackIndex).stop().velocity({ top : '0'}, 	animSpeed);			
+					$("#backgroundImage"+currentBackIndex).stop().velocity({ top : '-100%'}, 	animSpeed);	
+				}
+				else if(animIndex==2)
+				{				
+					$("#backgroundImage"+otherBackIndex).css("top", "-100%");
+					$("#backgroundImage"+otherBackIndex).stop().velocity({ top : '0'}, 	animSpeed);			
+					$("#backgroundImage"+currentBackIndex).stop().velocity({ top : '100%'}, 	animSpeed);	
+				}
 				
-				currentArrayIndex++;
-				if(currentArrayIndex>=imgList.length) currentArrayIndex = 0;
-				
-				$("#backgroundImage"+otherBackIndex).css("background", "url("+imgList[currentArrayIndex]+") no-repeat")
-													.css("background-size", "cover");
-				$("#backgroundImage"+otherBackIndex)	.stop().velocity({ opacity : '1.0' }, 	animSpeed);
 				
 				currentBackIndex = Math.abs(currentBackIndex-1);
 				currentArrayIndex++;
@@ -112,6 +136,7 @@
 			}
 			$(document).ready(function()
 			{
+				$("body").css("overflow", "hidden");
 				$("body").append(
 					"<div id='backgroundImage0'  class='backgroundDiapo'></div>"+
 					"<div id='backgroundImage1'  class='backgroundDiapo'></div>"+
@@ -181,7 +206,11 @@
 					$("#anim_time_control #anim_time_text").text( (animSpeed/1000) + " secondes" );
 				});
 				
-				
+				for(var i=0; i<animations.length; i++)
+					$("#anim_trans_types").append("<option value='"+i+"' onClick='animIndex="+i+";'>"+animations[i]+"</option>");
+				$("#anim_trans_types").on('change', function() {
+					animIndex = this.value;
+				});
 			});
 		</script>
         <!--script src="js/main.js"></script-->
