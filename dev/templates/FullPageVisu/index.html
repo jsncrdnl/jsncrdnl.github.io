@@ -9,7 +9,30 @@
 
         <link rel="stylesheet" href="http://jsncrdnl.github.io/CDN/reset.css">
         <link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="vegas/jquery.vegas.min.css" />
+		<!--link rel="stylesheet" href="vegas/jquery.vegas.min.css" /-->
+		<style>
+			body{ background:white;}
+			.backgroundDiapo{
+				position:absolute;
+				top:0; left:0;
+				width:100%; height:100%;
+				z-index:-101;
+			}
+			#backgroundImage1{
+				background:url(img/01.JPG) no-repeat;
+				background-size:cover;
+			}
+			#backgroundImage2{
+				background:url(img/02.JPG) no-repeat;
+				background-size:cover;
+				left:100%;
+			}
+			#backgroundOverlay{
+				background:url(img/overlays/01.png) repeat;
+				opacity:0.7;
+				z-index:-100;
+			}
+		</style>
     </head>
     <body>
 
@@ -46,7 +69,7 @@
 
 
         <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/jquery.js"></script>
-		<script type="text/javascript" src="vegas/jquery.vegas.min.js"></script>		
+		<!--script type="text/javascript" src="vegas/jquery.vegas.min.js"></script-->		
         <script type="text/javascript">	
 			var imgList =  new Array();
 			imgList[0] = 'img/01.JPG';
@@ -58,7 +81,15 @@
 			imgList[6] = 'img/07.JPG';
 			imgList[7] = 'img/08.JPG';
 			imgList[8] = 'img/09.JPG';
+			$(document).ready(function()
+			{
+				$("body").append(
+					"<div id='backgroundImage1'  class='backgroundDiapo'></div>"+
+					"<div id='backgroundImage2'  class='backgroundDiapo'></div>"+
+					"<div id='backgroundOverlay' class='backgroundDiapo'></div>"
+				);
+			});
 		</script>
-        <script src="js/main.js"></script>
+        <!--script src="js/main.js"></script-->
     </body>
 </html>
