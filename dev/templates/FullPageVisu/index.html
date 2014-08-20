@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="http://jsncrdnl.github.io/CDN/reset.css">
+        <link rel="stylesheet" href="http://jsncrdnl.github.io/CDN/vanilla.css">
         <link rel="stylesheet" href="css/main.css">
-		<!--link rel="stylesheet" href="vegas/jquery.vegas.min.css" /-->
 		<style>
 			body{ background:white;}
 			.backgroundDiapo{
@@ -18,14 +18,11 @@
 				width:100%; height:100%;
 				z-index:-101;
 			}
-			#backgroundImage1{
-				background:url(img/01.JPG) no-repeat;
+			#backgroundImage0{
 				background-size:cover;
 			}
-			#backgroundImage2{
-				background:url(img/02.JPG) no-repeat;
+			#backgroundImage1{
 				background-size:cover;
-				left:100%;
 			}
 			#backgroundOverlay{
 				background:url(img/overlays/01.png) repeat;
@@ -69,8 +66,10 @@
 
 
         <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/jquery.js"></script>
-		<!--script type="text/javascript" src="vegas/jquery.vegas.min.js"></script-->		
+        <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/velocity.js"></script>	
         <script type="text/javascript">	
+			var timeout = 5000, animSpeed = 2000, currentBackIndex = 0, currentArrayIndex = 0;
+			
 			var imgList =  new Array();
 			imgList[0] = 'img/01.JPG';
 			imgList[1] = 'img/02.JPG';
@@ -81,13 +80,36 @@
 			imgList[6] = 'img/07.JPG';
 			imgList[7] = 'img/08.JPG';
 			imgList[8] = 'img/09.JPG';
+			// shuffle the list
+			for(var j, x, i = imgList.length; i; j = parseInt(Math.random() * i), x = imgList[--i], imgList[i] = imgList[j], imgList[j] = x);
+			
+			function nextBackground (){
+				var otherBackIndex = Math.abs(currentBackIndex-1);
+				
+				$("#backgroundImage"+currentBackIndex)	.stop().velocity({ opacity : '0.0' }, 	animSpeed);			
+				
+				currentArrayIndex++;
+				if(currentArrayIndex>=imgList.length) currentArrayIndex = 0;
+				
+				$("#backgroundImage"+otherBackIndex).css("background", "url("+imgList[currentArrayIndex]+") no-repeat");
+				$("#backgroundImage"+otherBackIndex)	.stop().velocity({ opacity : '1.0' }, 	animSpeed);
+				
+				currentBackIndex = Math.abs(currentBackIndex-1);
+				currentArrayIndex++;
+				if(currentArrayIndex>=imgList.length) currentArrayIndex = 0;
+				
+				setTimeout(nextBackground, timeout);
+			}
 			$(document).ready(function()
 			{
 				$("body").append(
+					"<div id='backgroundImage0'  class='backgroundDiapo'></div>"+
 					"<div id='backgroundImage1'  class='backgroundDiapo'></div>"+
-					"<div id='backgroundImage2'  class='backgroundDiapo'></div>"+
 					"<div id='backgroundOverlay' class='backgroundDiapo'></div>"
 				);
+				$("#backgroundImage0").css("background", "url("+imgList[currentArrayIndex]+") no-repeat"); currentArrayIndex++;
+				$("#backgroundImage1").css("background", "url("+imgList[currentArrayIndex]+") no-repeat"); currentArrayIndex++;
+				nextBackground();
 			});
 		</script>
         <!--script src="js/main.js"></script-->
