@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>CV LIKE</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="http://jsncrdnl.github.io/CDN/reset.css">
+        <link rel="stylesheet" href="http://jsncrdnl.github.io/CDN/vanilla.css">
+        <link rel="stylesheet" href="css/main.css">
+		<style>
+			body{
+				position : relative;
+			}
+			.header-container h1{
+				position:absolute;
+				top:100px;
+				left:25px;
+				font-size:50px;
+				color:white;
+			}
+			.header-container {
+				background: url(img/01.jpg) no-repeat;
+				background-size: cover;
+				background-position: 0% 0%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 500px;
+				z-index:-1;
+			}
+			header.wrapper.clearfix {
+				background: url(img/overlays/01.png) no-repeat;
+				background-size: cover;
+				opacity:0.5;
+				position: relative;
+				height: 100%;
+				width: 100%;
+			}
+			.header-container header .title{
+				
+			}
+			.main-container {
+				margin-top: 500px;
+				background: white;
+				box-shadow: 0px 0px 65px 40px #000000;
+			}
+			section{
+				display:block;
+			}
+		</style>
+    </head>
+    <body>
+
+        <div class="header-container">
+                <h1 class="title">
+					My name is ???
+				</h1>
+            <header class="wrapper clearfix">
+            </header>
+        </div>
+
+        <div class="main-container">
+				
+            <div class="main wrapper clearfix">
+			
+				<section>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus pellentesque quam nec congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam gravida libero vitae ultrices ultricies. Donec commodo porta accumsan. In fermentum lorem enim, id pellentesque tellus lacinia in. Vivamus hendrerit dolor at auctor vestibulum. Donec turpis orci, placerat sed arcu non, consequat gravida eros. Ut nunc ligula, maximus vestibulum leo sed, sollicitudin sagittis risus. Aliquam velit dolor, placerat sit amet consectetur et, vestibulum sit amet justo. Donec sagittis leo dui, placerat vestibulum augue porttitor quis. Morbi ultrices aliquam scelerisque.
+					<br/><br/>Integer sed venenatis velit, vitae vehicula nunc. Nulla mattis neque eu lectus tristique vulputate. Sed mi ex, varius vel ipsum sed, vehicula interdum mi. Nunc tempor tortor metus, vel vehicula ante efficitur eu. Pellentesque dignissim arcu tincidunt, pulvinar risus quis, feugiat ligula. Vivamus sodales dictum enim pellentesque malesuada. Aenean consequat nisi leo, vel eleifend magna ullamcorper ut. Nulla facilisi.
+					<br/><br/>Nunc nec elit ac felis dictum facilisis quis eu ante. Vivamus venenatis semper maximus. Phasellus convallis arcu nibh, sit amet hendrerit risus ultrices sed. Vivamus rhoncus, tortor vel efficitur malesuada, massa odio scelerisque tortor, non facilisis leo justo in arcu. Phasellus ut nisi mattis, condimentum dui quis, dapibus mauris. Fusce tellus libero, pretium id blandit a, vulputate eu sem. Curabitur laoreet dui enim, vel gravida orci tempus id. Phasellus vel tempor lacus. Curabitur dui lectus, lobortis et consectetur vehicula, volutpat in nisi.
+					<br/><br/>Nulla pellentesque ornare dictum. Ut egestas sollicitudin consectetur. Ut congue eros posuere metus efficitur mattis. Morbi porta nisl est, quis auctor erat congue vitae. Proin at molestie ipsum. Aenean metus libero, malesuada sollicitudin turpis vitae, elementum tincidunt magna. Praesent et lacus at elit feugiat tempus. Suspendisse maximus mauris ante, in cursus erat posuere at. Suspendisse eget nulla a elit sollicitudin eleifend. Nullam sed lectus pulvinar, suscipit lectus nec, tempus enim. In non dolor metus. Donec faucibus neque sit amet turpis pulvinar, at imperdiet mauris interdum.
+					<br/><br/>Donec consequat suscipit massa, sed cursus orci commodo vel. Cras non interdum felis. Suspendisse potenti. Maecenas et tortor pulvinar, accumsan lacus vitae, vestibulum magna. In et nisl turpis. Donec malesuada felis vel scelerisque porttitor. Pellentesque ullamcorper quis est quis ultricies. Nullam in fermentum lectus. Integer egestas iaculis est nec sagittis. Etiam aliquet purus erat, fermentum pulvinar tortor pulvinar in. Sed eleifend mi dolor, faucibus ornare eros vulputate nec. Aenean aliquam sagittis nunc sit amet sodales. Vestibulum sed mauris in ipsum ultricies facilisis. Quisque at velit convallis, ornare sem non, tempor felis.
+				</section>
+
+				<section>
+					<h2>Controllez la page</h2>
+					<h3>Image de fond</h3>
+					<p id="timeout_time_control">
+						<button id="timeout_time_min">-</button><span id="timeout_time_text"></span><button id="timeout_time_plus">+</button>
+					</p>
+					<h3>Masque de l'image</h3>
+					<p id="anim_time_control">
+						<button id="anim_time_min">-</button><span id="anim_time_text"></span><button id="anim_time_plus">+</button>
+					</p>
+					<h3>Transparence du masque</h3>
+					<select id="anim_type"></select>
+				</section>
+
+				<section>
+					<h2>Controllez la page</h2>
+					<h3>Image de fond</h3>
+					<p id="timeout_time_control">
+						<button id="timeout_time_min">-</button><span id="timeout_time_text"></span><button id="timeout_time_plus">+</button>
+					</p>
+					<h3>Masque de l'image</h3>
+					<p id="anim_time_control">
+						<button id="anim_time_min">-</button><span id="anim_time_text"></span><button id="anim_time_plus">+</button>
+					</p>
+					<h3>Transparence du masque</h3>
+					<select id="anim_type"></select>
+				</section>
+				
+				<section>
+					<h2>Controllez la page</h2>
+					<h3>Image de fond</h3>
+					<p id="timeout_time_control">
+						<button id="timeout_time_min">-</button><span id="timeout_time_text"></span><button id="timeout_time_plus">+</button>
+					</p>
+					<h3>Masque de l'image</h3>
+					<p id="anim_time_control">
+						<button id="anim_time_min">-</button><span id="anim_time_text"></span><button id="anim_time_plus">+</button>
+					</p>
+					<h3>Transparence du masque</h3>
+					<select id="anim_type"></select>
+				</section>
+				
+				
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+
+        <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/jquery.js"></script>
+        <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/velocity.js"></script>	
+        <script src="js/main.js"></script>
+        <script type="text/javascript">	
+			$(document).bind("scroll", function(){
+				
+				if($(document).scrollTop()>250)
+					alert("scrolling at " + $(document).scrollTop());
+			});
+		
+			$(document).ready(function()
+			{
+				
+			});
+		</script>
+    </body>
+</html>

@@ -11,7 +11,15 @@
         <link rel="stylesheet" href="http://jsncrdnl.github.io/CDN/vanilla.css">
         <link rel="stylesheet" href="css/main.css">
 		<style>
-			body{ background:white;}
+			body{ 
+				background:white;
+				-webkit-perspective: 2000;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				position: absolute;
+			}
 			.backgroundDiapo{
 				position:absolute;
 				top:0; left:0;
@@ -28,6 +36,15 @@
 				background:url(img/overlays/01.png) repeat;
 				opacity:0.7;
 				z-index:-100;
+			}
+			button{
+				color: #000000;
+				width: 25px;
+				height: 25px;
+				background-color: #ddddddd;
+				font-family: monospace;
+				font-weight: bold;
+				font-size: 18px;
 			}
 		</style>
     </head>
@@ -67,9 +84,8 @@
 						<p id="anim_time_control">
 							<button id="anim_time_min">-</button><span id="anim_time_text"></span><button id="anim_time_plus">+</button>
 						</p>
-						<h3>Type de transition</h3>
-						<select id="anim_trans_types"></select>
-						<a href="http://tympanus.net/Development/PageTransitions/" target="_blank">Voir ce lien pour inspiration</a>
+						<h3>Type de la transition</h3>
+						<select id="anim_type"></select>
                     </section>
                 </article>
 
@@ -80,12 +96,24 @@
         <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/jquery.js"></script>
         <script type="text/javascript" src="http://jsncrdnl.github.io/CDN/velocity.js"></script>	
         <script type="text/javascript">	
-			var timeout = 3000, animSpeed = 1000, currentBackIndex = 0, currentArrayIndex = 0, animIndex = 0;
+			var timeout = 5000, animSpeed = 2000, currentBackIndex = 0, currentArrayIndex = 0, currAnimIndex = 0;
 			
-			var animations = new Array();
-			animations[0] = "Disparait";
-			animations[1] = "Par dessous";
-			animations[2] = "Par dessus";
+			var animations = [
+				"Fondu",
+				
+				"Glissement haut",
+				"Glissement bas",
+				"Glissement gauche",
+				"Glissement droite",
+				
+				"Rotation haut",
+				"Rotation bas",
+				"Rotation gauche",
+				"Rotation droite",
+				
+				"Rotation horizontale",
+				"Rotation verticale"
+			];
 			
 			var imgList =  new Array();
 			imgList[0] = 'img/01.JPG';
@@ -103,30 +131,105 @@
 			function nextBackground (){
 				var otherBackIndex = Math.abs(currentBackIndex-1);
 				
-				if(animIndex==0)
+				if 		(currAnimIndex==0)	// fade
 				{
-					$("#backgroundImage"+currentBackIndex)	.stop().velocity({ opacity : '0.0' }, 	animSpeed);			
+					$("#backgroundImage"+currentBackIndex)	.css("top",		"0")
+															.css("left",	"0")	
+															.css("opacity",	"1.0");
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({ opacity : '0.0' }, 	animSpeed);
 					
-					currentArrayIndex++;
-					if(currentArrayIndex>=imgList.length) currentArrayIndex = 0;
-					
-					$("#backgroundImage"+otherBackIndex).css("background", "url("+imgList[currentArrayIndex]+") no-repeat")
-														.css("background-size", "cover");
+					$("#backgroundImage"+otherBackIndex)	.css("top",		"0")
+															.css("left",	"0")	
+															.css("opacity",	"0.0");
 					$("#backgroundImage"+otherBackIndex)	.stop().velocity({ opacity : '1.0' }, 	animSpeed);
 				}
-				else if(animIndex==1)
-				{				
-					$("#backgroundImage"+otherBackIndex).css("top", "100%");
-					$("#backgroundImage"+otherBackIndex).stop().velocity({ top : '0'}, 	animSpeed);			
-					$("#backgroundImage"+currentBackIndex).stop().velocity({ top : '-100%'}, 	animSpeed);	
+				else if	(currAnimIndex==1)	//down to up
+				{					
+					$("#backgroundImage"+currentBackIndex)	.css("top",		"0")
+															.css("left",	"0")	
+															.css("opacity",	"1.0");
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({ top : '-100%' }, 	animSpeed);
+					
+					$("#backgroundImage"+otherBackIndex)	.css("top",		"100%")
+															.css("left",	"0")	
+															.css("opacity",	"1.0");;
+					$("#backgroundImage"+otherBackIndex)	.stop().velocity({ top : '0' }, 	animSpeed);
 				}
-				else if(animIndex==2)
-				{				
-					$("#backgroundImage"+otherBackIndex).css("top", "-100%");
-					$("#backgroundImage"+otherBackIndex).stop().velocity({ top : '0'}, 	animSpeed);			
-					$("#backgroundImage"+currentBackIndex).stop().velocity({ top : '100%'}, 	animSpeed);	
+				else if	(currAnimIndex==2)	// up to down
+				{
+					$("#backgroundImage"+currentBackIndex)	.css("top",		"0")
+															.css("left",	"0")	
+															.css("opacity",	"1.0");
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({ top : '100%' }, 	animSpeed);
+					
+					$("#backgroundImage"+otherBackIndex)	.css("top",		"-100%")
+															.css("left",	"0")	
+															.css("opacity",	"1.0");;
+					$("#backgroundImage"+otherBackIndex)	.stop().velocity({ top : '0' }, 	animSpeed);
 				}
-				
+				else if	(currAnimIndex==3)	// left to right
+				{
+					$("#backgroundImage"+currentBackIndex)	.css("top",		"0")	
+															.css("left",	"0")	
+															.css("opacity",	"1.0");
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({ left : '100%' }, 	animSpeed);
+					
+					$("#backgroundImage"+otherBackIndex)	.css("top",		"0")
+															.css("left",	"-100%")	
+															.css("opacity",	"1.0");
+					$("#backgroundImage"+otherBackIndex)	.stop().velocity({ left : '0' }, 	animSpeed);					
+				}
+				else if	(currAnimIndex==4)	// right to left
+				{
+					$("#backgroundImage"+currentBackIndex)	.css("top",		"0")	
+															.css("left",	"0")	
+															.css("opacity",	"1.0");
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({ left : '-100%' }, 	animSpeed);
+					
+					$("#backgroundImage"+otherBackIndex)	.css("top",		"0")
+															.css("left",	"100%")	
+															.css("opacity",	"1.0");
+					$("#backgroundImage"+otherBackIndex)	.stop().velocity({ left : '0' }, 	animSpeed);					
+				}
+				else if	(currAnimIndex==5)	// rotate up border
+				{
+					$("#backgroundImage"+currentBackIndex)	.css("top",							"0")	
+															.css("left",						"0")	
+															.css("-webkit-transform-origin-y",	"0%")
+															.css("-webkit-transform-origin-x",	"0%")
+															.css("opacity",						"1.0");
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({  rotateY: "0deg" }, 	0);
+					$("#backgroundImage"+currentBackIndex)	.stop().velocity({  rotateY: "-180deg" }, 	animSpeed);
+					
+					$("#backgroundImage"+otherBackIndex)	.css("top",							"0")
+															.css("left",						"0")	
+															.css("-webkit-transform-origin-y",	"0%")
+															.css("-webkit-transform-origin-x",	"0%")
+															.css("opacity",						"1.0");
+					$("#backgroundImage"+otherBackIndex)	.stop().velocity({  rotateY: "0deg" }, 	0);
+					//$("#backgroundImage"+otherBackIndex)	.stop().velocity({ left : '0' }, 	animSpeed);		
+					
+				}
+				else if	(currAnimIndex==6)	// rotate down border
+				{
+					
+				}
+				else if	(currAnimIndex==7)	// rotate left border
+				{
+					
+				}
+				else if	(currAnimIndex==8)	// rotate right border
+				{
+					
+				}
+				else if	(currAnimIndex==9)	// rotate self hori
+				{
+					
+				}
+				else if	(currAnimIndex==10)	// rotate self vert
+				{
+					
+				}
 				
 				currentBackIndex = Math.abs(currentBackIndex-1);
 				currentArrayIndex++;
@@ -136,7 +239,6 @@
 			}
 			$(document).ready(function()
 			{
-				$("body").css("overflow", "hidden");
 				$("body").append(
 					"<div id='backgroundImage0'  class='backgroundDiapo'></div>"+
 					"<div id='backgroundImage1'  class='backgroundDiapo'></div>"+
@@ -207,10 +309,8 @@
 				});
 				
 				for(var i=0; i<animations.length; i++)
-					$("#anim_trans_types").append("<option value='"+i+"' onClick='animIndex="+i+";'>"+animations[i]+"</option>");
-				$("#anim_trans_types").on('change', function() {
-					animIndex = this.value;
-				});
+					$("#anim_type").append("<option value='"+i+"'>"+animations[i]+"</option>");
+				$("#anim_type").on("change", function(){ currAnimIndex = this.value; });
 			});
 		</script>
         <!--script src="js/main.js"></script-->
