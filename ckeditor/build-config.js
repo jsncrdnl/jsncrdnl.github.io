@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/68f9d6f9444410247158d05b4865e6fd
+ * (2) http://ckeditor.com/builder/04e2e5ac7fe55df64d067533e60f247e
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/68f9d6f9444410247158d05b4865e6fd
+ * (3) http://ckeditor.com/builder/download/04e2e5ac7fe55df64d067533e60f247e
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -25,57 +25,53 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'moono',
+	skin: 'office2013',
 	preset: 'basic',
 	ignore: [
+		'.bender',
+		'bender.js',
+		'bender-err.log',
+		'bender-out.log',
 		'dev',
-		'.gitignore',
+		'.DS_Store',
+		'.editorconfig',
 		'.gitattributes',
+		'.gitignore',
+		'gruntfile.js',
+		'.idea',
+		'.jscsrc',
+		'.jshintignore',
+		'.jshintrc',
+		'.mailmap',
+		'node_modules',
+		'package.json',
 		'README.md',
-		'.mailmap'
+		'tests'
 	],
 	plugins : {
-		'ajax' : 1,
 		'autogrow' : 1,
-		'autosave' : 1,
 		'basicstyles' : 1,
-		'blockquote' : 1,
 		'clipboard' : 1,
 		'colorbutton' : 1,
-		'contextmenu' : 1,
-		'div' : 1,
-		'divarea' : 1,
+		'colordialog' : 1,
 		'enterkey' : 1,
 		'entities' : 1,
 		'floatingspace' : 1,
 		'font' : 1,
-		'format' : 1,
-		'gg' : 1,
-		'image' : 1,
 		'image2' : 1,
-		'imagebrowser' : 1,
-		'imagepaste' : 1,
-		'imageresize' : 1,
 		'indentlist' : 1,
-		'inlinecancel' : 1,
-		'inlinesave' : 1,
 		'justify' : 1,
 		'link' : 1,
 		'list' : 1,
-		'liststyle' : 1,
-		'maximize' : 1,
-		'slideshow' : 1,
-		'smiley' : 1,
-		'specialchar' : 1,
-		'table' : 1,
-		'tableresize' : 1,
-		'tliyoutube' : 1,
+		'symbol' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
+		'wysiwygarea' : 1,
 		'youtube' : 1
 	},
 	languages : {
 		'en' : 1,
-		'fr' : 1
+		'fr' : 1,
+		'nl' : 1
 	}
 };
