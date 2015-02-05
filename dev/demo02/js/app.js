@@ -20,7 +20,10 @@
 			.when('/contact', {
 				templateUrl : 'pages/contact.html',
 				controller  : 'contactController'
-			});
+			})
+			
+			.otherwise({ redirectTo	: '/' });
+			
 	});
 	
 	app.controller("mainController", function($scope)
