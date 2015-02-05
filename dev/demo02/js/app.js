@@ -25,21 +25,21 @@
 	
 	app.controller("mainController", function($scope)
 	{
-		$scope.editDisabled = true;
-		$scope.customStyle= ".ta-toolbar{ display:none; }";
+		// $scope.editDisabled = true;
+		// $scope.customStyle= ".ta-toolbar{ display:none; }";
 	
-		$scope.toggleActiveEditor = function(){
-			if ( $scope.editDisabled )
-			{
-				$scope.editDisabled = false;
-				$scope.customStyle= "";				
-			}
-			else
-			{
-				$scope.editDisabled = true;
-				$scope.customStyle= ".ta-toolbar{ display:none; }";
-			}
-		};
+		// $scope.toggleActiveEditor = function(){
+			// if ( $scope.editDisabled )
+			// {
+				// $scope.editDisabled = false;
+				// $scope.customStyle= "";				
+			// }
+			// else
+			// {
+				// $scope.editDisabled = true;
+				// $scope.customStyle= ".ta-toolbar{ display:none; }";
+			// }
+		// };
 		
 		$scope.message = 'This is the home page !';
 	});
