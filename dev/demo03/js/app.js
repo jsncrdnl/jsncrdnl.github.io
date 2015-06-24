@@ -30,21 +30,32 @@
 	{
 
 		// WYSIWYG
-		$scope.editDisabled = true;
-		$scope.customStyle= ".ta-toolbar{ display:none; }";
-		$scope.toggleActiveEditor = function(){
-			if ( $scope.editDisabled )
-			{
-				$scope.editDisabled = false;
-				$scope.customStyle= "";
-			}
-			else
-			{
-				$scope.editDisabled = true;
-				$scope.customStyle= ".ta-toolbar{ display:none; }";
-			}
-		};
+//		$scope.editDisabled = true;
+//		$scope.customStyle= ".ta-toolbar{ display:none; }";
+//		$scope.toggleActiveEditor = function(){
+//			if ( $scope.editDisabled )
+//			{
+//				$scope.editDisabled = false;
+//				$scope.customStyle= "";
+//			}
+//			else
+//			{
+//				$scope.editDisabled = true;
+//				$scope.customStyle= ".ta-toolbar{ display:none; }";
+//			}
+//		};
 		/////////
+
+        // On login success only
+        CKEDITOR_BASEPATH="ckeditor/";
+        $.getScript( "ckeditor/ckeditor.js" )
+          .done(function( script, textStatus ) {
+            console.log( textStatus );
+            $(".editableAware").attr("contenteditable", "true");
+          })
+          .fail(function( jqxhr, settings, exception ) {
+            console.log( "exception : " + exception );
+        });
 
 	});
 
