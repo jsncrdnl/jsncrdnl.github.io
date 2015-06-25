@@ -5,20 +5,26 @@
     <title>Untitled Document</title>
 </head>
 <body>
-    http://justbuildsomething.com/frontend-routing-with-sammy-js/
-    http://takazudo.github.io/jQuery.LazyJaxDavis/doc/pages/setup.html
-    History.js
-    http://james2doyle.github.io/simplebinder/
-    https://muut.com/riotjs/
-    http://microjs.com/#router
+    http://justbuildsomething.com/frontend-routing-with-sammy-js/<br/>
+    http://takazudo.github.io/jQuery.LazyJaxDavis/doc/pages/setup.html<br/>
+    History.js<br/>
+    http://james2doyle.github.io/simplebinder/<br/>
+    https://muut.com/riotjs/<br/>
+    http://microjs.com/#router<br/>
+
+    <p><input type="password" value="" name="secretvalue" data-controller="mysecret" /></p>
+    <p>my secret is <span data-model="mysecret"></span></p>
 
     <script src="jquery-1.11.0.min.js"></script>
     <script src="sammy-latest.min.js"></script>
     <script src="rivets.bundled.min.js"></script>
+    <script src="simplebinder.min.js"></script>
     <script>
         $(document).ready(function()
         {
-            alert("test");
+            var mysecret = SimpleBuilder('mysecret', function(input, model){
+
+            });
         });
     </script>
 </body>
