@@ -43,12 +43,12 @@
         $(document).ready(function()
         {
             var mysecret = SimpleBinder('mysecret');
-            var infoBind = SimpleBinder('info');
+//            var infoBind = SimpleBinder('info');
 
             page('/pages/*', function(context){
               var filePath = context.params[0];
               console.log('Loading file', filePath);
-                infoBind.value = filePath;
+//                infoBind.value = filePath;
             });
         });
     </script>
