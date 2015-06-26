@@ -28,7 +28,7 @@
             <p><input type="password" value="" name="secretvalue" data-controller="mysecret" /></p>
             <p>my secret is <span data-model="mysecret"></span></p>
 
-            <p id="info" data-controller="info"></p>
+            <p data-controller="infoPath"></p>
 
         </div>
     </div>
@@ -43,7 +43,7 @@
         $(document).ready(function()
         {
             var mysecret = SimpleBinder('mysecret');
-            var infoBind = SimpleBinder('info');
+            var infoPath = SimpleBinder('infoPath');
 
             page('/pages/*', function(context){
               var filePath = context.params[0];
