@@ -8,9 +8,9 @@
     <h1>title</h1>
     <nav>
         <ul>
-            <li><a href="#1">01</a></li>
-            <li><a href="#2">02</a></li>
-            <li><a href="#3">03</a></li>
+            <li><a href="#/pages/01.html">01</a></li>
+            <li><a href="#/pages/02.html">02</a></li>
+            <li><a href="#/pages/03.html">03</a></li>
         </ul>
     </nav>
     <div id="container">
@@ -28,6 +28,8 @@
             <p><input type="password" value="" name="secretvalue" data-controller="mysecret" /></p>
             <p>my secret is <span data-model="mysecret"></span></p>
 
+            <p id="info" data-controller="info"></p>
+
         </div>
     </div>
 
@@ -35,10 +37,19 @@
     <script src="sammy-latest.min.js"></script>
     <script src="rivets.bundled.min.js"></script>
     <script src="simplebinder.min.js"></script>
+    <script src="page.js"></script>
     <script>
+//        var info = "";
         $(document).ready(function()
         {
             var mysecret = SimpleBinder('mysecret');
+            var infoBind = SimpleBinder('info');
+
+            page('/pages/*', function(context){
+              var filePath = context.params[0];
+              console.log('Loading file', filePath);
+                infoBind = filePath;
+            });
         });
     </script>
 </body>
