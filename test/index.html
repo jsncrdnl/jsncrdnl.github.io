@@ -48,7 +48,7 @@
             page('/pages/*', function(context){
               var filePath = context.params[0];
               console.log('Loading file', filePath);
-                infoBind = filePath;
+                infoBind.value = filePath;
             });
         });
     </script>
