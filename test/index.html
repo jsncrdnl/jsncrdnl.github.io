@@ -34,7 +34,7 @@
             <h3>homemade</h3>
             <input twocan-input="test01" value="test" />
             <p twocan-output="test01">output of my input</p>
-            <button onclick="$('#myOutput').text(test01);">Check variable "test01" value</button>
+            <button onclick="$('#myOutput').text(twocan.test01);">Check variable "test01" value</button>
             <p id="myOutput"></p>
 
         </div>
@@ -50,7 +50,7 @@
         $(document).ready(function()
         {
             $("*[twocan-input]").keyup(function(){
-                window[$(this).attr("twocan-input")] = $(this).val();
+                twocan[$(this).attr("twocan-input")] = $(this).val();
                 $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
             });
             var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
