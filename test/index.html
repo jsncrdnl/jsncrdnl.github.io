@@ -25,13 +25,11 @@
             http://visionmedia.github.io/page.js/<br/>
             https://github.com/flatiron/director<br/>
 
-            <p><input type="password" value="" name="secretvalue" data-controller="mysecret" /></p>
-            <p>my secret is <span data-model="mysecret"></span></p>
-
-            <p><textarea data-controller="infoPath">aaaa</textarea></p>
-            <p>value is <span data-model="infoPath"></span></p>
-
             <h3>homemade</h3>
+
+            <p><input type="password" value="" name="secretvalue" twocan-input="mysecret" /></p>
+            <p>my secret is <span twocan-output="mysecret"></span></p>
+
             <input twocan-input="test01" value="test" />
             <p twocan-output="test01">output of my input</p>
             <button onclick="$('#myOutput').text(twocan.test01);">Check variable "test01" value</button>
