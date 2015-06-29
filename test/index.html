@@ -37,6 +37,9 @@
             <button onclick="$('#myOutput').text(twocan.test01);">Check variable "test01" value</button>
             <p id="myOutput"></p>
 
+            <h3>sending</h3>
+            <button onclick="serializeTwocan();">serialize</button>
+
         </div>
     </div>
 
@@ -51,17 +54,14 @@
             twocan[ elem.attr("twocan-input") ] = elem.val();
             $("*[twocan-output='"+ elem.attr("twocan-input") +"']").text(elem.val());
         };
+        var serializeTwocan function (){
+            alert(twocan);
+        };
         $(document).ready(function()
         {
             $("*[twocan-input]").each(function(index,value){
                 updateTwocan( $(this) );
-//                twocan[$(this).attr("twocan-input")] = $(this).val();
-//                $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
-                $(this).keyup(function(){
-                    updateTwocan( $(this) );
-//                    twocan[$(this).attr("twocan-input")] = $(this).val();
-//                    $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
-                });
+                $(this).keyup(function(){ updateTwocan( $(this) ); });
             });
 
             $("nav ul li a").each(function(index, elem)
