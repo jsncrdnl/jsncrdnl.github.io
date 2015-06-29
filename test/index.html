@@ -54,7 +54,7 @@
             twocan[ elem.attr("twocan-input") ] = elem.val();
             $("*[twocan-output='"+ elem.attr("twocan-input") +"']").text(elem.val());
         };
-        var serializeTwocan function (){
+        var serializeTwocan = function (){
             alert(twocan);
         };
         $(document).ready(function()
