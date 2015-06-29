@@ -66,10 +66,10 @@
             $("nav ul li a[twocan-link]").each(function(index, elem){
                 $(this).click(function(e){
                     console.log( "target is " + $(this).attr("href") );
-                    var asyncLoad = $.ajax(
+                    var asyncLoad = $.ajax({
                         URL: $(this).attr("href"),
                         method: "GET"
-                    );
+                    });
                     asyncLoad.done(function(data){
                         $("body div[twocan-content]").html( $(data).find("body div[twocan-content]").html() );
                     });
