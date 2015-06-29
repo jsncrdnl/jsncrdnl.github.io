@@ -66,6 +66,14 @@
             $("nav ul li a[twocan-link]").each(function(index, elem){
                 $(this).click(function(e){
                     console.log( "target is " + $(this).attr("href") );
+                    var asyncLoad = $.ajax(
+                        URL: $(this).attr("href"),
+                        method: "GET"
+                    );
+                    asyncLoad.done(function(data){
+                        $("body div[twocan-content]").html( $(data).find("body div[twocan-content]").html() );
+                    });
+                    asyncLoad.fail(function(){ console.log("an error occured while loading page : should redirect to page instead of loading it"); });
                     e.preventDefault();
                 });
             });
