@@ -48,7 +48,6 @@
         $(document).ready(function()
         {
             $("*[twocan-input]").keyup(function(){
-                console.log("bla  " + $(this).val() );
                 $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
             });
             var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
