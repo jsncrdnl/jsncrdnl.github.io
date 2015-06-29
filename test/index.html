@@ -50,7 +50,7 @@
         $(document).ready(function()
         {
             $("*[twocan-input]").keyup(function(){
-                if(isNaN(twocan)) window['twocan']={};
+                if(twocan==null) window['twocan']={};
                 twocan[$(this).attr("twocan-input")] = $(this).val();
                 $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
             });
