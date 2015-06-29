@@ -37,6 +37,7 @@
 
             <h3>sending</h3>
             <button onclick="serializeTwocan();">serialize</button>
+            <p id="jsonOut"></p>
 
         </div>
     </div>
@@ -53,7 +54,7 @@
             $("*[twocan-output='"+ elem.attr("twocan-input") +"']").text(elem.val());
         };
         var serializeTwocan = function (){
-            alert( JSON.stringify(twocan) );
+            $("#jsonOut").text( JSON.stringify(twocan, null, ' ') );
         };
         $(document).ready(function()
         {
