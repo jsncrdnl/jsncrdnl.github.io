@@ -43,35 +43,21 @@
     <script src="jquery-1.11.0.min.js"></script>
     <script src="sammy-latest.min.js"></script>
     <script src="rivets.bundled.min.js"></script>
-    <script src="simplebinder.min.js"></script>
     <script src="page.js"></script>
     <script>
         var info = "";
+        window.twocan = [];
         $(document).ready(function()
         {
-            var twocan = [];
             $("*[twocan-input]").keyup(function(){
                 twocan[$(this).attr("twocan-input")] = $(this).val();
                 $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
-                console.log(twocan);
+//                console.log(twocan);
             });
-            var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
-            var infoPath = SimpleBinder('infoPath', function(input, model){ info = input.value; console.log("info = " + info); });
-
-//              console.log("pages called ...");
-//              var filePath = context.params[0];
-//              console.log('Loading file', filePath);
-////                infoBind.value = filePath;
-//            });
 
             $("nav ul li a").each(function(index, elem)
             {
-                $(this).click(function(e){
-                    page('/'+$(this).attr("content-target"), function(){
-                        $('body').text('Not found!')
-                    });
-                    e.preventDefault();
-                });
+
             });
         });
     </script>
