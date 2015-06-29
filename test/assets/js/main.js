@@ -21,11 +21,12 @@ $(document).ready(function()
             $("body").removeClass("contentReloaded");
             $("body").addClass("reloadingContent");
             var tmplink = $(this).attr("href");
-            var asyncLoad = $.get( "/test" + tmplink )
+            var pagepath = "/test" + tmplink;
+            var asyncLoad = $.get( pagepath )
                 .done(function(data){
                     $("body").addClass("contentReloaded");
                     $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
-                    window.history.pushState("string", $(data).find("title").text(), tmplink );
+                    window.history.pushState("string", $(data).find("title").text(), pagepath );
 
                     var scriptpath = "/test/assets/js" + tmplink.replace(".html",".js");
                     if(tmplink!=null && tmplink=="/") scriptpath =  "/test/assets/js/main.js";
