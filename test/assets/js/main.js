@@ -27,9 +27,9 @@ $(document).ready(function()
                     $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
                     window.history.pushState("string", $(data).find("title").text(), tmplink );
 
-                    var scriptpath = "/test/assets/js"+replaceAll(/.html/g,".js",tmplink);
+                    var scriptpath = "/test/assets/js"+replace(/.html/g,".js",tmplink);
                     if(tmplink!=null && tmplink=="/") scriptpath =  "/test/assets/js/main.js";
-                    $.getScript( "/test/assets/js"+replaceAll(/.html/g,".js",tmplink) )
+                    $.getScript( scriptpath )
                         .done(function(){ console.log("script loaded"); })
                         .fail(function(){ console.log("script NOT loaded"); });
                 })
