@@ -8,11 +8,11 @@
     <h1>title</h1>
     <nav>
         <ul>
-            <li><a href="/test/" twocan-link>home</a></li>
-            <li><a href="/test/page01.html" twocan-link>01</a></li>
-            <li><a href="/test/page02.html" twocan-link>02</a></li>
-            <li><a href="/test/page03.html" twocan-link>03</a></li>
-            <li><a href="/test/page04.html" twocan-link>04</a></li>
+            <li><a href="/" twocan-link>home</a></li>
+            <li><a href="/page01.html" twocan-link>01</a></li>
+            <li><a href="/page02.html" twocan-link>02</a></li>
+            <li><a href="/page03.html" twocan-link>03</a></li>
+            <li><a href="/page04.html" twocan-link>04</a></li>
         </ul>
     </nav>
     <div id="container">
@@ -24,47 +24,7 @@
     </div>
 
     <script src="jquery-1.11.0.min.js"></script>
-    <script>
-        var info = "";
-        window.twocan = {};
-        var updateTwocan = function(el){
-            twocan[ el.attr("twocan-input") ] = el.val();
-            $("*[twocan-output='"+ el.attr("twocan-input") +"']").text(el.val());
-        };
-        var serializeTwocan = function (){
-            $("#jsonOut").text( JSON.stringify(twocan, null, ' ') );
-        };
-        $(document).ready(function()
-        {
-            $("#mainContent").css("background", "blue");
-
-            $("*[twocan-input]").each(function(index,value){
-                updateTwocan( $(this) );
-                $(this).keyup(function(){ updateTwocan( $(this) ); });
-            });
-
-            $("nav ul li a[twocan-link]").each(function(index, elem){
-                $(this).click(function(e){
-                    $("body").removeClass("contentReloaded");
-                    $("body").addClass("reloadingContent");
-                    var tmplink = $(this).attr("href");
-                    var asyncLoad = $.get( tmplink )
-                        .done(function(data){
-                            $("body").addClass("contentReloaded");
-                            $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
-                            window.history.pushState("string", $(data).find("title").text(), tmplink );
-                        })
-                        .fail(function(){
-//                            window.location = tmplink;
-                            console.log("an error occured while loading page : should redirect to page instead of loading it");
-                        })
-                    .always(function(){
-                        $("body").removeClass("reloadingContent");
-                    });
-                    e.preventDefault();
-                });
-            });
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/page02.js"></script>
 </body>
 </html>
