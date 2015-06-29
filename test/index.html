@@ -40,17 +40,17 @@
     <script src="simplebinder.min.js"></script>
     <script src="page.js"></script>
     <script>
-//        var info = "";
+        var info = "";
         $(document).ready(function()
         {
             var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
-            var infoPath = SimpleBinder('infoPath', function(input, model){ console.log("callback value"); });
+            var infoPath = SimpleBinder('infoPath', function(input, model){ info = infoPath.value; console.log("info = " + info); });
 
-//            page('/pages/*', function(context){
-//              var filePath = context.params[0];
-//              console.log('Loading file', filePath);
-////                infoBind.value = filePath;
-//            });
+            page('/pages/*', function(context){
+              var filePath = context.params[0];
+              console.log('Loading file', filePath);
+//                infoBind.value = filePath;
+            });
         });
     </script>
 </body>
