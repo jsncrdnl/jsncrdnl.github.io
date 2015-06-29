@@ -24,9 +24,6 @@
     </div>
 
     <script src="jquery-1.11.0.min.js"></script>
-    <script src="sammy-latest.min.js"></script>
-    <script src="rivets.bundled.min.js"></script>
-    <script src="page.js"></script>
     <script>
         var info = "";
         window.twocan = {};
@@ -39,6 +36,8 @@
         };
         $(document).ready(function()
         {
+            $("#mainContent").css("background", "blue");
+
             $("*[twocan-input]").each(function(index,value){
                 updateTwocan( $(this) );
                 $(this).keyup(function(){ updateTwocan( $(this) ); });
@@ -46,7 +45,22 @@
 
             $("nav ul li a[twocan-link]").each(function(index, elem){
                 $(this).click(function(e){
-                    console.log( "target is " + $(this).attr("href") );
+                    $("body").removeClass("contentReloaded");
+                    $("body").addClass("reloadingContent");
+                    var tmplink = $(this).attr("href");
+                    var asyncLoad = $.get( tmplink )
+                        .done(function(data){
+                            $("body").addClass("contentReloaded");
+                            $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
+                            window.history.pushState("string", $(data).find("title").text(), tmplink );
+                        })
+                        .fail(function(){
+//                            window.location = tmplink;
+                            console.log("an error occured while loading page : should redirect to page instead of loading it");
+                        })
+                    .always(function(){
+                        $("body").removeClass("reloadingContent");
+                    });
                     e.preventDefault();
                 });
             });
