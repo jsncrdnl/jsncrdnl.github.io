@@ -55,7 +55,9 @@
             $("nav ul li a").each(function(index, elem)
             {
                 $(this).click(function(e){
-                    page('/'+$(this).attr("content-target"));
+                    page('/'+$(this).attr("content-target"), function(){
+                        $('body').text('Not found!')
+                    });
                     e.preventDefault();
                 });
             });
