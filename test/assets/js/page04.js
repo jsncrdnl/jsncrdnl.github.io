@@ -1,4 +1,4 @@
 $(document).ready(function()
 {
-    $("#mainContent").css("background", "yellow");
+    $("#mainContent").stop().animate({"background", "yellow"}, 1000);
 });
