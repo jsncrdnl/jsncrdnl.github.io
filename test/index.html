@@ -49,7 +49,7 @@
         var info = "";
         $(document).ready(function()
         {
-            var twocan = {};
+            var twocan = [];
             $("*[twocan-input]").keyup(function(){
                 twocan[$(this).attr("twocan-input")] = $(this).val();
                 $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
