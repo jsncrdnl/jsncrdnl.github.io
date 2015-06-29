@@ -55,7 +55,7 @@
             $("*[twocan-output='"+ elem.attr("twocan-input") +"']").text(elem.val());
         };
         var serializeTwocan = function (){
-            alert(twocan);
+            alert( JSON.stringify(twocan) );
         };
         $(document).ready(function()
         {
