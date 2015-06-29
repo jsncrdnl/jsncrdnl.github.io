@@ -44,7 +44,7 @@
         $(document).ready(function()
         {
             var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
-            var infoPath = SimpleBinder('infoPath', function(input, model){ info = infoPath.value; console.log("info = " + info); });
+            var infoPath = SimpleBinder('infoPath', function(input, model){ info = input.value; console.log("info = " + info); });
 
             page('/pages/*', function(context){
               var filePath = context.params[0];
