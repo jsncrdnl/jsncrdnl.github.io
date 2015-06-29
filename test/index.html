@@ -47,12 +47,21 @@
     <script>
         var info = "";
         window.twocan = [];
+        var updateTwocan = function(elem){
+            twocan[ elem.attr("twocan-input") ] = elem.val();
+            $("*[twocan-output='"+ elem.attr("twocan-input") +"']").text(elem.val());
+        };
         $(document).ready(function()
         {
-            $("*[twocan-input]").keyup(function(){
-                twocan[$(this).attr("twocan-input")] = $(this).val();
-                $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
-//                console.log(twocan);
+            $("*[twocan-input]").each(function(index,value){
+                updateTwocan( $(this) );
+//                twocan[$(this).attr("twocan-input")] = $(this).val();
+//                $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
+                $(this).keyup(function(){
+                    updateTwocan( $(this) );
+//                    twocan[$(this).attr("twocan-input")] = $(this).val();
+//                    $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
+                });
             });
 
             $("nav ul li a").each(function(index, elem)
