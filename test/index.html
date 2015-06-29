@@ -47,6 +47,7 @@
             var infoPath = SimpleBinder('infoPath', function(input, model){ info = input.value; console.log("info = " + info); });
 
             page('/pages/*', function(context){
+              console.log('pages called ...");
               var filePath = context.params[0];
               console.log('Loading file', filePath);
 //                infoBind.value = filePath;
