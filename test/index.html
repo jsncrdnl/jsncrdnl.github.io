@@ -48,10 +48,10 @@
     <script src="page.js"></script>
     <script>
         var info = "";
-        window.twocan = [];
-        var updateTwocan = function(elem){
-            twocan[ elem.attr("twocan-input") ] = elem.val();
-            $("*[twocan-output='"+ elem.attr("twocan-input") +"']").text(elem.val());
+        window.twocan = {};
+        var updateTwocan = function(el){
+            twocan[ el.attr("twocan-input") ] = el.val();
+            $("*[twocan-output='"+ el.attr("twocan-input") +"']").text(el.val());
         };
         var serializeTwocan = function (){
             $("#jsonOut").text( JSON.stringify(twocan, null, ' ') );
