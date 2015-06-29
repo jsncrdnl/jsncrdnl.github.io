@@ -65,7 +65,7 @@
 
             $("nav ul li a[twocan-link]").each(function(index, elem){
                 $(this).click(function(e){
-                    var tmplink = $(this).attr("href");
+                    var tmplink = String($(this).attr("href"));
                     console.log("tmplink = " + tmplink);
                     var asyncLoad = $.get({ tmplink })
                         .done(function(data){
