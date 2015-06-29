@@ -43,8 +43,8 @@
 //        var info = "";
         $(document).ready(function()
         {
-            var mysecret = SimpleBinder('mysecret', function(){ console.log("callback secret"); });
-            var infoPath = SimpleBinder('infoPath', function(){ console.log("callback value"); });
+            var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
+            var infoPath = SimpleBinder('infoPath', function(input, model){ console.log("callback value"); });
 
 //            page('/pages/*', function(context){
 //              var filePath = context.params[0];
