@@ -53,6 +53,7 @@
             $("*[twocan-input]").keyup(function(){
                 twocan[$(this).attr("twocan-input")] = $(this).val();
                 $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
+                console.log(twocan);
             });
             var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
             var infoPath = SimpleBinder('infoPath', function(input, model){ info = input.value; console.log("info = " + info); });
