@@ -1,2 +1,54 @@
-<h2>page 04</h2>
-<p>testtttt</p>
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<body>
+    <h1>title</h1>
+    <nav>
+        <ul>
+            <li><a href="pages/01.html" twocan-link>01</a></li>
+            <li><a href="pages/02.html" twocan-link>02</a></li>
+            <li><a href="pages/03.html" twocan-link>03</a></li>
+        </ul>
+    </nav>
+    <div id="container">
+        <div id="mainContent" twocan-content>
+
+            page 04
+
+        </div>
+    </div>
+
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="sammy-latest.min.js"></script>
+    <script src="rivets.bundled.min.js"></script>
+    <script src="page.js"></script>
+    <script>
+        var info = "";
+        window.twocan = {};
+        var updateTwocan = function(el){
+            twocan[ el.attr("twocan-input") ] = el.val();
+            $("*[twocan-output='"+ el.attr("twocan-input") +"']").text(el.val());
+        };
+        var serializeTwocan = function (){
+            $("#jsonOut").text( JSON.stringify(twocan, null, ' ') );
+        };
+        $(document).ready(function()
+        {
+            $("*[twocan-input]").each(function(index,value){
+                updateTwocan( $(this) );
+                $(this).keyup(function(){ updateTwocan( $(this) ); });
+            });
+
+            $("nav ul li a[twocan-link]").each(function(index, elem){
+                $(this).click(function(e){
+                    console.log( "target is " + $(this).attr("href") );
+                    e.preventDefault();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
