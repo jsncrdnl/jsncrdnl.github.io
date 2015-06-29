@@ -31,6 +31,10 @@
             <p><textarea data-controller="infoPath">aaaa</textarea></p>
             <p>value is <span data-model="infoPath"></span></p>
 
+            <h3>homemade</h3>
+            <input twocan-input="test01" value="test" />
+            <p twocan-output="test01">output of my input</p>
+
         </div>
     </div>
 
@@ -43,6 +47,10 @@
         var info = "";
         $(document).ready(function()
         {
+            $("*[twocan-input]").keydown(function(){
+                console.log("bla  " + $(this).val() );
+                $("*["+$(this).attr("twocan-input")+"]").text($(this).val());
+            });
             var mysecret = SimpleBinder('mysecret', function(input, model){ console.log("callback secret"); });
             var infoPath = SimpleBinder('infoPath', function(input, model){ info = input.value; console.log("info = " + info); });
 
