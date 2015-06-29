@@ -49,8 +49,8 @@
         var info = "";
         $(document).ready(function()
         {
+            var twocan = {};
             $("*[twocan-input]").keyup(function(){
-                if(twocan==null) window['twocan']={};
                 twocan[$(this).attr("twocan-input")] = $(this).val();
                 $("*[twocan-output='"+$(this).attr("twocan-input")+"']").text($(this).val());
             });
