@@ -8,13 +8,13 @@
     <h1>title</h1>
     <nav>
         <ul>
-            <li><a href="#" content-target="pages/01.html">01</a></li>
-            <li><a href="#" content-target="pages/02.html">02</a></li>
-            <li><a href="#" content-target="pages/03.html">03</a></li>
+            <li><a href="pages/01.html" twocan-link>01</a></li>
+            <li><a href="pages/02.html" twocan-link>02</a></li>
+            <li><a href="pages/03.html" twocan-link>03</a></li>
         </ul>
     </nav>
     <div id="container">
-        <div id="mainContent">
+        <div id="mainContent" twocan-content>
 
             http://justbuildsomething.com/frontend-routing-with-sammy-js/<br/>
             http://takazudo.github.io/jQuery.LazyJaxDavis/doc/pages/setup.html<br/>
@@ -63,9 +63,11 @@
                 $(this).keyup(function(){ updateTwocan( $(this) ); });
             });
 
-            $("nav ul li a").each(function(index, elem)
-            {
-
+            $("nav ul li a[twocan-link]").each(function(index, elem){
+                $(this).click(function(e){
+                    console.log( "target is " + $(this).attr("href") );
+                    e.preventDefault();
+                });
             });
         });
     </script>
