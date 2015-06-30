@@ -29,10 +29,9 @@ var serializeTwocan = function (){
 //    console.log("page04");
 //    $("body").stop().animate({"background-color": "green"}, 1000);
 //};
-//var page404 = function(){
-//    console.log("page404");
-//    $("body").stop().animate({"background-color": "black"}, 1000);
-//};
+var page404 = function(){
+    $("body").html("Page doesn't exist !");
+};
 
 
 $(document).ready(function()
