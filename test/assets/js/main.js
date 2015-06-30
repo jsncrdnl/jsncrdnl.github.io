@@ -3,10 +3,14 @@
 // twocan-input (1)
 // twocan-output (2)
 // twocan-content (3)
+// body.reloadingContent (4)
+// body.contentReloaded (5)
 // -----------
 // 1 - data source must have tag "twocan-input" equal to a variable name, i.e. twocan-input='myVar'
 // 2 - data bind must is made using a "twocan-output" tag equal to the variable name, i.e. twocan-output='myVar'
 // 3 - only the container with tag "twocan-content" will be async loaded/replaced
+// 4 - This class will be added to the body during the async loaded of the content
+// 5 - This class is added when the async content is loaded
 
 window.twocan = {};
 
