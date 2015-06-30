@@ -1,10 +1,11 @@
 window.twocan = {};
 
-var updateTwocan = function(el){
+var refreshTwocan = function(el){
     var targ = el.attr("twocan-input");
-    console.log( "targ = " + targ );
-    console.log( "twocan[targ] = " + twocan[targ] );
     if ( twocan[targ]!=null ) el.val( twocan[targ] );
+    updateTwocan(el);
+};
+var updateTwocan = function(el){
     twocan[ el.attr("twocan-input") ] = el.val();
     $("*[twocan-output='"+ el.attr("twocan-input") +"']").text(el.val());
 };
@@ -31,7 +32,7 @@ $(document).ready(function()
                     $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
 
                     $("*[twocan-input]").each(function(index,value){
-                        updateTwocan( $(this) );
+                        refreshTwocan( $(this) );
                         $(this).keyup(function(){ updateTwocan( $(this) ); });
                     });
                 })
