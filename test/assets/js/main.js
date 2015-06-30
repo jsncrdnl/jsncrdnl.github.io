@@ -46,30 +46,53 @@ $(document).ready(function()
         $(this).keyup(function(){ updateTwocan( $(this) ); });
     });
 
-    $("nav ul li a[twocan-link]").each(function(index, elem){
-        $(this).click(function(e){
+    $("nav ul li a[twocan-link]").each(function(index, elem)
+    {
+        var tmplink = $(this).attr("href");
+        var pagepath = "/test" + tmplink;
+
+        page( pagepath, function()
+        {
             $("body").removeClass("contentReloaded");
             $("body").addClass("reloadingContent");
-            var tmplink = $(this).attr("href");
-            var pagepath = "/test" + tmplink;
 
-            page( pagepath, function()
-            {
-                var asyncLoad = $.get( pagepath )
-                    .done(function(data){
-                        $("body").addClass("contentReloaded");
-                        $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
-                    })
-                    .fail(function(){
-                        //window.location = tmplink;
-                        console.log("an error occured while loading page : should redirect to page instead of loading it");
-                    })
-                    .always(function(){
-                        $("body").removeClass("reloadingContent");
-                    });
-            });
-            e.preventDefault();
+            var asyncLoad = $.get( pagepath )
+                .done(function(data){
+                    $("body").addClass("contentReloaded");
+                    $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
+                })
+                .fail(function(){
+                    //window.location = tmplink;
+                    console.log("an error occured while loading page : should redirect to page instead of loading it");
+                })
+                .always(function(){
+                    $("body").removeClass("reloadingContent");
+                });
         });
+
+        $(this).click(function(e){ e.preventDefault(); });
+
+//        $(this).click(function(e){
+//            $("body").removeClass("contentReloaded");
+//            $("body").addClass("reloadingContent");
+//
+//            page( pagepath, function()
+//            {
+//                var asyncLoad = $.get( pagepath )
+//                    .done(function(data){
+//                        $("body").addClass("contentReloaded");
+//                        $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
+//                    })
+//                    .fail(function(){
+//                        //window.location = tmplink;
+//                        console.log("an error occured while loading page : should redirect to page instead of loading it");
+//                    })
+//                    .always(function(){
+//                        $("body").removeClass("reloadingContent");
+//                    });
+//            });
+//            e.preventDefault();
+//        });
     });
 
     page('*', page404);
