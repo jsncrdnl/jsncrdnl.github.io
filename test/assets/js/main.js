@@ -13,14 +13,30 @@ var serializeTwocan = function (){
 //  alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
 //};
 
+var homepage = function(){
+    $("body").stop().animate({"background-color": "white"}, 1000);
+};
+var page02 = function(){
+    $("body").stop().animate({"background-color": "blue"}, 1000);
+};
+var page03 = function(){
+    $("body").stop().animate({"background-color": "red"}, 1000);
+};
+var page04 = function(){
+    $("body").stop().animate({"background-color": "green"}, 1000);
+};
+var page404 = function(){
+    $("body").stop().animate({"background-color": "black"}, 1000);
+};
+
 
 $(document).ready(function()
 {
-    page('/test/', function(){ console.log("HOME"); });
-    page('/test/page02.html', function(){ console.log("P2"); });
-    page('/test/page03.html', function(){ console.log("P3"); });
-    page('/test/page04.html', function(){ console.log("P4"); });
-    page('*', function(){ console.log("NOT-FOUND"); });
+    page('/test/',              homepage);
+    page('/test/page02.html',   page02);
+    page('/test/page03.html',   page03);
+    page('/test/page04.html',   page04);
+    page('*',                   page404);
     page();
 
     $("*[twocan-input]").each(function(index,value){
@@ -43,9 +59,9 @@ $(document).ready(function()
 
                     var scriptpath = "/test/assets/js" + tmplink.replace(".html",".js");
                     if(tmplink!=null && tmplink=="/") scriptpath =  "/test/assets/js/index.js";
-                    $.getScript( scriptpath )
-                        .done(function(){ console.log("script loaded"); })
-                        .fail(function(){ console.log("script NOT loaded"); });
+//                    $.getScript( scriptpath )
+//                        .done(function(){ console.log("script loaded"); })
+//                        .fail(function(){ console.log("script NOT loaded"); });
                 })
                 .fail(function(){
 //                  window.location = tmplink;
