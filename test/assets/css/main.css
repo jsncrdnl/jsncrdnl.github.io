@@ -1,14 +1,18 @@
 body{
     background: #fff;
-    -webkit-transition: background .1s, color .1s;
-    transition: background .1s, color .1s;
+    /*-webkit-transition: background .1s, color .1s;
+    transition: background .1s, color .1s;*/
     color: #000;
 }
 body.reloadingContent{
     background: #84f2b7;
     color: transparent;
+    -webkit-transition: background .1s, color .1s;
+    transition: background .1s, color .1s;
 }
 body.contentReloaded{
     background: #f8ba7c;
     color: #000;
+    -webkit-transition: background .5s, color .5s;
+    transition: background .5s, color .5s;
 }
