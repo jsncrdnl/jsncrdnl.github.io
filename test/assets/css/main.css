@@ -1,0 +1,14 @@
+body{
+    background: #fff;
+    -webkit-transition: background .5s, color .5s;
+    transition: background .5s, color .5s;
+    color: #000;
+}
+body.reloadingContent{
+    background: #84f2b7;
+    color: transparent;
+}
+body.contentReloaded{
+    background: #fff;
+    color: #000;
+}
