@@ -9,6 +9,15 @@ var serializeTwocan = function (){
     $("body").append("<div style='border:1px solid gray;'>"+ JSON.stringify(twocan, null, ' ') +"</div>");
 };
 
+window.onpopstate = function (event) {
+  if (event.state) {
+    console.log("state changed");
+  } else {
+    console.log("page loaded");
+  }
+};
+
+
 $(document).ready(function()
 {
     $("*[twocan-input]").each(function(index,value){
