@@ -34,6 +34,7 @@ $(document).ready(function()
                     $("*[twocan-input]").each(function(index,value){
                         refreshTwocan( $(this) );
                         $(this).keyup(function(){ updateTwocan( $(this) ); });
+                        $(this).keydown(function(){ updateTwocan( $(this) ); });
                     });
                 })
                 .fail(function(){
