@@ -1,5 +1,5 @@
 $(document).ready(function()
 {
-    $("body").stop().animate({"background-color": "blue"}, 1000);
-    console.log("idx script !!");
+    $("body").stop().animate({"background-color": "white"}, 1000);
+    $("body").css("background-color", "white");
 });
