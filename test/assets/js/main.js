@@ -70,7 +70,13 @@ $(document).ready(function()
                 });
         });
 
-        $(this).click(function(e){ e.preventDefault(); });
+        $(this).click(function(e){
+            $("body").removeClass("contentReloaded");
+            $("body").addClass("reloadingContent");
+
+            page( pagepath );
+            e.preventDefault();
+        });
 
 //        $(this).click(function(e){
 //            $("body").removeClass("contentReloaded");
