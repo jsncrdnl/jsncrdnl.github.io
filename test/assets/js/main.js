@@ -14,18 +14,23 @@ var serializeTwocan = function (){
 //};
 
 var homepage = function(){
+    console.log("home");
     $("body").stop().animate({"background-color": "white"}, 1000);
 };
 var page02 = function(){
+    console.log("page02");
     $("body").stop().animate({"background-color": "blue"}, 1000);
 };
 var page03 = function(){
+    console.log("page03");
     $("body").stop().animate({"background-color": "red"}, 1000);
 };
 var page04 = function(){
+    console.log("page04");
     $("body").stop().animate({"background-color": "green"}, 1000);
 };
 var page404 = function(){
+    console.log("page404");
     $("body").stop().animate({"background-color": "black"}, 1000);
 };
 
@@ -57,8 +62,8 @@ $(document).ready(function()
 //                    window.history.pushState("string", $(data).find("title").text(), pagepath );
                     page( pagepath );
 
-                    var scriptpath = "/test/assets/js" + tmplink.replace(".html",".js");
-                    if(tmplink!=null && tmplink=="/") scriptpath =  "/test/assets/js/index.js";
+//                    var scriptpath = "/test/assets/js" + tmplink.replace(".html",".js");
+//                    if(tmplink!=null && tmplink=="/") scriptpath =  "/test/assets/js/index.js";
 //                    $.getScript( scriptpath )
 //                        .done(function(){ console.log("script loaded"); })
 //                        .fail(function(){ console.log("script NOT loaded"); });
