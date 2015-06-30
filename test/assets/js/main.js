@@ -10,11 +10,7 @@ var serializeTwocan = function (){
 };
 
 window.onpopstate = function (event) {
-  if (event.state) {
-    console.log("state changed");
-  } else {
-    console.log("page loaded");
-  }
+  alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
 };
 
 
