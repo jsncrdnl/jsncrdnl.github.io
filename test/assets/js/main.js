@@ -1,3 +1,13 @@
+// USAGE NOTES
+// -----------
+// twocan-input (1)
+// twocan-output (2)
+// twocan-content (3)
+// -----------
+// 1 - data source must have tag "twocan-input" equal to a variable name, i.e. twocan-input='myVar'
+// 2 - data bind must is made using a "twocan-output" tag equal to the variable name, i.e. twocan-output='myVar'
+// 3 - only the container with tag "twocan-content" will be async loaded/replaced
+
 window.twocan = {};
 
 var refreshTwocan = function(el){
@@ -38,7 +48,7 @@ $(document).ready(function()
                     });
                 })
                 .fail(function(){
-                    //window.location = tmplink;
+                    window.location = tmplink;
                     console.log("an error occured while loading page : should redirect to page instead of loading it");
                 })
                 .always(function(){
