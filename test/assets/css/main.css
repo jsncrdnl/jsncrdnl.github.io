@@ -1,7 +1,7 @@
 body{
     background: #fff;
-    -webkit-transition: background .5s, color .5s;
-    transition: background .5s, color .5s;
+    -webkit-transition: background .1s, color .1s;
+    transition: background .1s, color .1s;
     color: #000;
 }
 body.reloadingContent{
