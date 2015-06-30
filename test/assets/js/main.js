@@ -11,11 +11,6 @@ var serializeTwocan = function (){
 
 $(document).ready(function()
 {
-    $("*[twocan-input]").each(function(index,value){
-        updateTwocan( $(this) );
-        $(this).keyup(function(){ updateTwocan( $(this) ); });
-    });
-
     $("nav ul li a[twocan-link]").each(function(index, elem)
     {
         var tmplink = $(this).attr("href");
@@ -30,6 +25,11 @@ $(document).ready(function()
                 .done(function(data){
                     $("body").addClass("contentReloaded");
                     $("div[twocan-content]").html( $(data).find("div[twocan-content]").html() );
+
+                    $("*[twocan-input]").each(function(index,value){
+                        updateTwocan( $(this) );
+                        $(this).keyup(function(){ updateTwocan( $(this) ); });
+                    });
                 })
                 .fail(function(){
                     //window.location = tmplink;
@@ -47,6 +47,8 @@ $(document).ready(function()
             page( pagepath );
             e.preventDefault();
         });
+
     });
+
     page();
 });
