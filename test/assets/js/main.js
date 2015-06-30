@@ -42,10 +42,10 @@ $(document).ready(function()
                     page( pagepath );
 
                     var scriptpath = "/test/assets/js" + tmplink.replace(".html",".js");
-                    if(tmplink!=null && tmplink=="/") scriptpath =  "/test/assets/js/main.js";
-//                    $.getScript( scriptpath )
-//                        .done(function(){ console.log("script loaded"); })
-//                        .fail(function(){ console.log("script NOT loaded"); });
+                    if(tmplink!=null && tmplink=="/") scriptpath =  "/test/assets/js/index.js";
+                    $.getScript( scriptpath )
+                        .done(function(){ console.log("script loaded"); })
+                        .fail(function(){ console.log("script NOT loaded"); });
                 })
                 .fail(function(){
 //                  window.location = tmplink;
