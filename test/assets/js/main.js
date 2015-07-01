@@ -16,7 +16,7 @@ window.pagepath = "index";
 window.twocan = {};
 
 var refreshTwocan = function(el){
-    pagepath = window.location.pathname.replace("/","").replace(".html", "").replace("test", "");
+    pagepath = window.location.pathname.replace(/\//g,"").replace(/.html/g, "").replace(/test/g, "");
     if(pagepath=="") pagepath = "index";
     console.log("refreshTwocan :: " + pagepath);
     var targ = el.attr("twocan-input");
