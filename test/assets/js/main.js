@@ -12,18 +12,21 @@
 // 4 - This class will be added to the body during the async loaded of the content
 // 5 - This class is added when the async content is loaded
 
+var pagepath = "index";
 window.twocan = {};
 
 var refreshTwocan = function(el){
+    pagepath = window.location.pathname.replace("/","").replace(".html", "").replace("test", "");
+    if(pagepath=="") pagepath = "index";
+    console.log("refreshTwocan :: " + pagepath);
     var targ = el.attr("twocan-input");
-    if ( twocan[targ]!=null ) el.val( twocan[targ] );
+    if ( twocan[pagepath][targ]!=null ) el.val( twocan[pagepath][targ] );
     updateTwocan(el);
 };
 var updateTwocan = function(el){
-    var pagepath = window.location.pathname.replace("/","").replace(".html", "").replace("test", "");
-    if(pagepath=="") pagepath = "index";
+    console.log("updateTwocan :: " + pagepath);
     if( pagepath[ pagepath ]==null ) pagepath[ pagepath ] = {};
-    twocan[ el.attr("twocan-input") ] = el.val();
+    twocan[pagepath][ el.attr("twocan-input") ] = el.val();
     $("*[twocan-output='"+ el.attr("twocan-input") +"']").text(el.val());
 };
 
