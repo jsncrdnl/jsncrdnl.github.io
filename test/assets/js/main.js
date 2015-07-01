@@ -18,6 +18,7 @@ window.twocan = {};
 var refreshTwocan = function(el){
     pagepath = window.location.pathname.replace(/\//g,"").replace(/.html/g, "").replace(/test/g, "");
     if(pagepath=="") pagepath = "index";
+    if( twocan[ pagepath ]==null ) twocan[ pagepath ] = {};
     console.log("refreshTwocan :: " + pagepath);
     var targ = el.attr("twocan-input");
     if ( twocan[pagepath][targ]!=null ) el.val( twocan[pagepath][targ] );
@@ -25,7 +26,6 @@ var refreshTwocan = function(el){
 };
 var updateTwocan = function(el){
     console.log("updateTwocan :: " + pagepath);
-    if( pagepath[ pagepath ]==null ) pagepath[ pagepath ] = {};
     twocan[pagepath][ el.attr("twocan-input") ] = el.val();
     $("*[twocan-output='"+ el.attr("twocan-input") +"']").text(el.val());
 };
