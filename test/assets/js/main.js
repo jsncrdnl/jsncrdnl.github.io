@@ -20,6 +20,9 @@ var refreshTwocan = function(el){
     updateTwocan(el);
 };
 var updateTwocan = function(el){
+    var pagepath = window.location.pathname.replace("/","").replace(".html", "").replace("test", "");
+    if(pagepath=="") pagepath = "index";
+    if( pagepath[ pagepath ]==null ) pagepath[ pagepath ] = {};
     twocan[ el.attr("twocan-input") ] = el.val();
     $("*[twocan-output='"+ el.attr("twocan-input") +"']").text(el.val());
 };
