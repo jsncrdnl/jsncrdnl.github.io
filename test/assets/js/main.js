@@ -12,6 +12,13 @@
 // 4 - This class will be added to the body during the async loaded of the content
 // 5 - This class is added when the async content is loaded
 
+// SAMPLE UPDATE CONTENT
+// {
+//      "index": { "mysecret": "aaaaaa", "test01": "bbbbb" },
+//      "page02": { "mysecret": "dddddddd" },
+//      "page03": { "txtMsg": "Ceci est une zone de texte ...." }
+// }
+
 window.pagepath = "index";
 window.twocan = {};
 
