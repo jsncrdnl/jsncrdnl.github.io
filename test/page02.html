@@ -17,7 +17,13 @@
     <div id="container">
         <div id="mainContent" twocan-content>
 
-            page 02
+            page 02<br/><br/>
+
+            <p><input type="password" value="" name="secretvalue" twocan-input="mysecret" /></p>
+            <p>my secret is <span twocan-output="mysecret"></span></p>
+
+            <button onclick="$('#myOutput').text(twocan.page02.mysecret);">Check variable "mysecret" value</button>
+            <p id="myOutput"></p>
 
         </div>
     </div>
