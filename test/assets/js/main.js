@@ -12,7 +12,7 @@
 // 4 - This class will be added to the body during the async loaded of the content
 // 5 - This class is added when the async content is loaded
 
-var pagepath = "index";
+window.pagepath = "index";
 window.twocan = {};
 
 var refreshTwocan = function(el){
