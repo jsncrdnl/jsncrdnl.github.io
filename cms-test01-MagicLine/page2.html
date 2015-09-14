@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>index</title>
+        <meta name="description" content="" />
+        <meta name="author" content="Kuroicloud" />
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    </head>
+
+    <body>        
+        
+            
+        <div id="body">
+            <div id="centralPanel">                
+                
+                    <header>
+                        <h1>Future moving line</h1>
+                    </header>
+                            
+                    <nav class="nav-wrap">    
+                        <ul class="group" id="magicLineMenu">
+                            <li>
+                                <a twocan-link href="index.html">Accueil</a>
+                            </li>
+                            <li>
+                                <a twocan-link href="page1.html">page 1</a>
+                            </li>
+                            <li class="current_page_item">
+                                <a twocan-link href="page2.html">page 2</a>
+                            </li>
+                            <li>
+                                <a twocan-link href="page3.html">page 3</a>
+                            </li>
+                        </ul>            
+                    </nav>
+                        
+                    <div class="menuDiag" id="menuDiagL"> </div>
+                
+                    <div id="content">     		
+                        <div twocan-content>
+                            <h2>Page 2</h2>
+                            <div>
+                                <textarea twocan-input>
+                                    Yeahhhhhhhhhhhhhhhhhhhh
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="menuDiag" id="menuDiagR"> </div>
+                    </div>
+                              
+            </div>
+            
+        </div>
+              
+        <div id="footer">
+            <footer>
+                <div id="jsnCrdnlSignature">    
+                    <div id="preSignature">D&eacute;velopp&eacute; par </div>
+                    <div id="signature"><a href="http://jsncrdnl.alwaysdata.net/" title="Vers le site web de jsn.crdnl">. jsn.crdnl</a></div>
+                </div>
+            </footer>
+        </div>
+    </body>
+	
+    
+    <link rel='stylesheet' href='css/style.css'>
+
+    <!--[if lt IE 9]><script src="js/IE9.js"></script><![endif]-->	
+    <script src='js/jquery-1.9.1.min.js'></script>
+    <script src="js/jquery.color-2.1.2.min.js"></script>
+    <script src='js/magicLine.js'></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {                
+            spectrum();
+            function spectrum(){
+                var hue = 'rgb('+(Math.floor(Math.random()*256))+','+
+                                 (Math.floor(Math.random()*256))+','+
+                                 (Math.floor(Math.random()*256))+')';
+                $('#signature a').animate( { color : hue }, 2500);
+                setTimeout( spectrum, 2500 );
+            }   
+        });
+    </script>
+    
+    <script src="twocan/jquery-1.11.0.min.js"></script>
+    <script src="twocan/page.js"></script>
+    <script src="twocan/twocan.js"></script>
+
+</html>

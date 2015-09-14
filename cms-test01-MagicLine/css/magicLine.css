@@ -1,0 +1,45 @@
+body { font: 14px Georgia, serif; background: #2F2626; color: #eee; }
+
+/* Clearfix */
+.group:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; }
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+/* Example One */
+#magicLineMenu { 
+	margin: 0 auto; 
+	list-style: none; 
+	position: relative; 
+	width: 850px; 
+	display:block;
+}
+#magicLineMenu li { 
+	display: inline-block;	
+}
+#magicLineMenu a { 
+	color: #bbb; 
+	font-size: 14px; 
+	float: left;
+	padding: 6px 10px 4px 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#magicLineMenu a:hover { 
+	color: white; 
+}
+#magic-line { 
+	position: absolute;
+	bottom: -2px; 
+	left: 0; 
+	width: 100px; 
+	height: 2px; 
+	background: #fe4902;
+}
+.current_page_item a { 
+	color: white !important; 
+}
+.ie6 #magicLineMenu li, .ie7 #magicLineMenu li { 
+	display: inline; 
+}
+.ie6 #magic-line {
+	bottom: -3px;
+}
