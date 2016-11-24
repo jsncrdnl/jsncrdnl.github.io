@@ -115,9 +115,7 @@ var initplumenavContent = function()
 {
     $("*[plumenav-link]").each(function(index, elem)
     {
-        var tmplink = $(this).attr("href");
-
-        page( tmplink, function()
+        page( $(this).attr("href"), function()
         {
             bodyLoading();
 
@@ -142,7 +140,6 @@ var initplumenavContent = function()
                         bodyLoaded();
 					})
 					.fail(function(event, request, settings){
-//						window.location = tmplink;
 						window.location = settings.url;
 						console.log("an error occured while loading page : should redirect to page instead of loading it");
                         bodyLoaded();
@@ -151,16 +148,17 @@ var initplumenavContent = function()
         });
 
         $(this).click(function(e){
-            console.log( "e.currentTarget = ", e, $(e.currentTarget).attr('href') );
+            var locallink = $(e.currentTarget).attr('href');
+
             bodyLoading();
 
 
 			$("*[plumenav-link]").removeClass("menuSelected");
 			$(this).addClass("menuSelected");
 
-			pagepath = tmplink;
+			pagepath = locallink;
 
-            page( tmplink );
+            page( locallink );
             e.preventDefault();
         });
 
