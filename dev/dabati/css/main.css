@@ -368,7 +368,7 @@ label input{
 }
 #realisations{
     background: #231f20;
-    margin: 0; padding: 0;
+    margin: 0; padding: 10px 0px;
     text-align: center;
 }
 #realisations .filter-icon{
@@ -378,15 +378,15 @@ label input{
     margin: 0 0 5px 0; padding: 0;
 }
 #toutprojet {
-    background: url(../img/icons/icone_sanitaires.png) no-repeat;
+    background: url(../img/icons/icone_projets.png) no-repeat;
     background-size: cover;
 }
 #construction {
-    background: url(../img/icons/icone_sanitaires.png) no-repeat;
+    background: url(../img/icons/icone_construct.png) no-repeat;
     background-size: cover;
 }
 #carrelage {
-    background: url(../img/icons/icone_sanitaires.png) no-repeat;
+    background: url(../img/icons/icone_carrelages.png) no-repeat;
     background-size: cover;
 }
 #sanitaire {
@@ -394,14 +394,14 @@ label input{
     background-size: cover;
 }
 #exterieur {
-    background: url(../img/icons/icone_sanitaires.png) no-repeat;
+    background: url(../img/icons/icone_exterieur.png) no-repeat;
     background-size: cover;
 }
 #facade {
-    background: url(../img/icons/icone_sanitaires.png) no-repeat;
+    background: url(../img/icons/icone_facade.png) no-repeat;
     background-size: cover;
 }
 #platre {
-    background: url(../img/icons/icone_sanitaires.png) no-repeat;
+    background: url(../img/icons/icone_facade.png) no-repeat;
     background-size: cover;
 }
