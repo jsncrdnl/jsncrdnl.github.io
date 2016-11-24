@@ -37,7 +37,7 @@ window.pagepath = "index";
 window.plumenav = {
     pages: {},
     config: {
-        navDelay: 500, // in ms
+        navDelay: 100, // in ms
         pagesExt: "html", // in ms
     },
 };
@@ -144,6 +144,7 @@ var initplumenavContent = function()
 			{
 				var asyncLoad = $.get( pagepath )
 					.done(function(data){
+                        console.log("data = ", data);
 						$("*[plumenav-content]").html( $(data).find("*[plumenav-content]").html() );
 						refreshplumenav( $("*[plumenav-content]") );
                         bodyLoaded();
