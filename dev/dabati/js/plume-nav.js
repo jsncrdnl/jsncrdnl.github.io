@@ -35,7 +35,7 @@
 
 window.pagepath = "index";
 window.plumenav = {
-    pages: {},
+    pages: [],
     config: {
         navDelay: 500, // in ms
     },
