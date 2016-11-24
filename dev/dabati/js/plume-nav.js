@@ -65,7 +65,7 @@ var parsePageName = function(url){
 ////////////////////////////////////////////////////
 $(document).ready(function()
 {
-    pagepath = $(this).URL;
+    pagepath = $(document)[0].URL;
     pagepath = pagepath.substr( pagepath.lastIndexOf("/"), 0 );
     console.log("pagepath = ", pagepath);
 
