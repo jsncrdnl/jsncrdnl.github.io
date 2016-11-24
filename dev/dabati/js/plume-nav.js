@@ -151,7 +151,7 @@ var initplumenavContent = function()
         });
 
         $(this).click(function(e){
-            console.log( "e.currentTarget = ", e.currentTarget);
+            console.log( "e.currentTarget = ", e, e.currentTarget);
             bodyLoading();
 
 
