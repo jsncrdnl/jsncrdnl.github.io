@@ -144,7 +144,7 @@ var initplumenavContent = function()
 			{
 				var asyncLoad = $.get( pagepath )
 					.done(function(data){
-                        console.log("data = ", $(data).find("*[plumenav-content]").html());
+                        console.log("data = ", $(data), $(data).find("*[plumenav-content]"), $(data).find("*[plumenav-content]").html());
 						$("*[plumenav-content]").html( $(data).find("*[plumenav-content]").html() );
 						refreshplumenav( $("*[plumenav-content]") );
                         bodyLoaded();
