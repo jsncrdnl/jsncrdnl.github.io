@@ -35,7 +35,10 @@
 
 window.pagepath = "index";
 window.plumenav = {
-    pageTransitionDelay: 500 // in ms
+    pages: {},
+    config: {
+        navDelay: 500, // in ms
+    },
 };
 
 /* ********************************************************** */
@@ -82,15 +85,15 @@ var initplumenavVariable = function()
 ////////////////////////////////////////////////////
 var refreshplumenav = function(el){
     pagepath = parsePageName(pagepath);
-    if ( plumenav[pagepath]==null ) 			plumenav[ pagepath ] = {};
-    if ( plumenav[pagepath].content!=null )		el.html( plumenav[pagepath].content );
+    if ( plumenav.pages[pagepath]==null ) 			plumenav[ pagepath ] = {};
+    if ( plumenav.pages[pagepath].content!=null )		el.html( plumenav.pages[pagepath].content );
     updateplumenav(el);
 };
 ////////////////////////////////////////////////////
 // UPDATE plumenav GLOBAL VARIABLE /////////////////
 ////////////////////////////////////////////////////
 var updateplumenav = function(el){
-	plumenav[pagepath].content = el.html();
+	plumenav.pages[pagepath].content = el.html();
 };
 var bodyLoading = function()
 {
@@ -102,7 +105,7 @@ var bodyLoaded = function()
     $("body").removeClass("reloadingContent");
     setTimeout(function(){
         $("body").addClass("contentReloaded");
-    }, plumenav.pageTransitionDelay);
+    }, plumenav.config.navDelay);
 };
 ////////////////////////////////////////////////////
 // CONTENT SCANNING AND INITIALIZATION /////////////
@@ -137,8 +140,9 @@ var initplumenavContent = function()
 						refreshplumenav( $("*[plumenav-content]") );
                         bodyLoaded();
 					})
-					.fail(function(){
-						window.location = tmplink;
+					.fail(function(event, request, settings){
+//						window.location = tmplink;
+						window.location = settings.url;
 						console.log("an error occured while loading page : should redirect to page instead of loading it");
                         bodyLoaded();
 					});
@@ -147,6 +151,8 @@ var initplumenavContent = function()
 
         $(this).click(function(e){
             bodyLoading();
+
+            console.log( "e.currentTarget = ", e.currentTarget);
 
 			$("*[plumenav-link]").removeClass("menuSelected");
 			$(this).addClass("menuSelected");
