@@ -83,6 +83,11 @@ $(document).ready(function()
 ////////////////////////////////////////////////////
 var initplumenavVariable = function()
 {
+    $("*[plumenav-link]").each(function(index, elem){
+        if ( $(this).attr('href') == pagepath )
+            $(this).addClass('menuSelected');
+    });
+
 	$("*[plumenav-content]").each(function(index,value){
 		refreshplumenav( $(this) );
 	});
