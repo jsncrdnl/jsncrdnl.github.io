@@ -38,6 +38,7 @@ window.plumenav = {
     pages: [],
     config: {
         navDelay: 500, // in ms
+        pagesExt: "html", // in ms
     },
 };
 
@@ -55,7 +56,7 @@ window.plumenav = {
 // Create a standart page name
 var parsePageName = function(url){
 	var name = url;
-	name = name.replace(/\//g,"").replace(/.html/g, "");
+	name = name.replace(/\//g,"").replace(/.html/g, "").replace(/.php/g, "");
     if(name=="") name = "index";
 	return name;
 };
@@ -66,7 +67,9 @@ var parsePageName = function(url){
 $(document).ready(function()
 {
     pagepath = $(document)[0].URL;
-    pagepath = pagepath.substr( pagepath.lastIndexOf("/"), 0 );
+    pagepath = pagepath.substr( pagepath.lastIndexOf("/"), 0 ).split('?')[0];
+    if(pagepath=="")  pagepath = "index." + plumenav.config.pagesExt;
+
     console.log("pagepath = ", pagepath);
 
 	initplumenavVariable();
