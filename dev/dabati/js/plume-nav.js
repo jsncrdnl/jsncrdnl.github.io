@@ -65,8 +65,8 @@ var parsePageName = function(url){
 ////////////////////////////////////////////////////
 $(document).ready(function()
 {
-    pagepath = $(document).URL;
-    pagepath = pagepath.substr( pagepath.lastIndexOf("/") );
+    pagepath = $(this).URL;
+    pagepath = pagepath.substr( pagepath.lastIndexOf("/"), 0 );
     console.log("pagepath = ", pagepath);
 
 	initplumenavVariable();
