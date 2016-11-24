@@ -150,9 +150,9 @@ var initplumenavContent = function()
         });
 
         $(this).click(function(e){
+            console.log( "e.currentTarget = ", e.currentTarget);
             bodyLoading();
 
-            console.log( "e.currentTarget = ", e.currentTarget);
 
 			$("*[plumenav-link]").removeClass("menuSelected");
 			$(this).addClass("menuSelected");
