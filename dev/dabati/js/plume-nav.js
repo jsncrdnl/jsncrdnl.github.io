@@ -97,7 +97,6 @@ var initplumenavVariable = function()
 ////////////////////////////////////////////////////
 var refreshplumenav = function(el){
     pagepath = parsePageName(pagepath);
-    console.log("pagepath = ", pagepath);
     if ( plumenav.pages[pagepath]==null ) 			plumenav.pages[ pagepath ] = {};
     if ( plumenav.pages[pagepath].content!=null )		el.html( plumenav.pages[pagepath].content );
     updateplumenav(el);
