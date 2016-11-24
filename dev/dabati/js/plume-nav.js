@@ -85,7 +85,7 @@ var initplumenavVariable = function()
 ////////////////////////////////////////////////////
 var refreshplumenav = function(el){
     pagepath = parsePageName(pagepath);
-    if ( plumenav.pages[pagepath]==null ) 			plumenav[ pagepath ] = {};
+    if ( plumenav.pages[pagepath]==null ) 			plumenav.pages[ pagepath ] = {};
     if ( plumenav.pages[pagepath].content!=null )		el.html( plumenav.pages[pagepath].content );
     updateplumenav(el);
 };
@@ -125,10 +125,10 @@ var initplumenavContent = function()
 				console.log("page: already displayed");
                 bodyLoaded();
 			}
-			else if ( plumenav[parsePageName(pagepath)] != null )
+			else if ( plumenav.pages[parsePageName(pagepath)] != null )
 			{
 				console.log( "page: loaded from memory");
-                $("*[plumenav-content]").html( plumenav[parsePageName(pagepath)].content );
+                $("*[plumenav-content]").html( plumenav.pages[parsePageName(pagepath)].content );
 				refreshplumenav( $("*[plumenav-content]") );
                 bodyLoaded();
 			}
