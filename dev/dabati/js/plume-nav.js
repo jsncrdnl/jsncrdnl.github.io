@@ -35,7 +35,7 @@
 
 window.pagepath = "index";
 window.plumenav = {
-    pages: [],
+    pages: {},
     config: {
         navDelay: 500, // in ms
         pagesExt: "html", // in ms
@@ -69,8 +69,6 @@ $(document).ready(function()
     pagepath = $(document)[0].URL;
     pagepath = pagepath.substr( pagepath.lastIndexOf("/"), 0 ).split('?')[0];
     if(pagepath=="")  pagepath = "index." + plumenav.config.pagesExt;
-
-    console.log("pagepath = ", pagepath);
 
 	initplumenavVariable();
 	initplumenavContent();
