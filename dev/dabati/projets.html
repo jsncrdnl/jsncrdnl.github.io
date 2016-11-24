@@ -18,14 +18,14 @@
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="vegas/jquery.vegas.css" />
-		<link rel="stylesheet" href="css/lightbox.css" />
+		<link rel="stylesheet" href="css/lightbox.css" plumenav-css />
 
         <script type="text/javascript" src="js/vendor/jquery-1.10.1.min.js"></script>
         <script type="text/javascript" src="js/vendor/detectmobilebrowser.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script type="text/javascript" src="vegas/jquery.vegas.js"></script>
-		<script src="js/isotope.pkgd.min.js"></script>
-		<script src="js/vendor/lightbox-2.6.min.js"></script>
+		<script src="js/isotope.pkgd.min.js" plumenav-js></script>
+		<script src="js/vendor/lightbox-2.6.min.js" plumenav-js></script>
 		<script type="text/javascript" src="js/plume-nav.js"></script>
 
         <script type="text/javascript">
@@ -39,7 +39,8 @@
 			imgList[6]  = 'img/gallery/07.jpg';
 			imgList[7]  = 'img/gallery/08.jpg';
 			imgList[8]  = 'img/gallery/09.jpg';
-
+		</script>
+        <script type="text/javascript" plumenav-script>
 			$(document).ready(function(){
 				$('#projects-grid').isotope({
 					itemSelector: '.grid-item',
@@ -49,9 +50,6 @@
 		</script>
         <script src="js/main.js"></script>
 		<style>
-			.main-container{
-				overflow-y: scroll;
-			}
 		</style>
     </head>
     <body>

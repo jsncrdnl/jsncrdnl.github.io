@@ -95,16 +95,17 @@ var initplumenavVariable = function()
 ////////////////////////////////////////////////////
 var refreshplumenav = function(el){
     pagepath = parsePageName(pagepath);
-    if ( plumenav.pages[pagepath]==null ) 			plumenav.pages[ pagepath ] = {};
-    if ( plumenav.pages[pagepath].content!=null )		el.html( plumenav.pages[pagepath].content );
-    updateplumenav(el);
+    if ( plumenav.pages[pagepath]==null )           plumenav.pages[pagepath] = {};
+    if ( plumenav.pages[pagepath].content!=null )   el.html( plumenav.pages[pagepath].content );
+//    updateplumenav(el);
+    plumenav.pages[pagepath].content = el.html();
 };
 ////////////////////////////////////////////////////
 // UPDATE plumenav GLOBAL VARIABLE /////////////////
 ////////////////////////////////////////////////////
-var updateplumenav = function(el){
-	plumenav.pages[pagepath].content = el.html();
-};
+//var updateplumenav = function(el){
+//	plumenav.pages[pagepath].content = el.html();
+//};
 var bodyLoading = function()
 {
     $("body").removeClass("contentReloaded");
@@ -116,6 +117,13 @@ var bodyLoaded = function()
     setTimeout(function(){
         $("body").addClass("contentReloaded");
     }, plumenav.config.navDelay);
+};
+var loadStylesAndScripts = function(src_css, src_js){
+    console.log("src_css = ", src_css);
+    console.log("src_js = ", src_js);
+};
+var runScripts = function(src_script){
+    console.log("src_script = ", src_script);
 };
 ////////////////////////////////////////////////////
 // CONTENT SCANNING AND INITIALIZATION /////////////
@@ -144,9 +152,10 @@ var initplumenavContent = function()
 			{
 				var asyncLoad = $.get( pagepath )
 					.done(function(data){
-//                        console.log("data = ", $(data), $(data).filter("*[plumenav-content]"), $(data).filter("*[plumenav-content]").html());
 						$("*[plumenav-content]").html( $(data).filter("*[plumenav-content]").html() );
-						refreshplumenav( $("*[plumenav-content]") );
+						refreshplumenav       ( $("*[plumenav-content]") );
+                        loadStylesAndScripts  ( $(data).filter("*[plumenav-css]"), $(data).filter("*[plumenav-js]") );
+                        runScripts            ( $(data).filter("*[plumenav-script]") );
                         bodyLoaded();
 					})
 					.fail(function(event, request, settings){
