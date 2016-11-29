@@ -223,7 +223,13 @@ body.contentReloaded .header-container,
 }
 
 .leftblock, .rightblock{
-    width: 500px;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+.leftblock header, .rightblock header{
+    text-align: center;
 }
 .leftblock{
     display: inline-block;
