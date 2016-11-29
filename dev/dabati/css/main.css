@@ -221,6 +221,16 @@ body.contentReloaded .header-container,
     background: rgba(255, 255, 255, 0.9);
     color: #231f20;
 }
+
+.leftblock, .rightblock{
+    width: 500px;
+}
+.leftblock{
+    display: inline-block;
+}
+.rightblock{
+    display: inline-block;
+}
 body .header-container .wrapper img,
 body.reloadingContent .header-container .wrapper img {
 	margin-top: 0px;
