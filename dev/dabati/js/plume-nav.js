@@ -119,6 +119,7 @@ var bodyLoaded = function()
     }, plumenav.config.navDelay);
 };
 var loadStylesAndScripts = function(src_css, src_js){
+    console.log("loadStylesAndScripts... ");
     console.log("src_css = ", src_css);
     console.log("src_js = ", src_js);
 };
