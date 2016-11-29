@@ -61,7 +61,7 @@ body {
 	background : black;
 }
 .wrapper {
-    width: 90%;
+    width: 100%;
     /*margin: 0 5%;*/
 }
 
@@ -166,8 +166,6 @@ nav a:hover {
 	width: 95%;
 	margin-bottom:100px;
 	position:relative;
-    background: rgba(255, 255, 255, 0.9);
-    color: #231f20;
     padding: 27px;
 }
 
@@ -217,6 +215,11 @@ body.contentReloaded .header-container,
 	position: absolute;
     top: 200px;
     width: 100%;
+}
+.whitebannner{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #231f20;
 }
 body .header-container .wrapper img,
 body.reloadingContent .header-container .wrapper img {
